@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/WallTiles/Tile Sets/WallTileSet.tres" type="TileSet" id=1]
+[ext_resource path="res://Player/Scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UI/Scenes/ExitButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Levels/Scenes/LevelComplete.tscn" type="PackedScene" id=4]
+
+
+[node name="LevelThree" type="Node" index="0"]
+
+[node name="TileMap" type="TileMap" parent="." index="0"]
+
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 0, 7, 0, 1, 14, 0, 2, 14, 0, 3, 14, 0, 4, 14, 0, 5, 14, 0, 6, 14, 0, 7, 14, 0, 8, 14, 0, 9, 14, 0, 10, 14, 0, 11, 14, 0, 12, 14, 0, 13, 14, 0, 14, 2, 0, 65536, 6, 0, 65537, 13, 0, 65538, 15, 0, 65539, 13, 0, 65540, 13, 0, 65541, 15, 0, 65542, 13, 0, 65543, 13, 0, 65544, 13, 0, 65545, 15, 0, 65546, 13, 0, 65547, 13, 0, 65548, 15, 0, 65549, 13, 0, 65550, 0, 0, 131072, 6, 0, 131086, 0, 0, 196608, 6, 0, 196622, 0, 0, 262144, 6, 0, 262158, 0, 0, 327694, 0, 0, 393216, 6, 0, 393230, 0, 0, 458752, 6, 0, 458766, 0, 0, 524288, 5, 0, 524289, 9, 0, 524290, 9, 0, 524291, 9, 0, 524292, 9, 0, 524293, 9, 0, 524294, 9, 0, 524295, 9, 0, 524296, 9, 0, 524297, 9, 0, 524298, 9, 0, 524299, 9, 0, 524300, 9, 0, 524301, 9, 0, 524302, 3, 0 )
+_sections_unfolded = [ "Cell" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Player" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 10.9429, 87.8033 )
+
+[node name="VBoxContainer" parent="." index="2" instance=ExtResource( 3 )]
+
+margin_left = 227.0
+margin_top = 1.0
+margin_right = 247.0
+margin_bottom = 21.0
+rect_scale = Vector2( 0.6, 0.6 )
+_sections_unfolded = [ "Rect" ]
+
+[node name="LevelComplete" parent="." index="3" instance=ExtResource( 4 )]
+
+position = Vector2( 1.21643, 87.9544 )
+changeLevels = "res://Levels/Scenes/LevelTwo.tscn"
+
+
