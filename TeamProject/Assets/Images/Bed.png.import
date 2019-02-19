@@ -24,6 +24,6 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 stream=false
-size_limit=0
+size_limit=200
 detect_3d=false
 svg/scale=1.0
