@@ -1,4 +1,4 @@
-#bullet.gd
+#Code for bullet projectiles
 #Created by Jake Gilbert
 
 extends Area2D
@@ -24,4 +24,9 @@ func _physics_process(delta):
 
 func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
-	pass # replace with function body
+
+func  _on_bullet_body_entered(body):
+	if "enemy" in body.name:
+		body.dead()
+		body.queue_free()
+

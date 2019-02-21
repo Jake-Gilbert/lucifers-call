@@ -1,12 +1,13 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://UI/Script/HUD.gd" type="Script" id=1]
-[ext_resource path="res://Fonts/buttonFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Assets/Fonts/buttonFont.tres" type="DynamicFont" id=2]
 [ext_resource path="res://UI/Images/numbers-1.png" type="Texture" id=3]
 [ext_resource path="res://Sound/CheckButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://UI/Script/SaveBtn.gd" type="Script" id=5]
 [ext_resource path="res://UI/Script/PauseCntr.gd" type="Script" id=6]
 [ext_resource path="res://Assets/WallTiles/Images/BlackWall.png" type="Texture" id=7]
+
 
 [node name="HUD" type="Panel"]
 
