@@ -8,7 +8,7 @@ extends KinematicBody2D
 const GRAVITY = 10
 const SPEED = 30
 const FLOOR = Vector2(0, -1)
-
+var health = 3
 var alive = true 
 
 var velocity = Vector2()
@@ -20,6 +20,10 @@ func dead():
 	$Sprite.hide()
 	velocity = Vector2(0, 0)
 	
+func loseHealth():
+	health -= 1
+func getHealth():
+	return health
 func _physics_process(delta):
 	velocity.x   = SPEED * direction
 	velocity.y += GRAVITY
