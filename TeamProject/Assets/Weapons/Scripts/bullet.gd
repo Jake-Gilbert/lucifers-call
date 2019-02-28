@@ -10,6 +10,9 @@ const SPEED = 100
 var velocity = Vector2()
 var direction = 1
 
+var hit = false
+
+
 func set_bullet_direction(dir):
 	direction = dir
 	if dir == -1:
@@ -17,16 +20,30 @@ func set_bullet_direction(dir):
 	else:
 		$Sprite.flip_h = false
 	
+
 func _physics_process(delta):
+	
+			
+	
+
 	velocity.x = SPEED * delta * direction
 	translate(velocity)
 
 
 func _on_VisibilityNotifier2D_screen_exited():
-	queue_free()
-
+	self.queue_free()
+	
+#Whenever enemy hit by bullet this func is triggered
 func  _on_bullet_body_entered(body):
-	if "enemy" in body.name:
-		body.dead()
-		body.queue_free()
+	#var bodies = get.overlapping.areas
+	#for bodies in bodies
+		if "enemy" in body.name :
+			if(body.getHealth() <= 1):
+				self.queue_free()
+				body.dead()
+				body.queue_free()
+			
+			else:
+				body.loseHealth()
+				self.queue_free()
 
