@@ -23,6 +23,7 @@ func _physics_process(delta):
 		if body.name == "Player" and body.get("items") >= 1:
 			$DoorBlockDialogue.hide()
 			get_tree().change_scene(openPuzzle)
+			var newAmount = Global_Player.inventory_removeItem("1")
 		elif body.name == "Player" and body.get("items") == 0:
 			$DoorBlockDialogue.show()
 		else:

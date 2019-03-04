@@ -2,7 +2,8 @@
 
 [ext_resource path="res://UI/Script/PuzzleOneInstruction.gd" type="Script" id=1]
 [ext_resource path="res://UI/Images/Project - Drawing 1.jpeg" type="Texture" id=2]
-[ext_resource path="res://Fonts/pixelFont.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Assets/Fonts/pixelFont.tres" type="DynamicFont" id=3]
+
 
 
 
