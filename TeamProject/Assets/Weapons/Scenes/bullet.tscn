@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="bullet" type="Area2D"]
+[node name="bullet" type="Area2D" index="0"]
 
 position = Vector2( -1.41352, -3.8995 )
 scale = Vector2( 0.596554, 0.616044 )
@@ -51,8 +51,6 @@ rect = Rect2( -10, -10, 20, 20 )
 __meta__ = {
 "_edit_lock_": true
 }
-
-[connection signal="body_entered" from="." to="." method="_on_bullet_body_entered"]
 
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
 

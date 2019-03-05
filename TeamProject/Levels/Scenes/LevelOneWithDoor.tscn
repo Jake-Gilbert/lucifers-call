@@ -9,7 +9,7 @@
 [ext_resource path="res://Assets/Scripts/Key.gd" type="Script" id=7]
 [ext_resource path="res://Assets/Scenes/Wardrobe.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Scripts/Wardrobe.gd" type="Script" id=9]
-[ext_resource path="res://Assets/Fonts/pixelFont.tres" type="DynamicFont" id=10]
+[ext_resource path="res://Fonts/pixelFont.tres" type="DynamicFont" id=10]
 [ext_resource path="res://Assets/Scenes/Sink.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets/Scenes/Toilet.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Assets/Scenes/Window.tscn" type="PackedScene" id=13]
@@ -26,7 +26,6 @@
 [ext_resource path="res://UI/Scenes/UsableHUD.tscn" type="PackedScene" id=24]
 [ext_resource path="res://Assets/Scenes/Desk.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Assets/Scripts/DeskArea.gd" type="Script" id=26]
-
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -203,6 +202,7 @@ scale = Vector2( 1.25475, 1.15211 )
 
 [node name="Bed" parent="." index="12" instance=ExtResource( 17 )]
 
+editor/display_folded = true
 position = Vector2( 254.75, 180 )
 scale = Vector2( 0.789063, 0.828125 )
 
