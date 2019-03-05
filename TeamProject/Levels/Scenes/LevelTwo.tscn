@@ -8,12 +8,7 @@
 [ext_resource path="res://Assets/Enemies/Scenes/Enemy1.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Enemies/Scripts/Enemy1.gd" type="Script" id=7]
 
-<<<<<<< HEAD
-
-[node name="LevelTwo" type="Node"]
-=======
 [node name="LevelTwo" type="Node" index="0"]
->>>>>>> master
 
 [node name="TextureRect" type="TextureRect" parent="." index="0"]
 
