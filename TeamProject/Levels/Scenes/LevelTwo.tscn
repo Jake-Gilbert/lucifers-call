@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Images/Assets_room_floor_wood_small (6).png" type="Texture" id=1]
-[ext_resource path="res://Assets/WallTiles/Tile Sets/WallTileSetNewestEdition.tres" type="TileSet" id=2]
+[ext_resource path="res://Assets/WallTiles/TileSets/WallTileSetNewestEdition.tres" type="TileSet" id=2]
 [ext_resource path="res://Player/Scenes/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Levels/Scenes/LevelComplete.tscn" type="PackedScene" id=4]
 [ext_resource path="res://UI/Scenes/ExitButton.tscn" type="PackedScene" id=5]
