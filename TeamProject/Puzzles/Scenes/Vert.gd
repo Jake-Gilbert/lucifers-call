@@ -19,8 +19,8 @@ func _physics_process(delta):
 	var bodies = get_overlapping_areas()
 	
 	for body in bodies:
-		if hor == false && body.get_collision_layer_bit(7):
+		if hor == true && body.get_collision_layer_bit(7):
 			get_parent().clear()
 			body.queue_free()
-		elif hor == true && body.get_collision_layer_bit(7):
+		elif hor == false && body.get_collision_layer_bit(7):
 			get_tree().change_scene("res://UI/Scenes/PuzzleFailed.tscn")
