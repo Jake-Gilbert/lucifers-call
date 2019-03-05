@@ -13,8 +13,6 @@ var movedir = Vector2(0,0)
 
 var spritedir = "down"
 
-var inventory = false
-
 var level
 
 var items = 0
@@ -31,15 +29,13 @@ func _physics_process(delta):
 	else:
 		switch_animation("idle")
 	
-	if (Input.is_action_pressed("ui_inventory") && inventory == false):
-		get_tree().paused = true
-		$InventoryBackground.show()
-		inventory = true
-	
 	level = get_tree().get_current_scene().get_filename()
 	
-	#make variable that if item is part of these nodes
-	#items = min(items, 9)
+#	if (Input.is_action_pressed("ui_inventory") && inventory == false):
+#		get_tree().paused = true
+#		get_tree().change_scene("res://inventoryUI/Scenes/Scene_PlayerInventory.tscn")
+#	else:
+#		get_tree().paused = false
 
 #Function that says if this key pressed then player should move in this direction
 func controls_loop():
@@ -108,7 +104,6 @@ func get_state():
 		speed = SPEED,
 		moveDirection = movedir,
 		spriteDirection = spritedir,
-		isInventory = inventory,
 		level = level
 	}
 	return save_dict
@@ -119,3 +114,40 @@ func load_state(data):
 			position(Vector2(data["pos"]["x"], data["pos"]["y"]))
 		else:
 			set(attribute, data[attribute])
+
+func _on_SaveBtn_pressed():
+	var save_game = File.new()
+	save_game.open("user://savegame.save", File.WRITE)
+	var save_nodes = get_tree().get_nodes_in_group("Persist")
+	for i in save_nodes:
+		var node_data = i.call("save");
+		save_game.store_line(to_json(node_data))
+	save_game.close()
+
+func _on_LoadBtn_pressed():
+    var save_game = File.new()
+    if not save_game.file_exists("user://save_game.save"):
+        return # Error! We don't have a save to load.
+
+    # We need to revert the game state so we're not cloning objects during loading. This will vary wildly depending on the needs of a project, so take care with this step.
+    # For our example, we will accomplish this by deleting savable objects.
+    var save_nodes = get_tree().get_nodes_in_group("Persist")
+    for i in save_nodes:
+        i.queue_free()
+
+    # Load the file line by line and process that dictionary to restore the object it represents
+    save_game.open("user://savegame.save", File.READ)
+    while not save_game.eof_reached():
+        var current_line = parse_json(save_game.get_line())
+        # First we need to create the object and add it to the tree and set its position.
+        var new_object = load(current_line["filename"]).instance()
+        get_node(current_line["parent"]).add_child(new_object)
+        new_object.position = Vector2(current_line["pos_x"], current_line["pos_y"])
+        # Now we set the remaining variables.
+        for i in current_line.keys():
+            if i == "filename" or i == "parent" or i == "pos_x" or i == "pos_y":
+                continue
+            new_object.set(i, current_line[i])
+    save_game.close()
+	
+

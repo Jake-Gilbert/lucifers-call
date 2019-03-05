@@ -11,4 +11,3 @@ func _ready():
 	pass
 
 func _process(delta):
-	$UsableHUD/HUD/HBoxContainer2/items.frame = get_node("Player").items

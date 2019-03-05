@@ -17,3 +17,6 @@ func _on_ExitBtn_pressed():
 func _on_ResumeBtn_pressed():
 	get_tree().paused = false
 	pass
+
+func _on_Inventory_Button_pressed():
+	get_tree().change_scene("res://inventoryUI/Scenes/Scene_PlayerInventory.tscn")

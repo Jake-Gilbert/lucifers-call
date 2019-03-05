@@ -7,7 +7,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 8.65151, 31.9459 )
 
-[node name="DoorBlock" type="Area2D" index="0"]
+[node name="DoorBlock" type="Area2D"]
 
 rotation = 1.5708
 input_pickable = true
