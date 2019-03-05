@@ -60,7 +60,7 @@ extents = Vector2( 31.2284, 28.0067 )
 custom_solver_bias = 0.0
 extents = Vector2( 19.2, 42.6667 )
 
-[node name="Puzzle" type="Node" index="0"]
+[node name="Puzzle" type="Node"]
 
 __meta__ = {
 "_edit_horizontal_guides_": [ 0.0 ]
@@ -180,8 +180,6 @@ build_mode = 0
 polygon = PoolVector2Array( 396.709, 404.491, 396.709, 409.905, 538.304, 410.041, 537.898, 404.761 )
 
 [node name="VBlocks" type="Node" parent="." index="2"]
-
-editor/display_folded = true
 
 [node name="BlockMain" type="KinematicBody2D" parent="VBlocks" index="0"]
 
