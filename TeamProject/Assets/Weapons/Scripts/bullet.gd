@@ -6,7 +6,7 @@ extends Area2D
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
-const SPEED = 100
+const SPEED = 300
 var velocity = Vector2()
 var direction = 1
 
@@ -23,5 +23,15 @@ func _physics_process(delta):
 
 
 func _on_VisibilityNotifier2D_screen_exited():
-	queue_free()
-	pass # replace with function body
+	self.queue_free()
+
+
+
+func _on_bullet_body_entered(body):
+	if   ("enemy" in body.name && body.getHealth() < 0) :		
+		self.queue_free()
+		body.dead()
+		body.queue_free()
+	elif ("enemy" in body.name && body.getHealth() >= 0):
+		self.queue_free()
+		body.setHealth()
