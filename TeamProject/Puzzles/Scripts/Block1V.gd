@@ -5,13 +5,22 @@ extends KinematicBody2D
 
 var isHere = false
 var motion = Vector2()
+var pressed = false
 
 func _ready():
 	set_physics_process(true)
 
 func _physics_process(delta):
-	#If key 2 pressed and up and down keys pressed, body will move along Vector
-	if Input.is_mouse_button_pressed(BUTTON_LEFT) and isHere == true:
+	#Check if block clicked on		
+	if Input.is_mouse_button_pressed(BUTTON_LEFT) and isHere:
+		#If already clicked on become false
+		if pressed:
+			pressed = false
+		#Else become true as block selected
+		else:
+			pressed = true
+	#If the block is selected and arrow keys pressed then move the block
+	if pressed:
 		if Input.is_action_pressed("ui_down"):
 			motion.y = 10
 			move_and_collide(motion)
