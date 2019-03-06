@@ -1,5 +1,6 @@
 #ControlBlock.gd
 #Created by Faly Richou and Zainab Parvin
+#Edited by Rebekah
 
 extends KinematicBody2D
 
@@ -16,8 +17,12 @@ func _physics_process(delta):
 		#If already clicked on become false
 		if pressed:
 			pressed = false
+			#Return block to full colour when deselected
+			$Sprite.modulate.a = 1.0
 		#Else become true as block selected
 		else:
+			#Make block opque when selected
+			$Sprite.modulate.a = 0.5
 			pressed = true
 	#If the block is selected and arrow keys pressed then move the block
 	if pressed:
@@ -34,7 +39,6 @@ func _physics_process(delta):
 
 #Signal - if the body enters the goal then it will return to the scene where door is open
 func _on_Goal_body_entered(body):
-	#print("Win")
 	if body.name == "BlockMain":
 		get_tree().change_scene("res://Levels/Scenes/LevelOne.tscn")
 

@@ -1,5 +1,6 @@
 #Block1H.gd
 #Created by Faly Richou
+#Edited by Rebekah
 
 extends KinematicBody2D
 
@@ -17,8 +18,12 @@ func _physics_process(delta):
 		#If already clicked on become false
 		if pressed:
 			pressed = false
+			#Return block to full colour when deselected
+			$Sprite.modulate.a = 1.0
 		#Else become true as block selected
 		else:
+			#Make block opaque when selected
+			$Sprite.modulate.a = 0.5
 			pressed = true
 	#If the block is selected and arrow keys pressed then move the block
 	if pressed:

@@ -68,8 +68,6 @@ __meta__ = {
 
 [node name="Background" type="Node" parent="." index="0"]
 
-editor/display_folded = true
-
 [node name="Sprite" type="Sprite" parent="Background" index="0"]
 
 position = Vector2( 360, 216.051 )
@@ -236,7 +234,7 @@ collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 8 )
-_sections_unfolded = [ "Pickable", "Transform", "Visibility" ]
+_sections_unfolded = [ "Material", "Pickable", "Transform", "Visibility" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -319,8 +317,6 @@ scale = Vector2( 2.94004, 3.06664 )
 shape = SubResource( 4 )
 
 [node name="HBlocks" type="Node" parent="." index="3"]
-
-editor/display_folded = true
 
 [node name="Block1H" type="KinematicBody2D" parent="HBlocks" index="0"]
 
