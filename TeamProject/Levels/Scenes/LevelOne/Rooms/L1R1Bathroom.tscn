@@ -8,7 +8,7 @@
 [ext_resource path="res://Assets/Scenes/Toilet.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Scenes/Window.tscn" type="PackedScene" id=7]
 
-[node name="L1R1Bathroom" type="Node2D" index="0"]
+[node name="L1R1Bathroom" type="Node2D"]
 
 [node name="BathroomFloor" type="TextureRect" parent="." index="0"]
 
@@ -52,10 +52,10 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="Bath" parent="." index="2" instance=ExtResource( 3 )]
 
-position = Vector2( 358, -103 )
+position = Vector2( 345.778, -107.161 )
 rotation = -3.14159
-scale = Vector2( 0.96875, 0.71875 )
-_sections_unfolded = [ "Transform" ]
+scale = Vector2( 0.900276, 2.90859 )
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="TileMap" type="TileMap" parent="." index="3"]
 
