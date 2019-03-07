@@ -47,7 +47,7 @@ _data = {
 custom_solver_bias = 0.0
 extents = Vector2( 45, 45 )
 
-[node name="Puzzle1" type="Navigation2D" index="0"]
+[node name="Puzzle1" type="Navigation2D"]
 
 scale = Vector2( 0.24, 0.24 )
 script = ExtResource( 1 )

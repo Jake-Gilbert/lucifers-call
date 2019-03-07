@@ -10,11 +10,10 @@ const SPEED = 130
 const bullet = preload("res://Assets/Weapons/Scenes/bullet.tscn")
 #Variable representing the players position
 var movedir = Vector2(0,0)
-
+var diaShowing = false
 var spritedir = "down"
-
 var level
-
+var colliding
 var items = 0
 
 #The functions are called in the beginning 
@@ -65,6 +64,8 @@ func movement_loop():
 	var motion = movedir.normalized() * SPEED
 	#Move and slide method moves the player along the vector
 	move_and_slide(motion, Vector2(0,0))
+
+
 
 func shoot():
 	var bulleta = bullet.instance()
