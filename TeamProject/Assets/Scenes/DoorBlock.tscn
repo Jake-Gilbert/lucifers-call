@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 8.65151, 31.9459 )
+extents = Vector2( 9, 31.9459 )
 
 [node name="DoorBlock" type="Area2D"]
 
@@ -29,7 +29,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 23, -8.32598e-005 )
+position = Vector2( 23, -8.32598e-05 )
 shape = SubResource( 1 )
 
 
