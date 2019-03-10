@@ -2,7 +2,8 @@
 #Blocks the door and holds the puzzle
 #Created by Zainab Parvin
 
-extends Area2D
+#extends Area2D
+extends NinePatchRect
 
 #Creates a variable called openPuzzle
 #Allows any scene file to be declared
@@ -10,16 +11,17 @@ export (String, FILE, "*.tscn") var openPuzzle
 
 func _ready():
 	#$DoorBlockDialogue.hide()
-	set_physics_process(true)
+	#set_physics_process(true)
+	pass
 
-func _physics_process(delta):
+#func _physics_process(delta):
 	#Contain all the bodies that collisions will occur with
 	#$DoorBlockDialogue/RichTextLabel.add_text()
-	var bodiesCollision = get_overlapping_bodies()
+	#var bodiesCollision = get_overlapping_bodies()
 	
-	for body in bodiesCollision:
-		if body.name == "Player":
-			print("player entered")
+	##for body in bodiesCollision:
+	#	if body.name == "Player":
+	#		print("player entered")
 	
 	#Loops through the bodies in variable
 	#If one called player then the scene will change to designated chosen scene
