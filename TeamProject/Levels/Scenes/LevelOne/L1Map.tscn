@@ -1,10 +1,25 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Levels/Scenes/LevelOne/Rooms/L1R1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Scenes/LevelOne/Rooms/L1R1Bathroom.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Levels/Scenes/LevelOne/Rooms/L1Hallway.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Player/Scenes/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://UI/Scenes/Camera2D.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Scenes/DoorBlock.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Scripts/DoorBlock.gd" type="Script" id=7]
+[ext_resource path="res://Levels/Scenes/LevelOne/Door.gd" type="Script" id=8]
+[ext_resource path="res://Assets/Images/DoorBlock.png" type="Texture" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 9, 24 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 24 )
+
 [ext_resource path="res://UI/Scenes/DialogueBox.tscn" type="PackedScene" id=6]
 
 [node name="L1Map" type="Node2D" index="0"]
@@ -15,17 +30,71 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="L1R1Bathroom" parent="." index="1" instance=ExtResource( 2 )]
 
+position = Vector2( -0.354614, 0.128899 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
 [node name="L1Hallway" parent="." index="2" instance=ExtResource( 3 )]
 
 [node name="Player" parent="." index="3" instance=ExtResource( 4 )]
 
 position = Vector2( 511.785, 308.068 )
-collision_mask = 14
-_sections_unfolded = [ "Collision", "Pause" ]
+
+collision_mask = 6
+_sections_unfolded = [ "Collision", "Pause", "collision" ]
 
 [node name="Camera2D" parent="." index="4" instance=ExtResource( 5 )]
 
 current = true
+
+
+[node name="DoorBlock" parent="." index="5" instance=ExtResource( 6 )]
+
+position = Vector2( 200, 360 )
+rotation = 0.0
+scale = Vector2( 1, 0.749763 )
+collision_layer = 4
+collision_mask = 3
+script = ExtResource( 7 )
+_sections_unfolded = [ "Collision", "Transform" ]
+openPuzzle = null
+
+[node name="Door" type="StaticBody2D" parent="." index="6"]
+
+position = Vector2( 711, 360 )
+input_pickable = false
+collision_layer = 4
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 8 )
+_sections_unfolded = [ "Collision", "Transform" ]
+openPuzzle = "res://Puzzles/Scenes/Puzzle.tscn"
+
+[node name="Sprite" type="Sprite" parent="Door" index="0"]
+
+scale = Vector2( 1, 0.75 )
+texture = ExtResource( 9 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door" index="1"]
+
+shape = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="Door" index="2"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door/Area2D" index="0"]
+
+shape = SubResource( 2 )
 
 [node name="NinePatchRect" parent="Camera2D" index="1" instance=ExtResource( 6 )]
 
