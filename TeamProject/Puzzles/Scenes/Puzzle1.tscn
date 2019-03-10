@@ -2,12 +2,11 @@
 
 [ext_resource path="res://Puzzles/Scripts/Puzzle1.gd" type="Script" id=1]
 [ext_resource path="res://Puzzles/Images/Untitled.png" type="Texture" id=2]
-[ext_resource path="res://Assets/WallTiles/Tile Sets/WallTileSet.tres" type="TileSet" id=3]
+[ext_resource path="res://Assets/WallTiles/TileSets/WallTileSetNewestEdition.tres" type="TileSet" id=3]
 [ext_resource path="res://Puzzles/Scenes/Node.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Puzzles/Scripts/CollisionArea2D.gd" type="Script" id=5]
 [ext_resource path="res://icon.png" type="Texture" id=6]
-[ext_resource path="res://Puzzles/Scripts/Switch.gd" type="Script" id=7]
-
+[ext_resource path="res://Puzzles/Scenes/Vert.gd" type="Script" id=7]
 
 [sub_resource type="NavigationPolygon" id=1]
 
@@ -138,6 +137,9 @@ __meta__ = {
 
 position = Vector2( 2.49347, -1.21412 )
 scale = Vector2( 1.5, 1.5 )
+collision_layer = 128
+collision_mask = 64
+_sections_unfolded = [ "Collision" ]
 
 [node name="Path2" type="Path2D" parent="Paths" index="1"]
 
@@ -166,6 +168,9 @@ __meta__ = {
 ] instance=ExtResource( 4 )]
 
 scale = Vector2( 1.5, 1.5 )
+collision_layer = 128
+collision_mask = 64
+_sections_unfolded = [ "Collision" ]
 
 [node name="Path3" type="Path2D" parent="Paths" index="2"]
 
@@ -194,6 +199,9 @@ __meta__ = {
 ] instance=ExtResource( 4 )]
 
 scale = Vector2( 1.5, 1.5 )
+collision_layer = 128
+collision_mask = 64
+_sections_unfolded = [ "Collision" ]
 
 [node name="Path4" type="Path2D" parent="Paths" index="3"]
 
@@ -222,11 +230,15 @@ __meta__ = {
 ] instance=ExtResource( 4 )]
 
 scale = Vector2( 1.5, 1.5 )
+collision_layer = 128
+collision_mask = 128
+_sections_unfolded = [ "Collision" ]
 
-[node name="Area2D" type="Area2D" parent="." index="4" groups=[
+[node name="Hor" type="Area2D" parent="." index="4" groups=[
 "Switches",
 ]]
 
+editor/display_folded = true
 position = Vector2( 1511.66, 789.76 )
 scale = Vector2( 0.7, 0.7 )
 input_pickable = true
@@ -234,24 +246,93 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
+collision_layer = 64
+collision_mask = 128
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Switch" type="Sprite" parent="Area2D" index="0"]
+[node name="Switch" type="Sprite" parent="Hor" index="0"]
 
 modulate = Color( 1, 0, 0, 1 )
 rotation = 0.00173805
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 6 )
-script = ExtResource( 7 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hor" index="1"]
+
+shape = SubResource( 6 )
+
+[node name="Hor2" type="Area2D" parent="." index="5" groups=[
+"Switches",
+]]
+
+editor/display_folded = true
+position = Vector2( 1511.66, 1602.26 )
+scale = Vector2( 0.7, 0.7 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 64
+collision_mask = 128
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 5 )
+_sections_unfolded = [ "Collision", "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Switch" type="Sprite" parent="Hor2" index="0"]
+
+modulate = Color( 1, 0, 0, 1 )
+rotation = 0.00173805
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hor2" index="1"]
+
+shape = SubResource( 6 )
+
+[node name="Vert" type="Area2D" parent="." index="6" groups=[
+"Switches",
+]]
+
+editor/display_folded = true
+position = Vector2( 1543.75, 289.583 )
+scale = Vector2( 0.976564, 0.976561 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 64
+collision_mask = 128
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 7 )
+_sections_unfolded = [ "Collision", "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Switch" type="Sprite" parent="Vert" index="0"]
+
+modulate = Color( 1, 0, 0, 1 )
+rotation = 0.00173805
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Vert" index="1"]
 
 shape = SubResource( 6 )
 
