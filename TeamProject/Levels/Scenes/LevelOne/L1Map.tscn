@@ -1,24 +1,20 @@
-[gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://Levels/Scenes/LevelOne/L1Map.gd" type="Script" id=1]
-[ext_resource path="res://Levels/Scenes/LevelOne/Rooms/L1R1.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Levels/Scenes/LevelOne/Rooms/L1R1Bathroom.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Levels/Scenes/LevelOne/Rooms/L1Hallway.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Levels/Scenes/LevelOne/Rooms/L1RoomA.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Levels/Scenes/LevelOne/Rooms/L1RoomB.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Levels/Scenes/LevelOne/Rooms/L1RoomC.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Levels/Scenes/LevelOne/Rooms/L1RoomD.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Levels/Scenes/LevelOne/Rooms/L1BossRoom.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Player/Scenes/Player.tscn" type="PackedScene" id=10]
-[ext_resource path="res://UI/Scenes/Camera2D.tscn" type="PackedScene" id=11]
-[ext_resource path="res://UI/Scenes/DialogueBox.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Assets/Scripts/DoorBlock.gd" type="Script" id=13]
-[ext_resource path="res://Assets/Scenes/Door.tscn" type="PackedScene" id=14]
+[gd_scene load_steps=13 format=2]
 
-[sub_resource type="RectangleShape2D" id=1]
 
-custom_solver_bias = 0.0
-extents = Vector2( 24, 10 )
+[ext_resource path="res://Levels/Scenes/LevelOne/Rooms/L1R1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/Scenes/LevelOne/Rooms/L1R1Bathroom.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/Scenes/LevelOne/Rooms/L1Hallway.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Levels/Scenes/LevelOne/Rooms/L1RoomA.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Levels/Scenes/LevelOne/Rooms/L1RoomB.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Levels/Scenes/LevelOne/Rooms/L1RoomC.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Levels/Scenes/LevelOne/Rooms/L1RoomD.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Levels/Scenes/LevelOne/Rooms/L1BossRoom.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Player/Scenes/Player.tscn" type="PackedScene" id=9]
+[ext_resource path="res://UI/Scenes/Camera2D.tscn" type="PackedScene" id=10]
+[ext_resource path="res://UI/Scenes/DialogueBox.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/Scenes/Door.tscn" type="PackedScene" id=12]
+
 
 [node name="L1Map" type="Node2D" index="0"]
 
@@ -75,7 +71,6 @@ _sections_unfolded = [ "Collision", "Pause", "collision" ]
 [node name="Camera2D" parent="." index="9" instance=ExtResource( 11 )]
 
 editor/display_folded = true
-visible = false
 current = true
 
 [node name="NinePatchRect" parent="Camera2D" index="1" instance=ExtResource( 12 )]
@@ -83,16 +78,8 @@ current = true
 visible = false
 margin_top = 349.0
 
-[node name="DoorBlock" parent="." index="10" instance=ExtResource( 12 )]
 
-visible = false
-script = ExtResource( 13 )
-_sections_unfolded = [ "Collision", "Patch Margin", "Rect", "Transform" ]
-openPuzzle = null
-
-[node name="Door" parent="." index="11" instance=ExtResource( 14 )]
-
-visible = true
+[node name="Door" parent="." index="10" instance=ExtResource( 12 )]
 
 
 [editable path="Camera2D/NinePatchRect"]
