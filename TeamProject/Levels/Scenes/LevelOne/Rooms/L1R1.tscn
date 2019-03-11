@@ -1,4 +1,6 @@
-[gd_scene load_steps=16 format=2]
+
+[gd_scene load_steps=15 format=2]
+
 
 [ext_resource path="res://Assets/Images/Assets_room_floor_wood.png" type="Texture" id=1]
 [ext_resource path="res://Assets/WallTiles/TileSets/WallTileSetNewestEdition.tres" type="TileSet" id=2]
@@ -12,13 +14,38 @@
 [ext_resource path="res://Assets/Scenes/Bed.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/Scripts/WardrobeArea.gd" type="Script" id=11]
 [ext_resource path="res://Assets/Scenes/Desk.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Assets/Scripts/DeskArea.gd" type="Script" id=13]
-[ext_resource path="res://UI/Scenes/DialogueBox.tscn" type="PackedScene" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 45, 30 )
+
+
+[sub_resource type="GDScript" id=2]
+
+script/source = "extends Area2D
+
+var diaShowing = false
+
+func _ready():
+	set_physics_process(true)
+	pass
+	
+func _physics_process(delta):
+	var bodies = get_overlapping_bodies()
+	for body in bodies:
+		if Input.is_action_just_pressed(\"ui_select\") && diaShowing == false && body.get_collision_mask_bit(1):
+			get_parent().get_parent().get_node(\"Camera2D/NinePatchRect/text\").set_text(get_node(\"Label\").text)
+			get_parent().get_parent().get_node(\"Camera2D/NinePatchRect\").show()
+			get_parent().get_parent().get_node(\"Camera2D/NinePatchRect\").show()
+			diaShowing = true
+			get_parent().get_parent().get_node(\"Player\").set_physics_process(false)
+		elif Input.is_action_just_pressed(\"ui_select\") && diaShowing == true && body.get_collision_mask_bit(1):
+			get_parent().get_parent().get_node(\"Camera2D/NinePatchRect\").hide()
+			get_parent().get_parent().get_node(\"Camera2D/NinePatchRect/text\").clear()
+			diaShowing = false
+			get_parent().get_parent().get_node(\"Player\").set_physics_process(true)
+"
 
 [node name="L1R1" type="Node2D"]
 
@@ -165,19 +192,32 @@ max_lines_visible = -1
 
 [node name="Desk" parent="." index="8" instance=ExtResource( 12 )]
 
-editor/display_folded = true
-position = Vector2( 119, 353 )
-scale = Vector2( 1, 0.8 )
-script = ExtResource( 13 )
-_sections_unfolded = [ "Transform" ]
+position = Vector2( 131.026, 358.973 )
+scale = Vector2( 2.82032, 0.986663 )
+collision_layer = 8
+collision_mask = 3
+script = SubResource( 2 )
+_sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="DeskDialogue" parent="Desk" index="2" instance=ExtResource( 14 )]
+[node name="Label" type="Label" parent="Desk" index="2"]
 
 visible = false
-margin_left = -135.0
-margin_top = 41.0
-margin_right = 584.0
-margin_bottom = 117.0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 14.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "There's nothing here..."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 [connection signal="body_entered" from="WardrobeArea" to="WardrobeArea" method="_on_WardrobeArea_body_entered"]
 
