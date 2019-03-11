@@ -36,7 +36,7 @@ extents = Vector2( 10, 10 )
 custom_solver_bias = 0.0
 extents = Vector2( 45, 30 )
 
-[node name="LevelOne" type="Node"]
+[node name="LevelOne" type="Node" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
@@ -186,7 +186,7 @@ scale = Vector2( 4.96875, 4.42969 )
 position = Vector2( 470, -23 )
 rotation = -3.14159
 scale = Vector2( 0.96875, 0.71875 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="OpenWardrobe" parent="." index="10" instance=ExtResource( 15 )]
 
@@ -229,11 +229,6 @@ margin_left = -323.0
 margin_top = 229.0
 margin_right = 590.0
 margin_bottom = 305.0
-
-[node name="RichTextLabel" parent="Bed/BedArea/BedDialogue" index="0"]
-
-margin_right = 900.0
-text = "There is nothing under this bed."
 
 [node name="Player" parent="." index="13" instance=ExtResource( 20 )]
 
@@ -302,10 +297,6 @@ margin_left = -135.0
 margin_top = 41.0
 margin_right = 584.0
 margin_bottom = 117.0
-
-[node name="RichTextLabel" parent="Desk/DeskDialogue" index="0"]
-
-text = "If there was nothing under the bed, there's definitely nothing here."
 
 [node name="LevelComplete" parent="." index="17" instance=ExtResource( 25 )]
 
