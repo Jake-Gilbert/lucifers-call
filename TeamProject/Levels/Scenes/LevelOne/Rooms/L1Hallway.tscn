@@ -55,7 +55,6 @@ __meta__ = {
 
 [node name="DoorL1A" type="Sprite" parent="." index="2"]
 
-editor/display_folded = true
 position = Vector2( 919.445, 42.8021 )
 scale = Vector2( 0.538587, 0.6 )
 texture = ExtResource( 3 )
@@ -63,7 +62,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="PuzzleTwo" parent="DoorL1A" index="0" instance=ExtResource( 4 )]
 
-position = Vector2( 3.0433, 11.1715 )
+position = Vector2( 190.28, 54.7752 )
 scale = Vector2( 2.13484, 0.947134 )
 changeLevels = "res://Puzzles/Scenes/PuzzleTwo.tscn"
 

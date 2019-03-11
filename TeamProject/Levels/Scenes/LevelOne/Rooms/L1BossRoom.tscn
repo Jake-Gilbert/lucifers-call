@@ -155,6 +155,9 @@ editor/display_folded = false
 
 [node name="CouchLHS" parent="." index="8" instance=ExtResource( 9 )]
 
+position = Vector2( 1635.31, 272.302 )
+rotation = -0.0848095
+
 [node name="Couch" parent="." index="9" instance=ExtResource( 10 )]
 
 [node name="BlueVase" parent="." index="10" instance=ExtResource( 11 )]
