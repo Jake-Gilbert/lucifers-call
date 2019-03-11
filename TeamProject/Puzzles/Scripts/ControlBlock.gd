@@ -27,7 +27,9 @@ func _physics_process(delta):
 func _on_Goal_body_entered(body):
 	#print("Win")
 	if body.name == "BlockMain":
-		get_tree().change_scene("res://Levels/Scenes/LevelOne.tscn")
+		get_tree().reload_current_scene()
+#		get_tree().change_scene("res://Levels/Scenes/LevelOne/L1Map.tscn")
+#		get_tree().change_scene("res://Levels/Scenes/LevelOne.tscn")
 
 func _on_Area2D_mouse_entered():
 	isHere = true

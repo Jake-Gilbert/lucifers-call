@@ -7,8 +7,7 @@
 [ext_resource path="res://Player/Scenes/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://UI/Scenes/UsableHUD.tscn" type="PackedScene" id=6]
 
-
-[node name="Hallway" type="Node"]
+[node name="Hallway" type="Node" index="0"]
 
 [node name="TextureRect" type="TextureRect" parent="." index="0"]
 

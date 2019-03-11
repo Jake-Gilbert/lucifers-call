@@ -10,12 +10,15 @@ onready var pathThree = get_node("Paths/Path3/PathFollow2D")
 onready var pathFour = get_node("Paths/Path4/PathFollow2D")
 
 #The sprite's speed
-var speed = 0.0007
+var speed = 0.001
 var boploc = 0
+var cleared = 0
 
 func _ready():
 	set_process(true)
-#	set_physics_process(true)
+
+func clear():
+	cleared += 1
 
 func _process(delta):
 	boploc += speed
@@ -23,3 +26,5 @@ func _process(delta):
 	pathTwo.set_unit_offset(boploc)
 	pathThree.set_unit_offset(boploc)
 	pathFour.set_unit_offset(boploc)
+	if cleared == 4:
+		get_tree().change_scene("res://Levels/Scenes/LevelOne.tscn")

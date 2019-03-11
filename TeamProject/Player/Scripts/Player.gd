@@ -10,11 +10,10 @@ const SPEED = 130
 const bullet = preload("res://Assets/Weapons/Scenes/bullet.tscn")
 #Variable representing the players position
 var movedir = Vector2(0,0)
-
+var diaShowing = false
 var spritedir = "down"
-
 var level
-
+var colliding
 var items = 0
 
 #The functions are called in the beginning 
@@ -30,12 +29,6 @@ func _physics_process(delta):
 		switch_animation("idle")
 	
 	level = get_tree().get_current_scene().get_filename()
-	
-#	if (Input.is_action_pressed("ui_inventory") && inventory == false):
-#		get_tree().paused = true
-#		get_tree().change_scene("res://inventoryUI/Scenes/Scene_PlayerInventory.tscn")
-#	else:
-#		get_tree().paused = false
 
 #Function that says if this key pressed then player should move in this direction
 func controls_loop():
@@ -65,6 +58,8 @@ func movement_loop():
 	var motion = movedir.normalized() * SPEED
 	#Move and slide method moves the player along the vector
 	move_and_slide(motion, Vector2(0,0))
+
+
 
 func shoot():
 	var bulleta = bullet.instance()
