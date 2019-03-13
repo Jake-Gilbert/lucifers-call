@@ -4,13 +4,11 @@
 
 extends Node2D
 
-var doorDeleted = false
-var playerInside = false
+var doorDeleted
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
-	$L1RoomA.hide()
 	set_process(true)
 	pass
 
@@ -25,14 +23,3 @@ func _process(delta):
 			$L1Hallway/DoorL1A.queue_free()
 			doorDeleted = true
 	pass
-
-func _on_RoomAreaA_body_entered(body):
-	if body.name == "Player":
-		$L1RoomA.show()
-		playerInside = true
-
-
-func _on_RoomAreaA_body_exited(body):
-	if body.name == "Player":
-		$L1RoomA.hide()
-		playerInside = false

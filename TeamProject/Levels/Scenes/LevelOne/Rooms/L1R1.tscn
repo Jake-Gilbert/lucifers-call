@@ -1,6 +1,4 @@
-
 [gd_scene load_steps=15 format=2]
-
 
 [ext_resource path="res://Assets/Images/Assets_room_floor_wood.png" type="Texture" id=1]
 [ext_resource path="res://Assets/WallTiles/TileSets/WallTileSetNewestEdition.tres" type="TileSet" id=2]
@@ -19,7 +17,6 @@
 
 custom_solver_bias = 0.0
 extents = Vector2( 45, 30 )
-
 
 [sub_resource type="GDScript" id=2]
 
@@ -102,6 +99,7 @@ script = ExtResource( 4 )
 
 [node name="Wardrobe" parent="." index="3" instance=ExtResource( 5 )]
 
+editor/display_folded = true
 position = Vector2( 464, 114.653 )
 script = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
@@ -192,7 +190,8 @@ max_lines_visible = -1
 
 [node name="Desk" parent="." index="8" instance=ExtResource( 12 )]
 
-position = Vector2( 131.026, 358.973 )
+editor/display_folded = true
+position = Vector2( 140.026, 348.973 )
 scale = Vector2( 2.82032, 0.986663 )
 collision_layer = 8
 collision_mask = 3
@@ -222,7 +221,5 @@ max_lines_visible = -1
 [connection signal="body_entered" from="WardrobeArea" to="WardrobeArea" method="_on_WardrobeArea_body_entered"]
 
 [connection signal="body_exited" from="WardrobeArea" to="WardrobeArea" method="_on_WardrobeArea_body_exited"]
-
-[connection signal="body_exited" from="Desk" to="Desk" method="_on_Desk_body_exited"]
 
 
