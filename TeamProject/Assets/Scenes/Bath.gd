@@ -15,7 +15,7 @@ func _physics_process(delta):
 			get_parent().get_parent().get_node("Camera2D/NinePatchRect").show()
 			diaShowing = true
 			get_parent().get_parent().get_node("Player").set_physics_process(false)
-			print("touching bath")
+
 		elif Input.is_action_just_pressed("ui_select") && diaShowing == true && body.get_collision_mask_bit(1):
 			get_parent().get_parent().get_node("Camera2D/NinePatchRect").hide()
 			get_parent().get_parent().get_node("Camera2D/NinePatchRect/text").clear()

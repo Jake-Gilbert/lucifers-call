@@ -223,6 +223,4 @@ max_lines_visible = -1
 
 [connection signal="body_exited" from="WardrobeArea" to="WardrobeArea" method="_on_WardrobeArea_body_exited"]
 
-[connection signal="body_exited" from="Desk" to="Desk" method="_on_Desk_body_exited"]
-
 

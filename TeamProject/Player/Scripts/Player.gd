@@ -15,13 +15,21 @@ var spritedir = "down"
 var level
 var colliding
 var items = 0
+var currentAmmo = 10
+var ammoClip = 10
+var shootTime
+var health = 5
+var red = Color(1, 0, 0, 1)
+var default = Color(1, 1, 1, 1)
 
 #The functions are called in the beginning 
 func _physics_process(delta):
 	controls_loop()
 	movement_loop()
 	shoot()
+	reload()
 	spritedir_loop()
+	
 	
 	if movedir != Vector2(0,0):
 		switch_animation("walk")
@@ -59,20 +67,43 @@ func movement_loop():
 	#Move and slide method moves the player along the vector
 	move_and_slide(motion, Vector2(0,0))
 
-
+func reload():
+	if (Input.is_action_just_pressed("ui_reload")):
+		currentAmmo = ammoClip
 
 func shoot():
 	var bulleta = bullet.instance()
-	var bulletCount = 0
-	
-	if (Input.is_action_just_pressed("ui_shoot") && bulletCount < 5):
-		if sign($fire.position.x) == 1:
-			bulleta.set_bullet_direction(1)
-		else:
-			bulleta.set_bullet_direction(-1)
-		get_parent().add_child(bulleta)
-		bulleta.position = $fire.global_position
-		bulletCount += 1
+	if (Input.is_action_just_pressed("ui_shoot")):
+		
+		if (currentAmmo > 0 && get_node("shootTimer").get_time_left() == 0):
+		#face down
+			if get_node("Sprite").frame < 9:
+				bulleta.set_bullet_direction(0, 1)
+		#face right
+			elif get_node("Sprite").frame < 17 && get_node("Sprite").frame > 8:
+				bulleta.set_bullet_direction(1, 0)
+		#face left
+			elif get_node("Sprite").frame < 25 && get_node("Sprite").frame > 16:
+				bulleta.set_bullet_direction(-1, 0)
+		#face up
+			else:
+				bulleta.set_bullet_direction(0, -1)
+			get_parent().add_child(bulleta)
+			bulleta.position = $fire.global_position
+			currentAmmo -= 1
+			get_node("shootTimer").start()
+		elif (currentAmmo > 0 && get_node("shootTimer").get_time_left() != 0):
+			pass
+
+func lose_health():
+	if (health != 0 && get_node("invinciblityTimer").get_time_left() == 0):
+		health = health -1
+		get_node("invinciblityTimer").start()
+		get_node("Sprite").set_modulate(red)
+		if (health == 0):
+			get_tree().change_scene("res://UI/Scenes/GameOver.tscn")
+	elif (health != 0 && get_node("invinciblityTimer").get_time_left() != 0):
+		pass
 
 func spritedir_loop():
 	match movedir:
@@ -146,3 +177,7 @@ func _on_LoadBtn_pressed():
     save_game.close()
 	
 
+
+
+func _on_invinciblityTimer_timeout():
+	get_node("Sprite").set_modulate(default)
