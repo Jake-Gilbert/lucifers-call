@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/BossRoom/Chandelier [Distorted].png" type="Texture" id=1]
+
+[node name="Chandelier" type="StaticBody2D"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="Texture" type="TextureRect" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1760.0
+margin_top = 43.0
+margin_right = 1906.0
+margin_bottom = 223.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 0
+_sections_unfolded = [ "Focus", "Hint", "Rect" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array( 1775.26, 174.512, 1792.96, 142.363, 1813, 134.442, 1813, 121.861, 1859.12, 122.793, 1859.12, 139.567, 1877.76, 152.613, 1894.07, 176.842, 1890.34, 195.013, 1886.15, 208.525, 1873.1, 218.31, 1851.67, 223.435, 1811.13, 219.242, 1785.97, 213.651, 1780.38, 195.945 )
+
+

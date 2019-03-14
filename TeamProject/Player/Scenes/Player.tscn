@@ -171,9 +171,6 @@ collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
@@ -182,7 +179,7 @@ texture = ExtResource( 2 )
 vframes = 6
 hframes = 5
 frame = 9
-_sections_unfolded = [ "Animation", "Transform" ]
+_sections_unfolded = [ "Animation", "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
@@ -235,5 +232,21 @@ editor_draw_screen = true
 editor_draw_limits = true
 editor_draw_drag_margin = true
 _sections_unfolded = [ "Drag Margin", "Editor", "Limit" ]
+
+[node name="shootTimer" type="Timer" parent="." index="5"]
+
+process_mode = 1
+wait_time = 0.5
+one_shot = true
+autostart = false
+
+[node name="invinciblityTimer" type="Timer" parent="." index="6"]
+
+process_mode = 1
+wait_time = 2.0
+one_shot = true
+autostart = false
+
+[connection signal="timeout" from="invinciblityTimer" to="." method="_on_invinciblityTimer_timeout"]
 
 

@@ -1,6 +1,6 @@
 extends CheckButton
 
-onready var Audio = get_node("/root/Player")
+onready var Audio = get_node("/root/AudioPlayer")
 var on = true
 
 func _ready():

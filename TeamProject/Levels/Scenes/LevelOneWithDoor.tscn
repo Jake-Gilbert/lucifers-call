@@ -1,15 +1,15 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://UI/Script/UsableHUD.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Images/Assets_room_floor_wood_small (6).png" type="Texture" id=2]
 [ext_resource path="res://Assets/Images/Assets_Bathroom_floor_v2.png" type="Texture" id=3]
 [ext_resource path="res://Assets/WallTiles/Images/Assets_Wall.png" type="Texture" id=4]
-[ext_resource path="res://Assets/WallTiles/Tile Sets/WallTileSetNewestEdition.tres" type="TileSet" id=5]
+[ext_resource path="res://Assets/WallTiles/TileSets/WallTileSetNewestEdition.tres" type="TileSet" id=5]
 [ext_resource path="res://Assets/Scenes/Key.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Scripts/Key.gd" type="Script" id=7]
 [ext_resource path="res://Assets/Scenes/Wardrobe.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Scripts/Wardrobe.gd" type="Script" id=9]
-[ext_resource path="res://Assets/Fonts/pixelFont.tres" type="DynamicFont" id=10]
+[ext_resource path="res://Fonts/pixelFont.tres" type="DynamicFont" id=10]
 [ext_resource path="res://Assets/Scenes/Sink.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets/Scenes/Toilet.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Assets/Scenes/Window.tscn" type="PackedScene" id=13]
@@ -17,23 +17,16 @@
 [ext_resource path="res://Assets/Scenes/OpenWardrobe.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Assets/Scenes/Chair.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Assets/Scenes/Bed.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Assets/Scripts/BedVersionTwo.gd" type="Script" id=18]
-[ext_resource path="res://UI/Scenes/DialogueBox.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Assets/Scenes/DoorBlock.tscn" type="PackedScene" id=20]
-[ext_resource path="res://Assets/Scripts/DoorBlock.gd" type="Script" id=21]
-[ext_resource path="res://Player/Scenes/Player.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Assets/Scripts/WardrobeArea.gd" type="Script" id=23]
-[ext_resource path="res://UI/Scenes/UsableHUD.tscn" type="PackedScene" id=24]
-[ext_resource path="res://Assets/Scenes/Desk.tscn" type="PackedScene" id=25]
-[ext_resource path="res://Assets/Scripts/DeskArea.gd" type="Script" id=26]
-
+[ext_resource path="res://Assets/Scenes/DoorBlock.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Assets/Scripts/DoorBlock.gd" type="Script" id=19]
+[ext_resource path="res://UI/Scenes/DialogueBox.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Player/Scenes/Player.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Assets/Scripts/WardrobeArea.gd" type="Script" id=22]
+[ext_resource path="res://UI/Scenes/UsableHUD.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Assets/Scenes/Desk.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Assets/Scripts/DeskArea.gd" type="Script" id=25]
 
 [sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
-
-[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 45, 30 )
@@ -188,7 +181,7 @@ scale = Vector2( 4.96875, 4.42969 )
 position = Vector2( 470, -23 )
 rotation = -3.14159
 scale = Vector2( 0.96875, 0.71875 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="OpenWardrobe" parent="." index="10" instance=ExtResource( 15 )]
 
@@ -203,49 +196,40 @@ scale = Vector2( 1.25475, 1.15211 )
 
 [node name="Bed" parent="." index="12" instance=ExtResource( 17 )]
 
+editor/display_folded = true
 position = Vector2( 254.75, 180 )
 scale = Vector2( 0.789063, 0.828125 )
 
-[node name="BedArea" type="Area2D" parent="Bed" index="2"]
-
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-script = ExtResource( 18 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bed/BedArea" index="0"]
-
-position = Vector2( 0.316833, -18.1132 )
-scale = Vector2( 8.23762, 6.64151 )
-shape = SubResource( 1 )
-
-[node name="BedDialogue" parent="Bed/BedArea" index="1" instance=ExtResource( 19 )]
+[node name="Label" type="Label" parent="Bed" index="2"]
 
 visible = false
-margin_left = -323.0
-margin_top = 229.0
-margin_right = 590.0
-margin_bottom = 305.0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 14.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "There is nothing on or under this bed...."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
-[node name="RichTextLabel" parent="Bed/BedArea/BedDialogue" index="0"]
-
-margin_right = 900.0
-text = "There is nothing under this bed."
-
-[node name="DoorBlock" parent="." index="13" instance=ExtResource( 20 )]
+[node name="DoorBlock" parent="." index="13" instance=ExtResource( 18 )]
 
 editor/display_folded = true
 position = Vector2( 690, 287 )
 rotation = 0.0
-script = ExtResource( 21 )
+script = ExtResource( 19 )
 _sections_unfolded = [ "Collision", "Transform" ]
 openPuzzle = "res://UI/Instructions/PuzzleOneInstruction.tscn"
 
-[node name="DoorBlockDialogue" parent="DoorBlock" index="2" instance=ExtResource( 19 )]
+[node name="DoorBlockDialogue" parent="DoorBlock" index="2" instance=ExtResource( 20 )]
 
 pause_mode = 2
 visible = false
@@ -255,15 +239,11 @@ margin_right = 39.0
 margin_bottom = 145.0
 _sections_unfolded = [ "Patch Margin", "Pause", "Rect" ]
 
-[node name="RichTextLabel" parent="DoorBlock/DoorBlockDialogue" index="0"]
+[node name="Player" parent="." index="14" instance=ExtResource( 21 )]
 
-text = "This door is locked, I should try and find a key."
-
-[node name="Player" parent="." index="14" instance=ExtResource( 22 )]
-
-editor/display_folded = true
 position = Vector2( 360, 250 )
-_sections_unfolded = [ "Pause", "Transform" ]
+collision_mask = 14
+_sections_unfolded = [ "Collision", "Pause", "Transform" ]
 
 [node name="WardrobeArea" type="Area2D" parent="." index="15"]
 
@@ -277,14 +257,14 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 23 )
+script = ExtResource( 22 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WardrobeArea" index="0"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="WardrobeLabel" type="Label" parent="WardrobeArea" index="1"]
 
@@ -309,28 +289,22 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="UsableHUD" parent="." index="16" instance=ExtResource( 24 )]
+[node name="UsableHUD" parent="." index="16" instance=ExtResource( 23 )]
 
-[node name="Desk" parent="." index="17" instance=ExtResource( 25 )]
+[node name="Desk" parent="." index="17" instance=ExtResource( 24 )]
 
 position = Vector2( 135, 337 )
 scale = Vector2( 1, 0.8 )
-script = ExtResource( 26 )
+script = ExtResource( 25 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="DeskDialogue" parent="Desk" index="2" instance=ExtResource( 19 )]
+[node name="DeskDialogue" parent="Desk" index="2" instance=ExtResource( 20 )]
 
 visible = false
 margin_left = -135.0
 margin_top = 41.0
 margin_right = 584.0
 margin_bottom = 117.0
-
-[node name="RichTextLabel" parent="Desk/DeskDialogue" index="0"]
-
-text = "If there was nothing under the bed, there's definitely nothing here."
-
-[connection signal="area_exited" from="Bed/BedArea" to="Bed/BedArea" method="_on_BedArea_area_exited"]
 
 [connection signal="body_exited" from="DoorBlock" to="DoorBlock" method="_on_DoorBlock_body_exited"]
 
@@ -341,7 +315,6 @@ text = "If there was nothing under the bed, there's definitely nothing here."
 [connection signal="body_exited" from="Desk" to="Desk" method="_on_Desk_body_exited"]
 
 
-[editable path="Bed/BedArea/BedDialogue"]
 [editable path="DoorBlock/DoorBlockDialogue"]
 [editable path="Player"]
 [editable path="Desk/DeskDialogue"]

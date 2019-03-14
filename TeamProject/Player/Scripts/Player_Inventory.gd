@@ -1,12 +1,6 @@
-
-
 extends Node
 
 onready var itemList = get_node("Panel/ItemList")
-
-# WindowDialog_AddItemWindow Variables.
-onready var addItemWindow = get_node("Panel/WindowDialog_AddItemWindow")
-onready var addItemWindow_SpinBox_ItemId = get_node("Panel/WindowDialog_AddItemWindow/AddItemWindow_SpinBox_ItemID")
 
 onready var itemMenu = get_node("Panel/WindowDialog_ItemMenu")
 onready var itemMenu_TextureFrame_Icon = get_node("Panel/WindowDialog_ItemMenu/ItemMenu_TextureFrame_Icon")
@@ -89,22 +83,6 @@ func update_slot(slot):
 	itemList.set_item_metadata(slot, itemMetaData)
 	itemList.set_item_tooltip(slot, itemMetaData["name"])
 	itemList.set_item_tooltip_enabled(slot, int(inventoryItem["id"]) > 0)
-
-func _on_Button_AddItem_pressed():
-	addItemWindow.popup()
-
-
-func _on_AddItemWindow_Button_Close_pressed():
-	addItemWindow.hide()
-
-
-func addItem_toInventory():
-	var items = get_tree().call_group("Item")
-	if(items > 0):
-		var affectedSlot = Global_Player.inventory_addItem(addItemWindow_SpinBox_ItemId.get_value())
-		if (affectedSlot >= 0):
-			update_slot(affectedSlot)
-			Global_Player.save_data()
 
 
 func _on_ItemList_item_rmb_selected(index, atpos):

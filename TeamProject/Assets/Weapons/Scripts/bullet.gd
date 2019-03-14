@@ -1,4 +1,4 @@
-#Code for bullet projectiles
+#bullet.gd
 #Created by Jake Gilbert
 
 extends Area2D
@@ -6,27 +6,44 @@ extends Area2D
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
-const SPEED = 100
+const SPEED = 300
 var velocity = Vector2()
-var direction = 1
+var directionX = 1
+var directionY = 1
 
-func set_bullet_direction(dir):
-	direction = dir
-	if dir == -1:
+func _ready():
+	set_physics_process(true)
+
+func set_bullet_direction(dirX, dirY):
+	directionX = dirX
+	directionY = dirY
+	if dirX == -1 && dirY == 0:
 		$Sprite.flip_h = true
-	else:
+		$Sprite.rotation_degrees = 0
+	elif dirX == 1 && dirY == 0:
 		$Sprite.flip_h = false
+		$Sprite.rotation_degrees = 0
+	if dirY == 1 && dirX == 0:
+		$Sprite.rotation_degrees = 90
+	elif dirY == -1 && dirX == 0:
+		$Sprite.rotation_degrees = -90
+
 	
 func _physics_process(delta):
-	velocity.x = SPEED * delta * direction
+	var bodies = get_overlapping_bodies()
+	for body in bodies:
+		if body.name == "enemy":
+			body.lose_health()
+			print ("hit")
+			queue_free()
+	velocity.x = SPEED * delta * directionX
+	velocity.y = SPEED * delta * directionY
 	translate(velocity)
 
 
 func _on_VisibilityNotifier2D_screen_exited():
-	queue_free()
+	self.queue_free()
+	
 
-func  _on_bullet_body_entered(body):
-	if "enemy" in body.name:
-		body.dead()
-		body.queue_free()
+
 
