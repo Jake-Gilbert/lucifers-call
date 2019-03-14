@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Levels/Scripts/L1Map.gd" type="Script" id=1]
 [ext_resource path="res://Levels/Scenes/LevelOne/Rooms/L1R1.tscn" type="PackedScene" id=2]
@@ -16,7 +16,8 @@
 [ext_resource path="res://Player/Scenes/Player.tscn" type="PackedScene" id=14]
 [ext_resource path="res://UI/Scenes/Camera2D.tscn" type="PackedScene" id=15]
 [ext_resource path="res://UI/Scenes/DialogueBox.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Assets/Scenes/Door.tscn" type="PackedScene" id=17]
+[ext_resource path="res://PopupMenu.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Assets/Scenes/Door.tscn" type="PackedScene" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -37,6 +38,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="L1R1Bathroom" parent="." index="1" instance=ExtResource( 3 )]
 
+position = Vector2( 0, -0.326508 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="L1Hallway" parent="." index="2" instance=ExtResource( 4 )]
@@ -46,7 +48,8 @@ editor/display_folded = true
 [node name="RoomA" type="Area2D" parent="L1Hallway" index="6"]
 
 editor/display_folded = true
-position = Vector2( 906.216, 10.0165 )
+position = Vector2( 906.216, 4.6421 )
+scale = Vector2( 1, 0.6133 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -118,6 +121,7 @@ shape = SubResource( 2 )
 
 [node name="L1RoomC" parent="." index="5" instance=ExtResource( 9 )]
 
+editor/display_folded = true
 visible = false
 script = ExtResource( 10 )
 
@@ -140,6 +144,7 @@ shape = SubResource( 2 )
 
 [node name="L1RoomD" parent="." index="6" instance=ExtResource( 11 )]
 
+editor/display_folded = true
 visible = false
 script = ExtResource( 12 )
 
@@ -170,15 +175,21 @@ _sections_unfolded = [ "Collision", "Pause", "collision" ]
 
 [node name="Camera2D" parent="." index="9" instance=ExtResource( 15 )]
 
-editor/display_folded = true
 current = true
 
 [node name="NinePatchRect" parent="Camera2D" index="1" instance=ExtResource( 16 )]
 
+editor/display_folded = true
 visible = false
 margin_top = 349.0
 
-[node name="Door" parent="." index="10" instance=ExtResource( 17 )]
+[node name="PopupMenu" parent="Camera2D" index="2" instance=ExtResource( 17 )]
+
+visible = false
+
+[node name="Door" parent="." index="10" instance=ExtResource( 18 )]
+
+[connection signal="body_entered" from="L1Hallway/RoomA" to="." method="_on_RoomA_body_entered"]
 
 [connection signal="body_entered" from="L1RoomA/RoomAreaA" to="L1RoomA" method="_on_RoomAreaA_body_entered"]
 
