@@ -29,7 +29,7 @@ extents = Vector2( 26.494, 11.1226 )
 custom_solver_bias = 0.0
 extents = Vector2( 11.5055, 16.4894 )
 
-[node name="L1Map" type="Node2D" index="0"]
+[node name="L1Map" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]

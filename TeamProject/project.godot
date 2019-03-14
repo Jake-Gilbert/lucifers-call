@@ -41,6 +41,8 @@ mouse_leftbtn=[ Object(InputEventMouseButton,"resource_local_to_scene":false,"re
  ]
 inventoryKey=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":73,"unicode":0,"echo":false,"script":null)
  ]
+ui_reload=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":82,"unicode":0,"echo":false,"script":null)
+ ]
 
 [layer_names]
 
@@ -48,3 +50,6 @@ inventoryKey=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_na
 2d_physics/layer_2="wall"
 2d_physics/layer_3="ennemy"
 2d_physics/layer_4="interact"
+2d_physics/layer_5="bullet"
+2d_physics/layer_6="puzzlebit1"
+2d_physics/layer_7="puzzlebit2"

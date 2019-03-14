@@ -18,7 +18,9 @@
 custom_solver_bias = 0.0
 extents = Vector2( 13.6016, 10 )
 
+
 [node name="L1BossRoom" type="Node2D" index="0"]
+
 
 [node name="Floor" type="TextureRect" parent="." index="0"]
 
@@ -151,7 +153,30 @@ __meta__ = {
 
 [node name="CoffeeTable" parent="." index="7" instance=ExtResource( 8 )]
 
-editor/display_folded = false
+
+editor/display_folded = true
+position = Vector2( 1648.47, 275.848 )
+
+[node name="Label" type="Label" parent="CoffeeTable" index="3"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 14.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Looks appetising..."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
 
 [node name="CouchLHS" parent="." index="8" instance=ExtResource( 9 )]
 
