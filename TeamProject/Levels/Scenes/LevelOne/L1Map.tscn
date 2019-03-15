@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Levels/Scripts/L1Map.gd" type="Script" id=1]
 [ext_resource path="res://Levels/Scenes/LevelOne/Rooms/L1R1.tscn" type="PackedScene" id=2]
@@ -19,22 +19,19 @@
 [ext_resource path="res://PopupMenu.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Assets/Scenes/Door.tscn" type="PackedScene" id=18]
 
-[sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
-extents = Vector2( 26.494, 11.1226 )
-
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 11.5055, 16.4894 )
 
-[node name="L1Map" type="Node2D"]
+[node name="L1Map" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="L1R1" parent="." index="0" instance=ExtResource( 2 )]
+
+_sections_unfolded = [ "Transform" ]
 
 [node name="L1R1Bathroom" parent="." index="1" instance=ExtResource( 3 )]
 
@@ -45,28 +42,9 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 editor/display_folded = true
 
-[node name="RoomA" type="Area2D" parent="L1Hallway" index="6"]
+[node name="DoorL1D" parent="L1Hallway" index="5"]
 
 editor/display_folded = true
-position = Vector2( 906.216, 4.6421 )
-scale = Vector2( 1, 0.6133 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Transform", "Visibility" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="L1Hallway/RoomA" index="0"]
-
-position = Vector2( 13.7354, 33.2972 )
-scale = Vector2( 0.907256, 3.86902 )
-shape = SubResource( 1 )
 
 [node name="L1RoomA" parent="." index="3" instance=ExtResource( 5 )]
 
@@ -96,7 +74,6 @@ shape = SubResource( 2 )
 [node name="L1RoomB" parent="." index="4" instance=ExtResource( 7 )]
 
 editor/display_folded = true
-visible = false
 script = ExtResource( 8 )
 
 [node name="RoomAreaB" type="Area2D" parent="L1RoomB" index="1"]
@@ -127,6 +104,7 @@ script = ExtResource( 10 )
 
 [node name="RoomAreaC" type="Area2D" parent="L1RoomC" index="1"]
 
+editor/display_folded = true
 position = Vector2( 0, -864 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -150,6 +128,7 @@ script = ExtResource( 12 )
 
 [node name="RoomAreaD" type="Area2D" parent="L1RoomD" index="1"]
 
+editor/display_folded = true
 position = Vector2( 0, -864 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -175,6 +154,7 @@ _sections_unfolded = [ "Collision", "Pause", "collision" ]
 
 [node name="Camera2D" parent="." index="9" instance=ExtResource( 15 )]
 
+editor/display_folded = true
 current = true
 
 [node name="NinePatchRect" parent="Camera2D" index="1" instance=ExtResource( 16 )]
@@ -189,7 +169,21 @@ visible = false
 
 [node name="Door" parent="." index="10" instance=ExtResource( 18 )]
 
-[connection signal="body_entered" from="L1Hallway/RoomA" to="." method="_on_RoomA_body_entered"]
+[connection signal="body_entered" from="L1Hallway/DoorL1A/AreaA" to="." method="_on_AreaA_body_entered"]
+
+[connection signal="body_exited" from="L1Hallway/DoorL1A/AreaA" to="." method="_on_AreaA_body_exited"]
+
+[connection signal="body_entered" from="L1Hallway/DoorL1B/AreaB" to="." method="_on_AreaB_body_entered"]
+
+[connection signal="body_exited" from="L1Hallway/DoorL1B/AreaB" to="." method="_on_AreaB_body_exited"]
+
+[connection signal="body_entered" from="L1Hallway/DoorL1C/AreaC" to="." method="_on_AreaC_body_entered"]
+
+[connection signal="body_exited" from="L1Hallway/DoorL1C/AreaC" to="." method="_on_AreaC_body_exited"]
+
+[connection signal="body_entered" from="L1Hallway/DoorL1D/AreaD" to="." method="_on_AreaD_body_entered"]
+
+[connection signal="body_exited" from="L1Hallway/DoorL1D/AreaD" to="." method="_on_AreaD_body_exited"]
 
 [connection signal="body_entered" from="L1RoomA/RoomAreaA" to="L1RoomA" method="_on_RoomAreaA_body_entered"]
 
@@ -208,4 +202,5 @@ visible = false
 [connection signal="body_exited" from="L1RoomD/RoomAreaD" to="L1RoomD" method="_on_RoomAreaD_body_exited"]
 
 
+[editable path="L1Hallway"]
 [editable path="Camera2D/NinePatchRect"]
