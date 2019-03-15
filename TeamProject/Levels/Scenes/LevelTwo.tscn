@@ -109,7 +109,6 @@ lookahead = 4.0
 
 position = Vector2( 8.98322, 2.17944 )
 rotation = 1.57863
-scale = Vector2( 1, 1 )
 collision_mask = 19
 script = ExtResource( 7 )
 _sections_unfolded = [ "Collision", "collision" ]
