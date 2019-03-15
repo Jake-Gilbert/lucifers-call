@@ -104,6 +104,9 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Mouse", "custom_colors", "custom_fonts" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Label2" type="Label" parent="VBoxContainer" index="1"]
 
@@ -130,6 +133,9 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Label3" type="Label" parent="VBoxContainer" index="2"]
 
@@ -137,9 +143,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 76.0
-margin_right = 689.0
-margin_bottom = 96.0
+margin_left = -12.0
+margin_top = 108.0
+margin_right = 677.0
+margin_bottom = 128.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -154,6 +161,9 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Material", "Rect", "Visibility", "custom_colors", "custom_fonts" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Label4" type="Label" parent="VBoxContainer" index="3"]
 
@@ -161,9 +171,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 105.0
-margin_right = 689.0
-margin_bottom = 125.0
+margin_left = -8.0
+margin_top = 136.0
+margin_right = 681.0
+margin_bottom = 156.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -178,6 +189,9 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors", "custom_constants", "custom_fonts" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Label5" type="Label" parent="VBoxContainer" index="4"]
 
@@ -185,9 +199,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 135.0
-margin_right = 689.0
-margin_bottom = 155.0
+margin_left = -5.0
+margin_top = 167.0
+margin_right = 684.0
+margin_bottom = 187.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -202,16 +217,47 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts", "custom_styles" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label6" type="Label" parent="VBoxContainer" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -16.0
+margin_top = 80.0
+margin_right = 673.0
+margin_bottom = 100.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Press the S key to shoot"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="I" type="Sprite" parent="." index="4"]
 
-position = Vector2( 202.743, 309.727 )
+position = Vector2( 211.657, 319.612 )
 scale = Vector2( 0.403473, 0.326973 )
 texture = ExtResource( 5 )
 
 [node name="R" type="Sprite" parent="." index="5"]
 
-position = Vector2( 508.535, 309.984 )
+position = Vector2( 513.356, 320.331 )
 scale = Vector2( 0.763964, 0.652807 )
 texture = ExtResource( 6 )
 
