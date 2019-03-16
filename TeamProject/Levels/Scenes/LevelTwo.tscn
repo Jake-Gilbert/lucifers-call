@@ -92,13 +92,12 @@ _sections_unfolded = [ "Rect" ]
 
 self_modulate = Color( 0.5, 0.6, 1, 0.7 )
 curve = SubResource( 1 )
-_sections_unfolded = [ "Transform" ]
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D" index="0"]
 
 position = Vector2( 507.891, 239 )
 rotation = -1.57863
-offset = 653.815
+offset = 0.0
 h_offset = 0.0
 v_offset = 0.0
 rotate = false

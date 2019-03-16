@@ -5,34 +5,72 @@
 extends Node2D
 
 var doorDeleted = false
-var playerInside = false
+var menuPopup
+var roomA = false
+var roomB = false
+var roomC = false
+var roomD = false
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
-	$L1RoomA.hide()
-	set_process(true)
+	menuPopup = get_node("Camera2D/PopupMenu")
 	pass
 
-func _process(delta):
-	# Called every frame. Delta is time since last frame.
-	# Update game logic here.
-	
-	var bodiesCollision = $L1Hallway/RoomA.get_overlapping_bodies()
-	
-	for body in bodiesCollision:
-		if body.name == "Player" && doorDeleted == false:
-			$L1Hallway/DoorL1A.queue_free()
-			doorDeleted = true
-	pass
-
-func _on_RoomAreaA_body_entered(body):
+func _on_AreaA_body_entered(body):
 	if body.name == "Player":
-		$L1RoomA.show()
-		playerInside = true
+		menuPopup.show()
+		$Player.set_physics_process(false)
+		$Player/animChar.stop(true)
+		roomA = true
+	pass # replace with function body
 
-
-func _on_RoomAreaA_body_exited(body):
+func _on_AreaA_body_exited(body):
 	if body.name == "Player":
-		$L1RoomA.hide()
-		playerInside = false
+		roomA = false
+	pass # replace with function body
+
+
+func _on_AreaB_body_entered(body):
+	if body.name == "Player":
+		menuPopup.show()
+		$Player.set_physics_process(false)
+		$Player/animChar.stop(true)
+		roomB = true
+	pass # replace with function body
+
+
+func _on_AreaB_body_exited(body):
+	if body.name == "Player":
+		roomB = false
+	pass # replace with function body
+
+
+func _on_AreaC_body_entered(body):
+	if body.name == "Player":
+		menuPopup.show()
+		$Player.set_physics_process(false)
+		$Player/animChar.stop(true)
+		roomC = true
+	pass # replace with function body
+
+
+func _on_AreaC_body_exited(body):
+	if body.name == "Player":
+		roomC = false
+	pass # replace with function body
+
+
+func _on_AreaD_body_entered(body):
+	if body.name == "Player":
+		menuPopup.show()
+		$Player.set_physics_process(false)
+		$Player/animChar.stop(true)
+		roomD = true
+	pass # replace with function body
+
+
+func _on_AreaD_body_exited(body):
+	if body.name == "Player":
+		roomD = false
+	pass # replace with function body

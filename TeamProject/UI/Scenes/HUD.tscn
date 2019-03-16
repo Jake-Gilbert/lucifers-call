@@ -8,7 +8,7 @@
 [ext_resource path="res://UI/Script/PauseCntr.gd" type="Script" id=6]
 [ext_resource path="res://Assets/WallTiles/Images/BlackWall.png" type="Texture" id=7]
 
-[node name="HUD" type="Panel" index="0"]
+[node name="HUD" type="Panel"]
 
 pause_mode = 2
 self_modulate = Color( 0, 0, 0, 1 )
