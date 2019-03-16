@@ -29,7 +29,7 @@ extents = Vector2( 26.494, 11.1226 )
 custom_solver_bias = 0.0
 extents = Vector2( 11.5055, 16.4894 )
 
-[node name="L1Map" type="Node2D"]
+[node name="L1Map" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -96,7 +96,6 @@ shape = SubResource( 2 )
 [node name="L1RoomB" parent="." index="4" instance=ExtResource( 7 )]
 
 editor/display_folded = true
-visible = false
 script = ExtResource( 8 )
 
 [node name="RoomAreaB" type="Area2D" parent="L1RoomB" index="1"]
