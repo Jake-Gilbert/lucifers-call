@@ -30,7 +30,7 @@ func set_bullet_direction(dirX, dirY):
 
 	
 func _physics_process(delta):
-	var bodies = get_overlapping_bodies()
+	var bodies = get_overlapping_areas()
 	for body in bodies:
 		if body.name == "enemy":
 			body.lose_health()

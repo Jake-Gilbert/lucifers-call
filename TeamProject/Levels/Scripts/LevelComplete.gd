@@ -17,4 +17,3 @@ func _physics_process(delta):
 	for body in bodiesCollision:
 		if body.name == "Player":
 			get_tree().change_scene(changeLevels)
-	

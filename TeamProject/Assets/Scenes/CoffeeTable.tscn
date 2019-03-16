@@ -1,11 +1,14 @@
+
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Scenes/CoffeeTable.gd" type="Script" id=1]
 [ext_resource path="res://Assets/BossRoom/coffee table[Distorted].png" type="Texture" id=2]
 
+
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
+
 extents = Vector2( 40, 30.1736 )
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -34,6 +37,7 @@ _sections_unfolded = [ "Collision" ]
 position = Vector2( -2.46978, -2.18269 )
 scale = Vector2( 0.978144, 0.445107 )
 texture = ExtResource( 2 )
+
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
@@ -41,6 +45,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( -3.89209, 0 )
 scale = Vector2( 0.909486, 1 )
 shape = SubResource( 1 )
+
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="2"]
 
@@ -57,5 +62,6 @@ bounce = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
 
 shape = SubResource( 2 )
+
 
 
