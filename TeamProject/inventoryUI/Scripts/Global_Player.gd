@@ -1,5 +1,3 @@
-#Created by Hannah Narme
-
 extends Node
 
 var url_PlayerData = "user://PlayerData.bin"
