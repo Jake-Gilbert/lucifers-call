@@ -19,7 +19,7 @@
 [ext_resource path="res://PopupMenu.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Assets/Scenes/Door.tscn" type="PackedScene" id=18]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 11.5055, 16.4894 )
@@ -69,7 +69,7 @@ audio_bus_name = "Master"
 
 position = Vector2( 200.051, 249.799 )
 scale = Vector2( 14.4656, 11.2174 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="L1RoomB" parent="." index="4" instance=ExtResource( 7 )]
 
@@ -94,7 +94,7 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 225.014, 249.799 )
 scale = Vector2( 12.7446, 11.2174 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="L1RoomC" parent="." index="5" instance=ExtResource( 9 )]
 
@@ -118,7 +118,7 @@ audio_bus_name = "Master"
 
 position = Vector2( 201.163, 1070.61 )
 scale = Vector2( 14.4656, 12.2578 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="L1RoomD" parent="." index="6" instance=ExtResource( 11 )]
 
@@ -142,7 +142,7 @@ audio_bus_name = "Master"
 
 position = Vector2( 545.416, 1070.39 )
 scale = Vector2( 12.9592, 12.1725 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="L1BossRoom" parent="." index="7" instance=ExtResource( 13 )]
 
