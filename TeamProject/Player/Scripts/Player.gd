@@ -67,6 +67,7 @@ func movement_loop():
 	var motion = movedir.normalized() * SPEED
 	#Move and slide method moves the player along the vector
 	move_and_slide(motion, Vector2(0,0))
+	Global_SceneSwitch.save_current_scene()
 
 func reload():
 	if (Input.is_action_just_pressed("ui_reload")):

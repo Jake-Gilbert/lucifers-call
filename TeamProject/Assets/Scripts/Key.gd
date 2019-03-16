@@ -11,6 +11,5 @@ func _physics_process(delta):
 		if body.name == "Player" && body.get("items") < 9:
 			body.items += 1
 			Global_Player.inventory_addItem("1")
-			Global_SceneSwitch.save_current_scene()
 			queue_free()
 		pass
