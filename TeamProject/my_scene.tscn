@@ -187,7 +187,7 @@ shape = SubResource( 2 )
 "persistent",
 ] instance=ExtResource( 14 )]
 
-position = Vector2( 75.1178, 148.733 )
+position = Vector2( 459.785, 308.068 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 6
