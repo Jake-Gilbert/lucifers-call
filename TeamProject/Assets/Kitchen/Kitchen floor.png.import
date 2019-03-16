@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Basement floor.png-de47963b1633aa80222dd7a5ac9591fc.stex"
+path="res://.import/Kitchen floor.png-6d5345a5be67e469aef43a6f80e46e4f.stex"
 
 [deps]
 
-source_file="res://Assets/Floors/Basement floor.png"
-dest_files=[ "res://.import/Basement floor.png-de47963b1633aa80222dd7a5ac9591fc.stex" ]
+source_file="res://Assets/Kitchen/Kitchen floor.png"
+dest_files=[ "res://.import/Kitchen floor.png-6d5345a5be67e469aef43a6f80e46e4f.stex" ]
 
 [params]
 

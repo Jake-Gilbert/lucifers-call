@@ -67,6 +67,11 @@ func movement_loop():
 	#Move and slide method moves the player along the vector
 	move_and_slide(motion, Vector2(0,0))
 
+func inventory():
+	if (Input.is_action_pressed("ui_inventory")):
+		Global_SceneSwitch.save_current_scene()
+		get_tree().change_scene("res://inventoryUI/Scenes/Scene_PlayerInventory.tscn")
+
 func reload():
 	if (Input.is_action_just_pressed("ui_reload")):
 		currentAmmo = ammoClip
