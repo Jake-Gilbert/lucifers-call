@@ -27,6 +27,8 @@ func _ready():
 #		hide()
 #		playerInside = false
 
+#Called when player enters the room
+#
 func _on_RoomAreaA_body_entered(body):
 	if body.name == "Player":
 		self.show()

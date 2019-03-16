@@ -4,26 +4,14 @@
 extends KinematicBody2D
 
 var isHere = false
-var enabled = false
 var motion = Vector2()
-var green = Color(0, 1, 0, 1)
-var default = Color(1, 1, 1, 1)
 
 func _ready():
 	set_physics_process(true)
 
-func _input(event):
-	#If key 1 pressed and up and down keys pressed, body will move along Vector
-	if event.is_action_pressed("leftMouse") && enabled == false && isHere == true:
-		enabled = true
-		get_node("Sprite").set_modulate(green)
-	elif event.is_action_pressed("leftMouse") && enabled == true:
-			enabled = false
-			get_node("Sprite").set_modulate(default)
-
-
 func _physics_process(delta):
-	if (enabled == true):
+	#If key 1 pressed and up and down keys pressed, body will move along Vector
+	if Input.is_mouse_button_pressed(BUTTON_LEFT) and isHere == true:
 		if Input.is_action_pressed("ui_down"):
 			motion.y = 10
 			move_and_collide(motion)
@@ -33,6 +21,7 @@ func _physics_process(delta):
 		else:
 			motion.y = 0
 			motion.x = 0
+	pass
 
 #Signal - if the body enters the goal then it will return to the scene where door is open
 func _on_Goal_body_entered(body):

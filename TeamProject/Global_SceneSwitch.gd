@@ -15,4 +15,9 @@ func reload_last_saved():
 	var packed_scene = load("res://my_scene.tscn")
 	
 	var my_scene = packed_scene.instance()
-	get_tree().change_scene("res://my_scene.tscn")
+	add_child(my_scene)
+
+#func _process(delta):
+#	# Called every frame. Delta is time since last frame.
+#	# Update game logic here.
+#	pass
