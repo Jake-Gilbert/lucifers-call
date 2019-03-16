@@ -1,340 +1,551 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=24 format=2]
 
-[ext_resource path="res://Levels/Scripts/L1Map.gd" type="Script" id=1]
-[ext_resource path="res://Levels/Scenes/LevelOne/Rooms/L1R1.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Levels/Scenes/LevelOne/Rooms/L1R1Bathroom.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Levels/Scenes/LevelOne/Rooms/L1Hallway.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Levels/Scenes/LevelOne/Rooms/L1RoomA.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Levels/Scripts/L1RoomA.gd" type="Script" id=6]
-[ext_resource path="res://Levels/Scenes/LevelOne/Rooms/L1RoomB.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Levels/Scripts/L1RoomB.gd" type="Script" id=8]
-[ext_resource path="res://Levels/Scenes/LevelOne/Rooms/L1RoomC.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Levels/Scripts/L1RoomC.gd" type="Script" id=10]
-[ext_resource path="res://Levels/Scenes/LevelOne/Rooms/L1RoomD.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Levels/Scripts/L1RoomD.gd" type="Script" id=12]
-[ext_resource path="res://Levels/Scenes/LevelOne/Rooms/L1BossRoom.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Player/Scenes/Player.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Player/Scripts/Player.gd" type="Script" id=15]
-[ext_resource path="res://UI/Scenes/Camera2D.tscn" type="PackedScene" id=16]
-[ext_resource path="res://UI/Script/Camera2D.gd" type="Script" id=17]
-[ext_resource path="res://UI/Scenes/DialogueBox.tscn" type="PackedScene" id=18]
-[ext_resource path="res://UI/Images/dialogueBox.png" type="Texture" id=19]
-[ext_resource path="res://Fonts/titleFontW.tres" type="DynamicFont" id=20]
-[ext_resource path="res://PopupMenu.tscn" type="PackedScene" id=21]
-[ext_resource path="res://PopupMenu.gd" type="Script" id=22]
-[ext_resource path="res://Assets/Scenes/Door.tscn" type="PackedScene" id=23]
-[ext_resource path="res://Levels/Scripts/Door.gd" type="Script" id=24]
+[ext_resource path="res://Puzzles/Images/Lock screen.png" type="Texture" id=1]
+[ext_resource path="res://Puzzles/Images/Assets_Lock_full.png" type="Texture" id=2]
+[ext_resource path="res://Puzzles/Images/Lock left line.png" type="Texture" id=3]
+[ext_resource path="res://Puzzles/Images/Lock right line.png" type="Texture" id=4]
+[ext_resource path="res://Puzzles/Images/Assets_Lock_top_and_bottom_border.png" type="Texture" id=5]
+[ext_resource path="res://Puzzles/Scripts/Block4H.gd" type="Script" id=6]
+[ext_resource path="res://Puzzles/Images/Lock block.png" type="Texture" id=7]
+[ext_resource path="res://Puzzles/Scripts/Block3H.gd" type="Script" id=8]
+[ext_resource path="res://Puzzles/Scripts/Block2H.gd" type="Script" id=9]
+[ext_resource path="res://Puzzles/Scripts/Block1H.gd" type="Script" id=10]
+[ext_resource path="res://Puzzles/Scripts/BlockMain.gd" type="Script" id=11]
+[ext_resource path="res://Puzzles/Scripts/Block1V.gd" type="Script" id=12]
+[ext_resource path="res://Puzzles/Scripts/Block2V.gd" type="Script" id=13]
+[ext_resource path="res://Assets/Images/DoorBlock.png" type="Texture" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 26.494, 11.1226 )
+extents = Vector2( 7.74416, 12.0244 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 11.5055, 16.4894 )
+extents = Vector2( 31.2284, 28.0067 )
 
-[node name="L1Map" type="Node2D" index="6"]
+[sub_resource type="RectangleShape2D" id=3]
 
-script = ExtResource( 1 )
-_sections_unfolded = [ "Transform", "Z Index" ]
+custom_solver_bias = 0.0
+extents = Vector2( 31.3076, 29.4661 )
 
-[node name="L1R1" type="Node2D" parent="." index="0" instance=ExtResource( 2 )]
+[sub_resource type="RectangleShape2D" id=4]
 
-editor/display_folded = true
+custom_solver_bias = 0.0
+extents = Vector2( 30.9639, 26.7457 )
 
-[node name="L1R1Bathroom" type="Node2D" parent="." index="1" instance=ExtResource( 3 )]
+[sub_resource type="RectangleShape2D" id=5]
 
-position = Vector2( 0, -0.326508 )
-_sections_unfolded = [ "Transform", "Z Index" ]
+custom_solver_bias = 0.0
+extents = Vector2( 30.5327, 26.1987 )
 
-[node name="L1Hallway" type="Node2D" parent="." index="2" instance=ExtResource( 4 )]
+[sub_resource type="RectangleShape2D" id=6]
 
-editor/display_folded = true
+custom_solver_bias = 0.0
+extents = Vector2( 27.4439, 9.53854 )
 
-[node name="RoomA" type="Area2D" parent="L1Hallway" index="6"]
+[sub_resource type="RectangleShape2D" id=7]
 
-editor/display_folded = true
-position = Vector2( 906.216, 4.6421 )
-scale = Vector2( 1, 0.6133 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Transform", "Visibility" ]
-__meta__ = {
-"_edit_group_": true
-}
+custom_solver_bias = 0.0
+extents = Vector2( 16.7321, 26.2378 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="L1Hallway/RoomA" index="0"]
+[sub_resource type="RectangleShape2D" id=8]
 
-position = Vector2( 13.7354, 33.2972 )
-scale = Vector2( 0.907256, 3.86902 )
-shape = SubResource( 1 )
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
 
-[node name="L1RoomA" type="Node2D" parent="." index="3" instance=ExtResource( 5 )]
+[sub_resource type="RectangleShape2D" id=9]
+
+custom_solver_bias = 0.0
+extents = Vector2( 19.2, 42.6667 )
+
+[node name="PuzzleR1" type="Node2D"]
+
+[node name="Background" type="Node2D" parent="." index="0"]
 
 editor/display_folded = true
-visible = false
-position = Vector2( 720, -432 )
-script = ExtResource( 6 )
+
+[node name="WoodenFloor" type="Sprite" parent="Background" index="0"]
+
+position = Vector2( 360.106, 216.051 )
+texture = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="RoomAreaA" type="Area2D" parent="L1RoomA" index="1"]
+[node name="Lock" type="Sprite" parent="Background" index="1"]
 
-editor/display_folded = true
-position = Vector2( -0.903007, 0 )
-scale = Vector2( 0.971781, 1 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="L1RoomA/RoomAreaA" index="0"]
-
-position = Vector2( 200.051, 249.799 )
-scale = Vector2( 14.4656, 11.2174 )
-shape = SubResource( 2 )
-
-[node name="L1RoomB" type="Node2D" parent="." index="4" instance=ExtResource( 7 )]
-
-editor/display_folded = true
-visible = false
-position = Vector2( 720, -432 )
-script = ExtResource( 8 )
+position = Vector2( 360, 216.05 )
+texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="RoomAreaB" type="Area2D" parent="L1RoomB" index="1"]
+[node name="Walls" type="Node2D" parent="." index="1"]
 
 editor/display_folded = true
-position = Vector2( 297.32, 0 )
-scale = Vector2( 1.0725, 1 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="L1RoomB/RoomAreaB" index="0"]
-
-position = Vector2( 225.014, 249.799 )
-scale = Vector2( 12.7446, 11.2174 )
-shape = SubResource( 2 )
-
-[node name="L1RoomC" type="Node2D" parent="." index="5" instance=ExtResource( 9 )]
+[node name="LockLeftWall" type="StaticBody2D" parent="Walls" index="0"]
 
 editor/display_folded = true
-visible = false
-position = Vector2( 720, 432 )
-script = ExtResource( 10 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="RoomAreaC" type="Area2D" parent="L1RoomC" index="1"]
-
-position = Vector2( 0, -864 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="L1RoomC/RoomAreaC" index="0"]
-
-position = Vector2( 201.163, 1070.61 )
-scale = Vector2( 14.4656, 12.2578 )
-shape = SubResource( 2 )
-
-[node name="L1RoomD" type="Node2D" parent="." index="6" instance=ExtResource( 11 )]
-
-editor/display_folded = true
-visible = false
-position = Vector2( 720, 432 )
-script = ExtResource( 12 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="RoomAreaD" type="Area2D" parent="L1RoomD" index="1"]
-
-position = Vector2( 0, -864 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="L1RoomD/RoomAreaD" index="0"]
-
-position = Vector2( 545.416, 1070.39 )
-scale = Vector2( 12.9592, 12.1725 )
-shape = SubResource( 2 )
-
-[node name="L1BossRoom" type="Node2D" parent="." index="7" instance=ExtResource( 13 )]
-
-[node name="Player" type="KinematicBody2D" parent="." index="8" groups=[
-"persistent",
-] instance=ExtResource( 14 )]
-
-position = Vector2( 459.785, 308.068 )
+modulate = Color( 0.925781, 0.796695, 0.711196, 1 )
+position = Vector2( 93.7323, 214.677 )
 input_pickable = false
 collision_layer = 1
-collision_mask = 6
-collision/safe_margin = 0.08
-script = ExtResource( 15 )
-_sections_unfolded = [ "Collision", "Pause", "collision" ]
-
-[node name="Camera2D" type="Camera2D" parent="." index="9" instance=ExtResource( 16 )]
-
-anchor_mode = 0
-rotating = false
-current = true
-zoom = Vector2( 1, 1 )
-limit_left = -10000000
-limit_top = -10000000
-limit_right = 10000000
-limit_bottom = 10000000
-limit_smoothed = false
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
-smoothing_enabled = false
-smoothing_speed = 5.0
-offset_v = 0.0
-offset_h = 0.0
-drag_margin_left = 0.2
-drag_margin_top = 0.2
-drag_margin_right = 0.2
-drag_margin_bottom = 0.2
-editor_draw_screen = true
-editor_draw_limits = false
-editor_draw_drag_margin = false
-script = ExtResource( 17 )
-
-[node name="NinePatchRect" type="NinePatchRect" parent="Camera2D" index="1" instance=ExtResource( 18 )]
-
-editor/display_folded = true
-visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 349.0
-margin_right = 719.0
-margin_bottom = 432.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-texture = ExtResource( 19 )
-patch_margin_left = 17
-patch_margin_top = 5
-patch_margin_right = 17
-patch_margin_bottom = 5
-_sections_unfolded = [ "Patch Margin", "Rect" ]
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="text" type="RichTextLabel" parent="Camera2D/NinePatchRect" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 14.0
-margin_top = 10.0
-margin_right = 706.0
-margin_bottom = 53.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = true
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-custom_fonts/normal_font = ExtResource( 20 )
-bbcode_enabled = false
-bbcode_text = ""
-visible_characters = -1
-percent_visible = 1.0
-meta_underlined = true
-tab_size = 2
-text = ""
-scroll_active = true
-scroll_following = false
-selection_enabled = false
-override_selected_font_color = false
-_sections_unfolded = [ "Pause", "custom_fonts" ]
-
-[node name="PopupMenu" type="PopupMenu" parent="Camera2D" index="2" instance=ExtResource( 21 )]
-
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 574.0
-margin_top = -113.0
-margin_right = 826.0
-margin_bottom = 112.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-popup_exclusive = false
-items = [  ]
-hide_on_state_item_selection = false
-script = ExtResource( 22 )
-_sections_unfolded = [ "Rect" ]
-
-[node name="Door" type="StaticBody2D" parent="." index="10" instance=ExtResource( 23 )]
-
-editor/display_folded = true
-visible = false
-position = Vector2( 711, 360 )
-input_pickable = false
-collision_layer = 4
 collision_mask = 1
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
-script = ExtResource( 24 )
-_sections_unfolded = [ "Collision", "Transform" ]
-openPuzzle = "res://Puzzles/Scenes/Puzzle.tscn"
+_sections_unfolded = [ "Visibility" ]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
-[connection signal="body_entered" from="L1Hallway/RoomA" to="." method="_on_RoomA_body_entered"]
+[node name="Sprite" type="Sprite" parent="Walls/LockLeftWall" index="0"]
 
-[connection signal="body_entered" from="L1RoomA/RoomAreaA" to="L1RoomA" method="_on_RoomAreaA_body_entered"]
+position = Vector2( -0.285172, 1.26611 )
+texture = ExtResource( 3 )
 
-[connection signal="body_exited" from="L1RoomA/RoomAreaA" to="L1RoomA" method="_on_RoomAreaA_body_exited"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/LockLeftWall" index="1"]
 
-[connection signal="body_entered" from="L1RoomB/RoomAreaB" to="L1RoomB" method="_on_RoomAreaB_body_entered"]
+build_mode = 0
+polygon = PoolVector2Array( 82.5197, -72.4072, 73.5782, -70.5357, 56.9428, -52.4447, 45.9219, -27.4917, 39.6836, -3.16249, 34.4851, 30.94, 33.6924, 83.1051, 37.2745, 117.136, 47.4239, 154.151, 62.3495, 180.42, 83.8423, 198.928, 87.0077, 195.805, 86.4493, 189.104, 77.1434, 188.174, 63.3707, 174.029, 52.948, 152.811, 42.7115, 115.402, 40.1059, 96.2313, 39.793, 28.6017, 44.8864, -4.50543, 52.9509, -30.6091, 64.1989, -53.7416, 76.2957, -67.3241, 83.5113, -67.9607 )
 
-[connection signal="body_exited" from="L1RoomB/RoomAreaB" to="L1RoomB" method="_on_RoomAreaB_body_exited"]
+[node name="LockRightWall" type="StaticBody2D" parent="Walls" index="1"]
 
-[connection signal="body_entered" from="L1RoomC/RoomAreaC" to="L1RoomC" method="_on_RoomAreaC_body_entered"]
+editor/display_folded = true
+modulate = Color( 0.92549, 0.796078, 0.709804, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Visibility" ]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
-[connection signal="body_exited" from="L1RoomC/RoomAreaC" to="L1RoomC" method="_on_RoomAreaC_body_exited"]
+[node name="Sprite" type="Sprite" parent="Walls/LockRightWall" index="0"]
 
-[connection signal="body_entered" from="L1RoomD/RoomAreaD" to="L1RoomD" method="_on_RoomAreaD_body_entered"]
+position = Vector2( 360.599, 215.726 )
+texture = ExtResource( 4 )
 
-[connection signal="body_exited" from="L1RoomD/RoomAreaD" to="L1RoomD" method="_on_RoomAreaD_body_exited"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/LockRightWall" index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array( 538.329, 142.741, 541.631, 142.441, 559.571, 157.903, 569.404, 175.918, 577.21, 197.1, 582.149, 215.91, 585.752, 235.65, 587.583, 269.457, 586.907, 305.065, 581.698, 341.019, 572.616, 370.848, 558.19, 396.353, 546.39, 407.057, 535.957, 411.185, 536.257, 404.129, 545.189, 403.829, 556.598, 392.645, 564.48, 378.384, 569.058, 367.65, 574.718, 348.435, 578.246, 333.378, 582.314, 305.081, 583.365, 284.769, 583.455, 258.889, 581.248, 235.966, 578.441, 217.306, 571.685, 191.65, 560.396, 165.514, 548.222, 150.563, 544.544, 147.56, 538.089, 147.485, 537.944, 143.17 )
+
+[node name="LockBottonAndTop" type="StaticBody2D" parent="Walls" index="2"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Walls/LockBottonAndTop" index="0"]
+
+modulate = Color( 0.92549, 0.796078, 0.709804, 1 )
+position = Vector2( 360.676, 215.692 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/LockBottonAndTop" index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array( 176.961, 140.946, 540.035, 140.946, 545.644, 149.36, 541.563, 147.271, 174.911, 147.155, 174.098, 142.029 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Walls/LockBottonAndTop" index="2"]
+
+position = Vector2( 0, 99.0356 )
+scale = Vector2( 1, 0.757575 )
+build_mode = 0
+polygon = PoolVector2Array( 173.026, 402.514, 334.385, 402.558, 334.52, 410.956, 174.244, 411.178 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Walls/LockBottonAndTop" index="3"]
+
+build_mode = 0
+polygon = PoolVector2Array( 396.709, 404.491, 396.709, 409.905, 538.304, 410.041, 537.898, 404.761 )
+
+[node name="HBlocks" type="Node2D" parent="." index="2"]
+
+editor/display_folded = true
+
+[node name="Block4H" type="KinematicBody2D" parent="HBlocks" index="0"]
+
+editor/display_folded = true
+position = Vector2( 228.08, 240.22 )
+scale = Vector2( 2.81224, 0.917315 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 6 )
+_sections_unfolded = [ "Pickable", "Transform", "Visibility" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HBlocks/Block4H" index="0"]
+
+position = Vector2( 0.0140457, 0.220551 )
+scale = Vector2( 4.12203, 2.56185 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="HBlocks/Block4H" index="1"]
+
+position = Vector2( 0.0585108, 0.824496 )
+scale = Vector2( 3.99794, 10.4103 )
+texture = ExtResource( 7 )
+
+[node name="Area2D" type="Area2D" parent="HBlocks/Block4H" index="2"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HBlocks/Block4H/Area2D" index="0"]
+
+shape = SubResource( 2 )
+
+[node name="Block3H" type="KinematicBody2D" parent="HBlocks" index="1"]
+
+editor/display_folded = true
+position = Vector2( 543.955, 275.354 )
+scale = Vector2( 1.20182, 1.02493 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 8 )
+_sections_unfolded = [ "Pickable", "Transform", "Visibility" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HBlocks/Block3H" index="0"]
+
+position = Vector2( -0.154694, 0.220551 )
+scale = Vector2( 4.10939, 2.56185 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="HBlocks/Block3H" index="1"]
+
+position = Vector2( -0.154681, 0.480837 )
+scale = Vector2( 4.0238, 10.4478 )
+texture = ExtResource( 7 )
+
+[node name="Area2D" type="Area2D" parent="HBlocks/Block3H" index="2"]
+
+editor/display_folded = true
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HBlocks/Block3H/Area2D" index="0"]
+
+shape = SubResource( 3 )
+
+[node name="Block2H" type="KinematicBody2D" parent="HBlocks" index="2"]
+
+editor/display_folded = true
+position = Vector2( 500.208, 348.956 )
+scale = Vector2( 2.04796, 0.954004 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 9 )
+_sections_unfolded = [ "Pickable", "Transform", "Visibility" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HBlocks/Block2H" index="0"]
+
+position = Vector2( 0.305618, 0.042572 )
+scale = Vector2( 4.08112, 2.3337 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="HBlocks/Block2H" index="1"]
+
+position = Vector2( 0.1178, -0.219759 )
+rotation = 1.5708
+scale = Vector2( 3.46698, 10.5388 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Area2D" type="Area2D" parent="HBlocks/Block2H" index="2"]
+
+editor/display_folded = true
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HBlocks/Block2H/Area2D" index="0"]
+
+shape = SubResource( 4 )
+
+[node name="Block1H" type="KinematicBody2D" parent="HBlocks" index="3"]
+
+editor/display_folded = true
+position = Vector2( 271.497, 348.703 )
+scale = Vector2( 1.43173, 0.931854 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 10 )
+_sections_unfolded = [ "Pickable", "Transform", "Visibility" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HBlocks/Block1H" index="0"]
+
+position = Vector2( -0.290222, 0.298462 )
+scale = Vector2( 4.09898, 2.36205 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="HBlocks/Block1H" index="1"]
+
+position = Vector2( -0.306557, 0.649448 )
+scale = Vector2( 3.95564, 9.36823 )
+texture = ExtResource( 7 )
+
+[node name="Area2D" type="Area2D" parent="HBlocks/Block1H" index="2"]
+
+editor/display_folded = true
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HBlocks/Block1H/Area2D" index="0"]
+
+shape = SubResource( 5 )
+
+[node name="VBlocks" type="Node2D" parent="." index="3"]
+
+[node name="BlockMain" type="KinematicBody2D" parent="VBlocks" index="0"]
+
+modulate = Color( 0.988281, 0.0193024, 0.0193024, 1 )
+position = Vector2( 343.785, 348.054 )
+scale = Vector2( 0.823794, 1.41559 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 11 )
+_sections_unfolded = [ "Pickable", "Transform", "Visibility" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBlocks/BlockMain" index="0"]
+
+position = Vector2( 3.12259, -6.05331 )
+scale = Vector2( 4.03118, 1.88664 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="VBlocks/BlockMain" index="1"]
+
+position = Vector2( 3.3157, -5.80314 )
+rotation = 1.5704
+scale = Vector2( 2.75558, 10.3757 )
+texture = ExtResource( 7 )
+
+[node name="Area2D" type="Area2D" parent="VBlocks/BlockMain" index="2"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBlocks/BlockMain/Area2D" index="0"]
+
+position = Vector2( 3.52023, -4.49056 )
+scale = Vector2( 1.11563, 2.27853 )
+shape = SubResource( 6 )
+
+[node name="Block1V" type="KinematicBody2D" parent="VBlocks" index="1"]
+
+position = Vector2( 454.564, 266.31 )
+scale = Vector2( 1.4845, 1.73387 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 12 )
+_sections_unfolded = [ "Pickable", "Transform", "Visibility" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBlocks/Block1V" index="0"]
+
+position = Vector2( 3.34207, 0.0257263 )
+scale = Vector2( 2.77829, 2.30877 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Sprite" type="Sprite" parent="VBlocks/Block1V" index="1"]
+
+position = Vector2( 3.30712, 5.23711e-08 )
+rotation = -1.5708
+scale = Vector2( 3.45449, 7.11864 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Area2D" type="Area2D" parent="VBlocks/Block1V" index="2"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBlocks/Block1V/Area2D" index="0"]
+
+position = Vector2( 3.36348, 0 )
+scale = Vector2( 1.17046, 1 )
+shape = SubResource( 7 )
+
+[node name="Block2V" type="KinematicBody2D" parent="VBlocks" index="2"]
+
+editor/display_folded = true
+position = Vector2( 197.138, 336.822 )
+scale = Vector2( 0.905143, 2.02607 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 13 )
+_sections_unfolded = [ "Pickable", "Transform", "Visibility" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBlocks/Block2V" index="0"]
+
+position = Vector2( 0.052063, -0.470566 )
+scale = Vector2( 4.05828, 2.65831 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="VBlocks/Block2V" index="1"]
+
+position = Vector2( -0.325987, -0.496799 )
+rotation = 1.5708
+scale = Vector2( 3.96205, 10.4124 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Area2D" type="Area2D" parent="VBlocks/Block2V" index="2"]
+
+editor/display_folded = true
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VBlocks/Block2V/Area2D" index="0"]
+
+position = Vector2( -0.369407, -0.360369 )
+scale = Vector2( 2.94004, 3.06664 )
+shape = SubResource( 8 )
+
+[node name="Goal" type="Sprite" parent="." index="4"]
+
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 365.25, 408 )
+rotation = -1.5708
+scale = Vector2( 0.40625, 1 )
+texture = ExtResource( 14 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="GoalArea" type="Area2D" parent="Goal" index="0"]
+
+editor/display_folded = true
+position = Vector2( 1.10521, 1.59201 )
+rotation = 1.57081
+scale = Vector2( 2, 0.613034 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal/GoalArea" index="0"]
+
+position = Vector2( 0, 12.046 )
+shape = SubResource( 9 )
+
+[connection signal="mouse_entered" from="HBlocks/Block4H/Area2D" to="HBlocks/Block4H" method="_on_Area2D_mouse_entered"]
+
+[connection signal="mouse_exited" from="HBlocks/Block4H/Area2D" to="HBlocks/Block4H" method="_on_Area2D_mouse_exited"]
+
+[connection signal="mouse_entered" from="HBlocks/Block3H/Area2D" to="HBlocks/Block3H" method="_on_Area2D_mouse_entered"]
+
+[connection signal="mouse_exited" from="HBlocks/Block3H/Area2D" to="HBlocks/Block3H" method="_on_Area2D_mouse_exited"]
+
+[connection signal="mouse_entered" from="HBlocks/Block2H/Area2D" to="HBlocks/Block2H" method="_on_Area2D_mouse_entered"]
+
+[connection signal="mouse_exited" from="HBlocks/Block2H/Area2D" to="HBlocks/Block2H" method="_on_Area2D_mouse_exited"]
+
+[connection signal="mouse_entered" from="HBlocks/Block1H/Area2D" to="HBlocks/Block1H" method="_on_Area2D_mouse_entered"]
+
+[connection signal="mouse_exited" from="HBlocks/Block1H/Area2D" to="HBlocks/Block1H" method="_on_Area2D_mouse_exited"]
+
+[connection signal="mouse_entered" from="VBlocks/BlockMain" to="VBlocks/BlockMain" method="_on_BlockMain_mouse_entered"]
+
+[connection signal="mouse_exited" from="VBlocks/BlockMain" to="VBlocks/BlockMain" method="_on_BlockMain_mouse_exited"]
+
+[connection signal="mouse_entered" from="VBlocks/BlockMain/Area2D" to="VBlocks/BlockMain" method="_on_Area2D_mouse_entered"]
+
+[connection signal="mouse_exited" from="VBlocks/BlockMain/Area2D" to="VBlocks/BlockMain" method="_on_Area2D_mouse_exited"]
+
+[connection signal="mouse_entered" from="VBlocks/Block1V/Area2D" to="VBlocks/Block1V" method="_on_Area2D_mouse_entered"]
+
+[connection signal="mouse_exited" from="VBlocks/Block1V/Area2D" to="VBlocks/Block1V" method="_on_Area2D_mouse_exited"]
+
+[connection signal="mouse_entered" from="VBlocks/Block2V/Area2D" to="VBlocks/Block2V" method="_on_Area2D_mouse_entered"]
+
+[connection signal="mouse_exited" from="VBlocks/Block2V/Area2D" to="VBlocks/Block2V" method="_on_Area2D_mouse_exited"]
+
+[connection signal="body_entered" from="Goal/GoalArea" to="VBlocks/BlockMain" method="_on_GoalArea_body_entered"]
 
 
-[editable path="Camera2D/NinePatchRect"]

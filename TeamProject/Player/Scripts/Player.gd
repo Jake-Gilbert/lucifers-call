@@ -29,7 +29,6 @@ func _physics_process(delta):
 	shoot()
 	reload()
 	spritedir_loop()
-	inventory()
 	
 	
 	if movedir != Vector2(0,0):
@@ -67,7 +66,6 @@ func movement_loop():
 	var motion = movedir.normalized() * SPEED
 	#Move and slide method moves the player along the vector
 	move_and_slide(motion, Vector2(0,0))
-	Global_SceneSwitch.save_current_scene()
 
 func reload():
 	if (Input.is_action_just_pressed("ui_reload")):
@@ -117,10 +115,6 @@ func spritedir_loop():
 			spritedir = "up"
 		Vector2(0,1):
 			spritedir = "down"
-
-func inventory():
-	if (Input.is_action_pressed("inventory")):
-		get_tree().change_scene("res://inventoryUI/Scenes/Scene_PlayerInventory.tscn")
 
 func switch_animation(animation):
 	var newAnim = str(animation,spritedir)
