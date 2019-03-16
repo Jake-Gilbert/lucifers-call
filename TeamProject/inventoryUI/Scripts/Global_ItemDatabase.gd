@@ -1,3 +1,5 @@
+#Created by Hannah Narme
+
 extends Node
 
 var url_database_item = "res://Database//Database_Items.json"

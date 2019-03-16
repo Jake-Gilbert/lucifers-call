@@ -1,3 +1,5 @@
+#Created by Hannah Narme
+
 extends Node
 
 onready var itemList = get_node("Panel/ItemList")
@@ -106,14 +108,6 @@ func _on_ItemList_item_rmb_selected(index, atpos):
 	itemMenu_RichTextLabel_ItemInfo.set_bbcode(strItemInfo)
 	activeItemSlot = index
 	itemMenu.popup()
-	
-#func _on_ItemMenu_Button_DropItem_pressed():
-#	var newAmount = Global_Player.inventory_removeItem(dropItemSlot)
-#	if (newAmount < 1):
-#		itemMenu.hide()
-#	else:
-#		itemMenu_Button_DropItem.set_text("(" + String(newAmount) + ") Drop")
-#	update_slot(dropItemSlot)
 
 func begin_drag_item(index):
 	if (isDraggingItem):
@@ -164,4 +158,5 @@ func _on_ItemList_mouse_exited():
 
 
 func _on_Close_Button_pressed():
+	get_node("Panel").hide()
 	Global_SceneSwitch.reload_last_saved()

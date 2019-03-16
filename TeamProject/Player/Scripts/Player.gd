@@ -29,6 +29,7 @@ func _physics_process(delta):
 	shoot()
 	reload()
 	spritedir_loop()
+	inventory()
 	
 	
 	if movedir != Vector2(0,0):
@@ -115,6 +116,10 @@ func spritedir_loop():
 			spritedir = "up"
 		Vector2(0,1):
 			spritedir = "down"
+
+func inventory():
+	if (Input.is_action_pressed("inventory")):
+		get_tree().change_scene("res://inventoryUI/Scenes/Scene_PlayerInventory.tscn")
 
 func switch_animation(animation):
 	var newAnim = str(animation,spritedir)
