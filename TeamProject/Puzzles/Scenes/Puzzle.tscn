@@ -60,7 +60,7 @@ extents = Vector2( 31.2284, 28.0067 )
 custom_solver_bias = 0.0
 extents = Vector2( 19.2, 42.6667 )
 
-[node name="Puzzle" type="Node" index="0"]
+[node name="Puzzle" type="Node"]
 
 __meta__ = {
 "_edit_horizontal_guides_": [ 0.0 ]

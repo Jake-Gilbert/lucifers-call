@@ -10,7 +10,7 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 72, 136.788, 0, 0, 0, 0, 330, 130.788, 0, 0, 0, 0, 326, 362.788, 0, 0, 0, 0, 74, 132.788, 0, 0, 0, 0, 64, 362.788, 0, 0, 0, 0, 326, 364.788, 0, 0, 0, 0, 328, 142.788, 0, 0, 0, 0, 82, 138.788, 0, 0, 0, 0, 160, 370.788, 0, 0, 0, 0, 322, 132.788 )
 }
 
-[node name="L1RoomA" type="Node2D" index="0"]
+[node name="L1RoomA" type="Node2D"]
 
 position = Vector2( 720, -432 )
 _sections_unfolded = [ "Transform" ]

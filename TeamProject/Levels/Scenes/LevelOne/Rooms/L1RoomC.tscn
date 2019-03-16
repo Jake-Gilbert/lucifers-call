@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/WallTiles/TileSets/WallTileSetNewestEdition.tres" type="TileSet" id=1]
 
-[node name="L1RoomC" type="Node2D"]
+[node name="L1RoomC" type="Node2D" index="0"]
 
 position = Vector2( 720, 432 )
 _sections_unfolded = [ "Transform" ]
