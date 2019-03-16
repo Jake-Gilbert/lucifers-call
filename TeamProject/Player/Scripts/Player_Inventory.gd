@@ -164,5 +164,4 @@ func _on_ItemList_mouse_exited():
 
 
 func _on_Close_Button_pressed():
-	get_node("Panel").hide()
-	Global_SceneSwitch.reload_last_saved()
+	get_tree().change_scene("res://Levels/Scenes/LevelOneWithDoor.tscn")
