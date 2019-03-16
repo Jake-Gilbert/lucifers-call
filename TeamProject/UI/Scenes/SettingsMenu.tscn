@@ -1,7 +1,4 @@
-[gd_scene load_steps=3 format=2]
-
-[ext_resource path="res://Fonts/pixelFont.tres" type="DynamicFont" id=1]
-[ext_resource path="res://UI/Scenes/Label.gd" type="Script" id=2]
+[gd_scene format=2]
 
 [node name="Panel" type="Panel"]
 
@@ -44,45 +41,5 @@ editable = true
 tick_count = 0
 ticks_on_borders = false
 focus_mode = 2
-
-[node name="Control" type="Control" parent="." index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-
-[node name="Label" type="Label" parent="Control" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 306.0
-margin_top = 157.0
-margin_right = 387.0
-margin_bottom = 182.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = ExtResource( 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Volume"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-script = ExtResource( 2 )
-_sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 

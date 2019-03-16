@@ -27,7 +27,7 @@ func lose_health():
 func _physics_process(delta):
 	location += speed
 	get_parent().set_offset(location)
-	var bodies = get_overlapping_areas()
+	var bodies = get_overlapping_bodies()
 	for body in bodies:
 		if body.name == "Player":
 			body.lose_health()

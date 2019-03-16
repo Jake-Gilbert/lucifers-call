@@ -8,7 +8,7 @@
 [ext_resource path="res://Fonts/bigFont.tres" type="DynamicFont" id=6]
 [ext_resource path="res://Puzzles/Scripts/Timer.gd" type="Script" id=7]
 
-[node name="PuzzleTwo" type="Node"]
+[node name="PuzzleTwo" type="Node" index="0"]
 
 [node name="Background" type="Node" parent="." index="0"]
 
