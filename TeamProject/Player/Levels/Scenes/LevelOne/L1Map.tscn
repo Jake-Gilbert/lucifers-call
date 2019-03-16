@@ -1,23 +1,26 @@
 [gd_scene load_steps=21 format=2]
 
-[ext_resource path="res://Levels/Scripts/L1Map.gd" type="Script" id=1]
-[ext_resource path="res://Levels/Scenes/LevelOne/Rooms/L1R1.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Levels/Scenes/LevelOne/Rooms/L1R1Bathroom.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Levels/Scenes/LevelOne/Rooms/L1Hallway.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Levels/Scenes/LevelOne/Rooms/L1RoomA.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Levels/Scripts/L1RoomA.gd" type="Script" id=6]
-[ext_resource path="res://Levels/Scenes/LevelOne/Rooms/L1RoomB.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Levels/Scripts/L1RoomB.gd" type="Script" id=8]
-[ext_resource path="res://Levels/Scenes/LevelOne/Rooms/L1RoomC.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Levels/Scripts/L1RoomC.gd" type="Script" id=10]
-[ext_resource path="res://Levels/Scenes/LevelOne/Rooms/L1RoomD.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Levels/Scripts/L1RoomD.gd" type="Script" id=12]
-[ext_resource path="res://Levels/Scenes/LevelOne/Rooms/L1BossRoom.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Player/Levels/Scripts/L1Map.gd" type="Script" id=1]
+[ext_resource path="res://Player/Levels/Scenes/LevelOne/Rooms/L1R1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player/Levels/Scenes/LevelOne/Rooms/L1R1Bathroom.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player/Levels/Scenes/LevelOne/Rooms/L1Hallway.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Player/Levels/Scenes/LevelOne/Rooms/L1RoomA.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Player/Levels/Scripts/L1RoomA.gd" type="Script" id=6]
+[ext_resource path="res://Player/Levels/Scenes/LevelOne/Rooms/L1RoomB.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Player/Levels/Scripts/L1RoomB.gd" type="Script" id=8]
+[ext_resource path="res://Player/Levels/Scenes/LevelOne/Rooms/L1RoomC.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Player/Levels/Scripts/L1RoomC.gd" type="Script" id=10]
+[ext_resource path="res://Player/Levels/Scenes/LevelOne/Rooms/L1RoomD.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Player/Levels/Scripts/L1RoomD.gd" type="Script" id=12]
+[ext_resource path="res://Player/Levels/Scenes/LevelOne/Rooms/L1BossRoom.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Player/Scenes/Player.tscn" type="PackedScene" id=14]
 [ext_resource path="res://UI/Scenes/Camera2D.tscn" type="PackedScene" id=15]
 [ext_resource path="res://UI/Scenes/DialogueBox.tscn" type="PackedScene" id=16]
 [ext_resource path="res://PopupMenu.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Assets/Scenes/Door.tscn" type="PackedScene" id=18]
+
+
+
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -29,7 +32,7 @@ extents = Vector2( 26.494, 11.1226 )
 custom_solver_bias = 0.0
 extents = Vector2( 11.5055, 16.4894 )
 
-[node name="L1Map" type="Node2D"]
+[node name="L1Map" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -96,7 +99,6 @@ shape = SubResource( 2 )
 [node name="L1RoomB" parent="." index="4" instance=ExtResource( 7 )]
 
 editor/display_folded = true
-visible = false
 script = ExtResource( 8 )
 
 [node name="RoomAreaB" type="Area2D" parent="L1RoomB" index="1"]

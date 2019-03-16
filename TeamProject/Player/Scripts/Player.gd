@@ -119,6 +119,7 @@ func spritedir_loop():
 
 func inventory():
 	if (Input.is_action_pressed("inventory")):
+		Global_SceneSwitch.save_current_scene()
 		get_tree().change_scene("res://inventoryUI/Scenes/Scene_PlayerInventory.tscn")
 
 func switch_animation(animation):

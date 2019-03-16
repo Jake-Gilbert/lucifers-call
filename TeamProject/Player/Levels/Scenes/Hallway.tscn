@@ -3,9 +3,12 @@
 [ext_resource path="res://Assets/Images/Assets_room_floor_wood_small (6).png" type="Texture" id=1]
 [ext_resource path="res://Assets/WallTiles/TileSets/WallTileSetNewestEdition.tres" type="TileSet" id=2]
 [ext_resource path="res://Assets/Images/Door.png" type="Texture" id=3]
-[ext_resource path="res://Levels/Scenes/LevelComplete.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Player/Levels/Scenes/LevelComplete.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Player/Scenes/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://UI/Scenes/UsableHUD.tscn" type="PackedScene" id=6]
+
+
+
 
 [node name="Hallway" type="Node" index="0"]
 
