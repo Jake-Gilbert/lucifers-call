@@ -37,6 +37,7 @@ func _on_Exit_pressed():
 	get_tree().quit()
 
 func _on_Settings_pressed():
+	get_tree().change_scene("res://UI/Scenes/SettingsMenu.tscn")
 	pass # replace with function body
 
 func _on_Load_pressed():

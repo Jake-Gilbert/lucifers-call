@@ -7,6 +7,6 @@ func _ready():
 	# Initialization here
 	pass
 
- func _clearText():
+# func _clearText():
 	get_child().set_text
 	
