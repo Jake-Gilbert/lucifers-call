@@ -1,3 +1,5 @@
+#Created by Hannah Narme
+
 extends Node
 
 onready var file = File.new()
