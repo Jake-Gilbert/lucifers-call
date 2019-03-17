@@ -1,11 +1,9 @@
 #PuzzleOneInstruction.gd
-#
+#Changes the scene from the puzzle to the instruction
 #Created by Zainab Parvin
 
 extends Node
 
-func _ready():
-	pass
-
-func _on_Button_pressed():
-	get_tree().change_scene("res://Puzzles/Scenes/Puzzle.tscn")
+#Changes the scene from the instructions to the first puzzle
+func _on_StartBtn_pressed():
+	get_tree().change_scene("res://Puzzles/Scenes/PuzzleR1.tscn")

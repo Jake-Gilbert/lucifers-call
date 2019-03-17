@@ -4,7 +4,7 @@
 [ext_resource path="res://UI/Images/Picture1.png" type="Texture" id=2]
 [ext_resource path="res://Fonts/buttonFont.tres" type="DynamicFont" id=3]
 
-[node name="Node" type="Node" index="0"]
+[node name="Node" type="Node"]
 
 script = ExtResource( 1 )
 
