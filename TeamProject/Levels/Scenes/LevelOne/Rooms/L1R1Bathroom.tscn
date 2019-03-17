@@ -55,7 +55,7 @@ _sections_unfolded = [ "Rect" ]
 position = Vector2( 345.778, -107.161 )
 rotation = -3.14159
 scale = Vector2( 0.900276, 2.90859 )
-_sections_unfolded = [ "Collision", "Transform" ]
+_sections_unfolded = [ "Collision", "Material", "Pickable", "Transform", "Visibility" ]
 
 [node name="TileMap" type="TileMap" parent="." index="3"]
 
