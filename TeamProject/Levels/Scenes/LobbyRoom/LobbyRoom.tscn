@@ -1,0 +1,281 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Assets/LobbyRoom/Floor.png" type="Texture" id=1]
+[ext_resource path="res://Assets/WallTiles/TileSets/WallTileSetNewestEdition.tres" type="TileSet" id=2]
+[ext_resource path="res://Assets/LobbyRoom/One Stair no background.png" type="Texture" id=3]
+[ext_resource path="res://Assets/LobbyRoom/blue rug.png" type="Texture" id=4]
+[ext_resource path="res://Assets/LobbyRoom/Stair Railing.png" type="Texture" id=5]
+[ext_resource path="res://Assets/LobbyRoom/Bookshelf.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Scenes/Couch.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Scenes/CouchLHS.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/LobbyRoom/coffee table.png" type="Texture" id=9]
+[ext_resource path="res://Assets/LobbyRoom/Flower vase.png" type="Texture" id=10]
+[ext_resource path="res://Assets/LobbyRoom/KeyCabinet.png" type="Texture" id=11]
+[ext_resource path="res://Assets/LobbyRoom/Clock.png" type="Texture" id=12]
+[ext_resource path="res://Assets/LobbyRoom/FrontDesk.png" type="Texture" id=13]
+[ext_resource path="res://Assets/LobbyRoom/Painting 1.png" type="Texture" id=14]
+[ext_resource path="res://Assets/LobbyRoom/Chandelier.png" type="Texture" id=15]
+[ext_resource path="res://Assets/LobbyRoom/Vase blue.png" type="Texture" id=16]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32.1082, 66.7379 )
+
+[node name="LobbyRoom" type="Node2D" index="0"]
+
+editor/display_folded = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Floor" type="TextureRect" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 720.0
+margin_bottom = 432.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="TileMap" type="TileMap" parent="." index="1"]
+
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 327689, 40, 0, 327690, 40, 0, 327691, 40, 0, 327692, 40, 0, 327693, 40, 0, 327694, 40, 0, 327695, 40, 0, 327696, 40, 0, 327697, 40, 0, 327698, 40, 0, 327699, 40, 0, 327700, 40, 0, 327701, 40, 0, 327702, 40, 0, 327703, 40, 0, 327704, 40, 0, 327705, 40, 0, 327706, 40, 0, 327707, 40, 0, 327708, 40, 0, 327709, 40, 0, 327710, 40, 0, 327711, 40, 0, 327712, 40, 0, 327713, 40, 0, 327714, 40, 0, 327715, 40, 0, 327716, 40, 0, 327717, 40, 0, 327718, 40, 0, 327719, 40, 0, 327720, 40, 0, 327721, 40, 0, 327722, 40, 0, 327723, 40, 0, 327724, 40, 0, 393225, 40, 0, 393226, 40, 0, 393227, 40, 0, 393228, 40, 0, 393229, 40, 0, 393230, 40, 0, 393231, 40, 0, 393232, 40, 0, 393233, 40, 0, 393234, 40, 0, 393235, 40, 0, 393236, 40, 0, 393237, 40, 0, 393238, 40, 0, 393239, 40, 0, 393240, 40, 0, 393241, 40, 0, 393242, 40, 0, 393243, 40, 0, 393244, 40, 0, 393245, 40, 0, 393246, 40, 0, 393247, 40, 0, 393248, 40, 0, 393249, 40, 0, 393250, 40, 0, 393251, 40, 0, 393252, 40, 0, 393253, 40, 0, 393254, 40, 0, 393255, 40, 0, 393256, 40, 0, 393257, 40, 0, 393258, 40, 0, 393259, 40, 0, 393260, 40, 0, 458761, 40, 0, 458762, 40, 0, 458763, 40, 0, 458764, 40, 0, 458765, 40, 0, 458766, 40, 0, 458767, 40, 0, 458768, 40, 0, 458769, 40, 0, 458770, 40, 0, 458771, 40, 0, 458772, 40, 0, 458773, 40, 0, 458774, 40, 0, 458775, 40, 0, 458776, 40, 0, 458777, 40, 0, 458778, 40, 0, 458779, 40, 0, 458780, 40, 0, 458781, 40, 0, 458782, 40, 0, 458783, 40, 0, 458784, 40, 0, 458785, 40, 0, 458786, 40, 0, 458787, 40, 0, 458788, 40, 0, 458789, 40, 0, 458790, 40, 0, 458791, 40, 0, 458792, 40, 0, 458793, 40, 0, 458794, 40, 0, 458795, 40, 0, 458796, 40, 0, 524297, 40, 0, 524298, 40, 0, 524299, 40, 0, 524300, 40, 0, 524301, 40, 0, 524302, 40, 0, 524303, 40, 0, 524304, 40, 0, 524305, 40, 0, 524306, 40, 0, 524307, 40, 0, 524308, 40, 0, 524309, 40, 0, 524310, 40, 0, 524311, 40, 0, 524312, 40, 0, 524313, 40, 0, 524314, 40, 0, 524315, 40, 0, 524316, 40, 0, 524317, 40, 0, 524318, 40, 0, 524319, 40, 0, 524320, 40, 0, 524321, 40, 0, 524322, 40, 0, 524323, 40, 0, 524324, 40, 0, 524325, 40, 0, 524326, 40, 0, 524327, 40, 0, 524328, 40, 0, 524329, 40, 0, 524330, 40, 0, 524331, 40, 0, 524332, 40, 0, 589833, 40, 0, 589834, 40, 0, 589835, 40, 0, 589836, 40, 0, 589837, 40, 0, 589838, 40, 0, 589839, 40, 0, 589840, 40, 0, 589841, 40, 0, 589842, 40, 0, 589843, 40, 0, 589844, 40, 0, 589845, 40, 0, 589846, 40, 0, 589847, 40, 0, 589848, 40, 0, 589849, 40, 0, 589850, 40, 0, 589851, 40, 0, 589852, 40, 0, 589853, 40, 0, 589854, 40, 0, 589855, 40, 0, 589856, 40, 0, 589857, 40, 0, 589858, 40, 0, 589859, 40, 0, 589860, 40, 0, 589861, 40, 0, 589862, 40, 0, 589863, 40, 0, 589864, 40, 0, 589865, 40, 0, 589866, 40, 0, 589867, 40, 0, 589868, 40, 0, 655369, 40, 0, 655370, 40, 0, 655371, 40, 0, 655372, 40, 0, 655373, 40, 0, 655374, 40, 0, 655375, 40, 0, 655376, 40, 0, 655377, 40, 0, 655378, 40, 0, 655379, 40, 0, 655380, 40, 0, 655381, 40, 0, 655382, 40, 0, 655383, 40, 0, 655384, 40, 0, 655385, 40, 0, 655386, 40, 0, 655387, 40, 0, 655388, 40, 0, 655389, 40, 0, 655390, 40, 0, 655391, 40, 0, 655392, 40, 0, 655393, 40, 0, 655394, 40, 0, 655395, 40, 0, 655396, 40, 0, 655397, 40, 0, 655398, 40, 0, 655399, 40, 0, 655400, 40, 0, 655401, 40, 0, 655402, 40, 0, 655403, 40, 0, 655404, 40, 0 )
+_sections_unfolded = [ "Cell" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Stair" type="TextureRect" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1.0
+margin_right = 331.0
+margin_bottom = 310.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Rug" type="TextureRect" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 408.0
+margin_top = 229.0
+margin_right = 710.0
+margin_bottom = 405.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 0
+
+[node name="StairRailing" type="TextureRect" parent="." index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 326.0
+margin_top = 24.0
+margin_right = 531.0
+margin_bottom = 81.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 0
+
+[node name="StairRailing2" type="TextureRect" parent="." index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 520.0
+margin_top = 24.0
+margin_right = 725.0
+margin_bottom = 81.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 0
+
+[node name="BookShelf" type="Sprite" parent="." index="6"]
+
+position = Vector2( 635.342, 152.732 )
+texture = ExtResource( 6 )
+
+[node name="Couch" parent="." index="7" instance=ExtResource( 7 )]
+
+position = Vector2( 578.315, 312.209 )
+rotation = 0.153801
+scale = Vector2( 0.83557, 0.755841 )
+
+[node name="CouchLHS" parent="." index="8" instance=ExtResource( 8 )]
+
+position = Vector2( 552.139, 321.383 )
+rotation = -0.101718
+scale = Vector2( 0.759492, 0.705598 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CouchTableNormal" type="StaticBody2D" parent="." index="9"]
+
+editor/display_folded = true
+position = Vector2( 580.134, 318.217 )
+scale = Vector2( 0.992631, 0.826174 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="Sprite" type="Sprite" parent="CouchTableNormal" index="0"]
+
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CouchTableNormal" index="1"]
+
+position = Vector2( -3.79654, 0 )
+scale = Vector2( 1.10814, 1 )
+shape = SubResource( 1 )
+
+[node name="Table" type="StaticBody2D" parent="." index="10"]
+
+editor/display_folded = true
+position = Vector2( 686.061, 234.652 )
+scale = Vector2( 0.643553, 0.36147 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="Sprite" type="Sprite" parent="Table" index="0"]
+
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Table" index="1"]
+
+position = Vector2( -3.79654, 0 )
+scale = Vector2( 1.10814, 1 )
+shape = SubResource( 1 )
+
+[node name="Vase" type="Sprite" parent="." index="11"]
+
+position = Vector2( 576.153, 277.198 )
+scale = Vector2( 0.361557, 0.353088 )
+texture = ExtResource( 10 )
+
+[node name="KeyCabinet" type="Sprite" parent="." index="12"]
+
+position = Vector2( 308.36, 136.339 )
+scale = Vector2( 1.14047, 1.0506 )
+texture = ExtResource( 11 )
+
+[node name="Clock" type="Sprite" parent="." index="13"]
+
+position = Vector2( 176.823, 116.248 )
+scale = Vector2( 0.596049, 0.635975 )
+texture = ExtResource( 12 )
+
+[node name="FrontDesk" type="Sprite" parent="." index="14"]
+
+position = Vector2( 272.873, 187.503 )
+texture = ExtResource( 13 )
+
+[node name="Painting" type="Sprite" parent="." index="15"]
+
+position = Vector2( 508.404, 139.576 )
+scale = Vector2( 0.76422, 0.752923 )
+texture = ExtResource( 14 )
+
+[node name="Chadelier" type="StaticBody2D" parent="." index="16"]
+
+editor/display_folded = true
+position = Vector2( 392.844, 57.7048 )
+scale = Vector2( 0.67405, 0.517689 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="Sprite" type="Sprite" parent="Chadelier" index="0"]
+
+position = Vector2( 20.804, -6.6003 )
+scale = Vector2( 0.306043, 0.336648 )
+texture = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chadelier" index="1"]
+
+position = Vector2( 21.4209, 22.1986 )
+scale = Vector2( 1.44238, 1 )
+shape = SubResource( 1 )
+
+[node name="Vase2" type="Sprite" parent="." index="17"]
+
+position = Vector2( 682.217, 207.719 )
+scale = Vector2( 0.239125, 0.222023 )
+texture = ExtResource( 16 )
+
+
+[editable path="Couch"]
