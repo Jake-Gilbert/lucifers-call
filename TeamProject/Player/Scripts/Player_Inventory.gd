@@ -18,6 +18,7 @@ var draggedItemSlot = -1
 onready var initial_mousePos = Vector2()
 onready var cursor_insideItemList = false
 
+#Initialises variables and loads methods
 func _ready():
 	# Initialize Item List
 	itemList.set_max_columns(9)
@@ -32,11 +33,12 @@ func _ready():
 	set_process(false)
 	set_process_input(true)
 
+#Activates when the player uses the mouse to drag.
 func _process(delta):
 	if (isDraggingItem):
 		draggedItem.global_position = get_viewport().get_mouse_position()
 
-
+#Function for different mouse events
 func _input(event):
 	if (event is InputEventMouseButton):
 		if (event.is_action_pressed("mouse_leftbtn")):
@@ -60,14 +62,14 @@ func _input(event):
 		else:
 			activeItemSlot = -1
 
-
+#Function that loads items where necessary
 func load_items():
 	itemList.clear()
 	for slot in range(0, Global_Player.inventory_maxSlots):
 		itemList.add_item("", null, false)
 		update_slot(slot)
 
-
+#Function that updates an individual inventory slot
 func update_slot(slot):
 	var inventoryItem = Global_Player.inventory[String(slot)]
 	var itemMetaData = Global_ItemDatabase.get_item(inventoryItem["id"])

@@ -8,6 +8,8 @@
 [ext_resource path="res://Assets/Scenes/Toilet.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Scenes/Window.tscn" type="PackedScene" id=7]
 
+
+
 [node name="L1R1Bathroom" type="Node2D"]
 
 [node name="BathroomFloor" type="TextureRect" parent="." index="0"]

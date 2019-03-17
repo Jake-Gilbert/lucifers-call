@@ -6,11 +6,11 @@ func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	pass
-
+#Saves the current scene to be loaded back later
 func save_current_scene():
 	packed_scene.pack(get_tree().get_current_scene())
 	ResourceSaver.save("res://my_scene.tscn", packed_scene)
-
+#Loads using the saved scene function
 func reload_last_saved():
 	var packed_scene = load("res://my_scene.tscn")
 	

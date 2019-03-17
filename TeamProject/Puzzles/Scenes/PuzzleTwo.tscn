@@ -3,10 +3,11 @@
 [ext_resource path="res://UI/Images/Project - Drawing 1.jpeg" type="Texture" id=1]
 [ext_resource path="res://Assets/WallTiles/TileSets/WallTileSetNewestEdition.tres" type="TileSet" id=2]
 [ext_resource path="res://Player/Scenes/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Levels/Scenes/LevelComplete.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Levels/Scenes/LevelOne/LevelComplete.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Fonts/pixelFont.tres" type="DynamicFont" id=5]
 [ext_resource path="res://Fonts/bigFont.tres" type="DynamicFont" id=6]
 [ext_resource path="res://Puzzles/Scripts/Timer.gd" type="Script" id=7]
+
 
 [node name="PuzzleTwo" type="Node" index="0"]
 

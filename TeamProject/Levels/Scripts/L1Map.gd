@@ -16,7 +16,7 @@ func _ready():
 	# Initialization here
 	menuPopup = get_node("Camera2D/PopupMenu")
 	pass
-
+#Function that activates when the player enters one of the 4 rooms in hallway
 func _on_AreaA_body_entered(body):
 	if body.name == "Player":
 		menuPopup.show()
@@ -24,13 +24,13 @@ func _on_AreaA_body_entered(body):
 		$Player/animChar.stop(true)
 		roomA = true
 	pass # replace with function body
-
+#Makes the room not visisble when exited
 func _on_AreaA_body_exited(body):
 	if body.name == "Player":
 		roomA = false
 	pass # replace with function body
 
-
+#Function that enters whenever player tries to enter one of the 4 rooms in hallway
 func _on_AreaB_body_entered(body):
 	if body.name == "Player":
 		menuPopup.show()
@@ -39,13 +39,14 @@ func _on_AreaB_body_entered(body):
 		roomB = true
 	pass # replace with function body
 
-
+#Makes the room not visisble when exited
 func _on_AreaB_body_exited(body):
 	if body.name == "Player":
 		roomB = false
 	pass # replace with function body
 
 
+#Function that enters whenever player tries to enter one of the 4 rooms in hallway
 func _on_AreaC_body_entered(body):
 	if body.name == "Player":
 		menuPopup.show()
@@ -54,13 +55,13 @@ func _on_AreaC_body_entered(body):
 		roomC = true
 	pass # replace with function body
 
-
+#Makes the room not visisble when exited
 func _on_AreaC_body_exited(body):
 	if body.name == "Player":
 		roomC = false
 	pass # replace with function body
 
-
+#Function that enters whenever player tries to enter one of the 4 rooms in hallway
 func _on_AreaD_body_entered(body):
 	if body.name == "Player":
 		menuPopup.show()
@@ -69,7 +70,7 @@ func _on_AreaD_body_entered(body):
 		roomD = true
 	pass # replace with function body
 
-
+#Makes the room not visisble when exited
 func _on_AreaD_body_exited(body):
 	if body.name == "Player":
 		roomD = false
