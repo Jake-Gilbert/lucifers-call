@@ -5,7 +5,6 @@ onready var itemList = get_node("Panel/ItemList")
 onready var itemMenu = get_node("Panel/WindowDialog_ItemMenu")
 onready var itemMenu_TextureFrame_Icon = get_node("Panel/WindowDialog_ItemMenu/ItemMenu_TextureFrame_Icon")
 onready var itemMenu_RichTextLabel_ItemInfo = get_node("Panel/WindowDialog_ItemMenu/ItemMenu_RichTextLabel_ItemInfo")
-onready var itemMenu_Button_DropItem = get_node("Panel/WindowDialog_ItemMenu/ItemMenu_Button_DropItem")
 
 var activeItemSlot = -1
 var dropItemSlot = -1
@@ -35,7 +34,6 @@ func _ready():
 func _process(delta):
 	if (isDraggingItem):
 		draggedItem.global_position = get_viewport().get_mouse_position()
-
 
 func _input(event):
 	if (event is InputEventMouseButton):
@@ -106,14 +104,6 @@ func _on_ItemList_item_rmb_selected(index, atpos):
 	itemMenu_RichTextLabel_ItemInfo.set_bbcode(strItemInfo)
 	activeItemSlot = index
 	itemMenu.popup()
-	
-#func _on_ItemMenu_Button_DropItem_pressed():
-#	var newAmount = Global_Player.inventory_removeItem(dropItemSlot)
-#	if (newAmount < 1):
-#		itemMenu.hide()
-#	else:
-#		itemMenu_Button_DropItem.set_text("(" + String(newAmount) + ") Drop")
-#	update_slot(dropItemSlot)
 
 func begin_drag_item(index):
 	if (isDraggingItem):
