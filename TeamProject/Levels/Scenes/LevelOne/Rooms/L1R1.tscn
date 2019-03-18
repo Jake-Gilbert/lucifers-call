@@ -44,7 +44,7 @@ func _physics_process(delta):
 			get_parent().get_parent().get_node(\"Player\").set_physics_process(true)
 "
 
-[node name="L1R1" type="Node2D" index="0"]
+[node name="L1R1" type="Node2D"]
 
 [node name="L1Floor" type="TextureRect" parent="." index="0"]
 

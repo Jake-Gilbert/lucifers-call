@@ -1,3 +1,5 @@
+#Sets the inventory's GUI and controls its functions
+#Created by Hannah
 extends Node
 
 onready var itemList = get_node("Panel/ItemList")
@@ -108,13 +110,6 @@ func _on_ItemList_item_rmb_selected(index, atpos):
 	activeItemSlot = index
 	itemMenu.popup()
 	
-#func _on_ItemMenu_Button_DropItem_pressed():
-#	var newAmount = Global_Player.inventory_removeItem(dropItemSlot)
-#	if (newAmount < 1):
-#		itemMenu.hide()
-#	else:
-#		itemMenu_Button_DropItem.set_text("(" + String(newAmount) + ") Drop")
-#	update_slot(dropItemSlot)
 
 #Function to start dragging an item.
 func begin_drag_item(index):

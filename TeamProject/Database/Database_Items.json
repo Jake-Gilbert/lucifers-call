@@ -18,10 +18,34 @@
 	},
 	
 	"2": {
-		"name": "Unidentified Liquid",
-		"icon": "res://Database/Item_Icons/Health Potion.png",
-		"type": "consumable",
-		"stackable": true,
-		"description": "I don't know what it is but it makes me feel better"
+		"name": "Puzzle piece 1",
+		"icon": "res://Database/Item_Icons/Jigsaw piece1.png",
+		"type": "Important Item",
+		"stackable": false,
+		"description": "I found this puzzle piece on the floor when I finished the maze."
+	},
+	
+	"3": {
+		"name": "Puzzle piece 2",
+		"icon": "res://Database/Item_Icons/Jigsaw piece2.png",
+		"type": "Important Item",
+		"stackable": false,
+		"description": "It's a puzzle piece for the door"
+	},
+	
+	"4": {
+		"name": "Puzzle piece 3",
+		"icon": "res://Database/Item_Icons/Jigsaw piece3.png",
+		"type": "Important Item",
+		"stackable": false,
+		"description": "It's a puzzle piece for the door"
+	},
+	
+	"5": {
+		"name": "Puzzle piece 4",
+		"icon": "res://Database/Item_Icons/Jigsaw piece4.png",
+		"type": "Important Item",
+		"stackable": false,
+		"description": "It's the last puzzle piece for the door"
 	},
 }

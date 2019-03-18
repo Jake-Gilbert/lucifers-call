@@ -1,0 +1,29 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Jigsaw piece3.png-a09af6eeb26304cd30fe9284de4ed6ab.stex"
+
+[deps]
+
+source_file="res://Database/Item_Icons/Jigsaw piece3.png"
+dest_files=[ "res://.import/Jigsaw piece3.png-a09af6eeb26304cd30fe9284de4ed6ab.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
