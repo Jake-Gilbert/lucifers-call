@@ -29,6 +29,7 @@ func _physics_process(delta):
 	shoot()
 	reload()
 	spritedir_loop()
+	inventory()
 	
 	
 	if movedir != Vector2(0,0):
@@ -72,6 +73,7 @@ func inventory():
 	if (Input.is_action_pressed("ui_inventory")):
 		Global_SceneSwitch.save_current_scene()
 		get_tree().change_scene("res://inventoryUI/Scenes/Scene_PlayerInventory.tscn")
+
 #Function that reloads gun when a key is pressed
 func reload():
 	if (Input.is_action_just_pressed("ui_reload")):
