@@ -18,4 +18,5 @@ func _on_ResumeBtn_pressed():
 	get_tree().paused = false
 
 func _on_Inventory_Button_pressed():
+	Global_SceneSwitch.save_current_scene()
 	get_tree().change_scene("res://inventoryUI/Scenes/Scene_PlayerInventory.tscn")
