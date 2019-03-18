@@ -34,7 +34,6 @@ func _physics_process(delta):
 	for body in bodies:
 		if body.name == "enemy":
 			body.lose_health()
-			print ("hit")
 			queue_free()
 	velocity.x = SPEED * delta * directionX
 	velocity.y = SPEED * delta * directionY
