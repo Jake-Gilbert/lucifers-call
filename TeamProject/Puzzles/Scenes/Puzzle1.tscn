@@ -118,7 +118,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 [node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path1" index="0"]
 
 position = Vector2( 550.714, 51.9934 )
-rotation = 0.00527807
+rotation = 0.00527637
 scale = Vector2( 0.3, 0.3 )
 offset = 500.0
 h_offset = 0.0
@@ -181,7 +181,7 @@ curve = SubResource( 4 )
 [node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path3" index="0"]
 
 position = Vector2( 273.277, 161.389 )
-rotation = 0.00470906
+rotation = 0.00470902
 scale = Vector2( 0.3, 0.3 )
 offset = 0.0
 h_offset = 0.0
