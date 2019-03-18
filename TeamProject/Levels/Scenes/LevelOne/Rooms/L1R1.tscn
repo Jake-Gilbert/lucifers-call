@@ -46,6 +46,8 @@ func _physics_process(delta):
 
 [node name="L1R1" type="Node2D"]
 
+editor/display_folded = true
+
 [node name="L1Floor" type="TextureRect" parent="." index="0"]
 
 anchor_left = 0.0

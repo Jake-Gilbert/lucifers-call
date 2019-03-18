@@ -29,6 +29,7 @@ func _physics_process(delta):
 	shoot()
 	reload()
 	spritedir_loop()
+	inventory()
 	
 	
 	if movedir != Vector2(0,0):

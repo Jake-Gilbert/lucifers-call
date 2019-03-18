@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Images/Assets_room_floor_wood.png" type="Texture" id=1]
 [ext_resource path="res://Assets/WallTiles/TileSets/WallTileSetNewestEdition.tres" type="TileSet" id=2]
 [ext_resource path="res://Assets/Images/Door.png" type="Texture" id=3]
-[ext_resource path="res://Levels/Scenes/LevelComplete.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/Images/DoorBlock.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Images/DoorBlock.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -76,17 +75,10 @@ bounce = 0.0
 
 [node name="Sprite" type="Sprite" parent="DoorL1A" index="0"]
 
-editor/display_folded = true
 position = Vector2( 919.445, 42.8021 )
 scale = Vector2( 0.538587, 0.6 )
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
-
-[node name="PuzzleTwo" parent="DoorL1A/Sprite" index="0" instance=ExtResource( 4 )]
-
-position = Vector2( 120.949, 42.0905 )
-scale = Vector2( 2.13484, 0.947134 )
-changeLevels = "res://Puzzles/Scenes/PuzzleTwo.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorL1A" index="1"]
 
@@ -97,6 +89,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="AreaA" type="Area2D" parent="DoorL1A" index="2"]
 
+editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -170,7 +163,7 @@ bounce = 0.0
 position = Vector2( 1032.11, 422.986 )
 rotation = 1.5708
 scale = Vector2( 1, 0.75 )
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorL1C" index="1"]
@@ -200,6 +193,7 @@ shape = SubResource( 2 )
 
 [node name="DoorL1D" type="StaticBody2D" parent="." index="5"]
 
+editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -213,7 +207,7 @@ bounce = 0.0
 position = Vector2( 1240.11, 422.991 )
 rotation = 1.5708
 scale = Vector2( 1, 0.75 )
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorL1D" index="1"]

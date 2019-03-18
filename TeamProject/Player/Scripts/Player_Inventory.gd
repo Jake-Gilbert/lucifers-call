@@ -1,3 +1,5 @@
+#Sets the inventory's GUI and controls its functions
+#Created by Hannah
 extends Node
 
 onready var itemList = get_node("Panel/ItemList")
@@ -35,12 +37,13 @@ func _process(delta):
 	if (isDraggingItem):
 		draggedItem.global_position = get_viewport().get_mouse_position()
 
+
 func _input(event):
 	if (event is InputEventMouseButton):
-		if (event.is_action_pressed("mouse_leftbtn")):
+		if (event.is_action_pressed("leftMouse")):
 			mouseButtonReleased = false
 			initial_mousePos = get_viewport().get_mouse_position()
-		if (event.is_action_released("mouse_leftbtn")):
+		if (event.is_action_released("leftMouse")):
 			move_item()
 			end_drag_item()
 
@@ -154,4 +157,5 @@ func _on_ItemList_mouse_exited():
 
 
 func _on_Close_Button_pressed():
-	get_tree().change_scene("res://Levels/Scenes/LevelOneWithDoor.tscn")
+	get_node("Panel").hide()
+	Global_SceneSwitch.reload_last_saved()
