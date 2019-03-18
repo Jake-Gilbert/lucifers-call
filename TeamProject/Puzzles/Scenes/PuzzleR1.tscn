@@ -488,6 +488,7 @@ shape = SubResource( 8 )
 
 [node name="Goal" type="Sprite" parent="." index="4"]
 
+editor/display_folded = true
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 365.25, 408 )
 rotation = -1.5708
