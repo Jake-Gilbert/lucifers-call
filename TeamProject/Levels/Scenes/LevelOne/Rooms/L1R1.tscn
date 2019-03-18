@@ -1,0 +1,227 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Assets/Images/Assets_room_floor_wood.png" type="Texture" id=1]
+[ext_resource path="res://Assets/WallTiles/TileSets/WallTileSetNewestEdition.tres" type="TileSet" id=2]
+[ext_resource path="res://Assets/Scenes/Key.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Scripts/Key.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Scenes/Wardrobe.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Scripts/Wardrobe.gd" type="Script" id=6]
+[ext_resource path="res://Fonts/pixelFont.tres" type="DynamicFont" id=7]
+[ext_resource path="res://Assets/Scenes/OpenWardrobe.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Scenes/Chair.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/Scenes/Bed.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/Scripts/WardrobeArea.gd" type="Script" id=11]
+[ext_resource path="res://Assets/Scenes/Desk.tscn" type="PackedScene" id=12]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 45, 30 )
+
+[sub_resource type="GDScript" id=2]
+
+script/source = "extends Area2D
+
+var diaShowing = false
+
+func _ready():
+	set_physics_process(true)
+	pass
+	
+func _physics_process(delta):
+	var bodies = get_overlapping_bodies()
+	for body in bodies:
+		if Input.is_action_just_pressed(\"ui_select\") && diaShowing == false && body.get_collision_mask_bit(1):
+			get_parent().get_parent().get_node(\"Camera2D/NinePatchRect/text\").set_text(get_node(\"Label\").text)
+			get_parent().get_parent().get_node(\"Camera2D/NinePatchRect\").show()
+			get_parent().get_parent().get_node(\"Camera2D/NinePatchRect\").show()
+			diaShowing = true
+			get_parent().get_parent().get_node(\"Player\").set_physics_process(false)
+		elif Input.is_action_just_pressed(\"ui_select\") && diaShowing == true && body.get_collision_mask_bit(1):
+			get_parent().get_parent().get_node(\"Camera2D/NinePatchRect\").hide()
+			get_parent().get_parent().get_node(\"Camera2D/NinePatchRect/text\").clear()
+			diaShowing = false
+			get_parent().get_parent().get_node(\"Player\").set_physics_process(true)
+"
+
+[node name="L1R1" type="Node2D"]
+
+editor/display_folded = true
+
+[node name="L1Floor" type="TextureRect" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 720.0
+margin_bottom = 432.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="TileMap" type="TileMap" parent="." index="1"]
+
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 0, 13, 0, 1, 13, 0, 2, 13, 0, 3, 13, 0, 4, 13, 0, 5, 13, 0, 6, 13, 0, 7, 13, 0, 8, 13, 0, 9, 13, 0, 10, 13, 0, 11, 13, 0, 12, 13, 0, 13, 13, 0, 14, 13, 0, 15, 13, 0, 16, 13, 0, 17, 13, 0, 18, 13, 0, 19, 13, 0, 20, 13, 0, 21, 13, 0, 22, 13, 0, 23, 13, 0, 24, 13, 0, 25, 13, 0, 26, 13, 0, 27, 13, 0, 28, 13, 0, 29, 13, 0, 30, 13, 0, 31, 13, 0, 32, 13, 0, 33, 13, 0, 34, 23, 0, 39, 0, 0, 40, 13, 0, 41, 13, 0, 42, 13, 0, 43, 13, 0, 44, 13, 0, 65536, 13, 0, 65537, 13, 0, 65538, 13, 0, 65539, 13, 0, 65540, 13, 0, 65541, 13, 0, 65542, 13, 0, 65543, 13, 0, 65544, 13, 0, 65545, 13, 0, 65546, 13, 0, 65547, 13, 0, 65548, 13, 0, 65549, 13, 0, 65550, 13, 0, 65551, 13, 0, 65552, 13, 0, 65553, 13, 0, 65554, 13, 0, 65555, 13, 0, 65556, 13, 0, 65557, 13, 0, 65558, 13, 0, 65559, 13, 0, 65560, 13, 0, 65561, 13, 0, 65562, 13, 0, 65563, 13, 0, 65564, 13, 0, 65565, 13, 0, 65566, 13, 0, 65567, 13, 0, 65568, 13, 0, 65569, 13, 0, 65570, 23, 0, 65575, 0, 0, 65576, 13, 0, 65577, 13, 0, 65578, 52, 0, 65579, 13, 0, 65580, 13, 0, 131072, 13, 0, 131073, 13, 0, 131074, 6, 0, 131075, 11, 0, 131076, 11, 0, 131077, 11, 0, 131078, 11, 0, 131079, 11, 0, 131080, 11, 0, 131081, 11, 0, 131082, 11, 0, 131083, 11, 0, 131084, 11, 0, 131085, 11, 0, 131086, 11, 0, 131087, 11, 0, 131088, 11, 0, 131089, 11, 0, 131090, 11, 0, 131091, 11, 0, 131092, 11, 0, 131093, 11, 0, 131094, 11, 0, 131095, 11, 0, 131096, 11, 0, 131097, 11, 0, 131098, 11, 0, 131099, 11, 0, 131100, 11, 0, 131101, 11, 0, 131102, 11, 0, 131103, 11, 0, 131104, 11, 0, 131105, 11, 0, 131106, 22, 0, 131111, 17, 0, 131112, 11, 0, 131113, 1, 0, 131114, 52, 0, 131115, 13, 0, 131116, 13, 0, 196608, 13, 0, 196609, 13, 0, 196610, 23, 0, 196611, 40, 0, 196612, 40, 0, 196613, 40, 0, 196614, 40, 0, 196615, 40, 0, 196616, 40, 0, 196617, 40, 0, 196618, 40, 0, 196619, 40, 0, 196620, 40, 0, 196621, 40, 0, 196622, 40, 0, 196623, 40, 0, 196624, 40, 0, 196625, 40, 0, 196626, 40, 0, 196627, 40, 0, 196628, 40, 0, 196629, 40, 0, 196630, 40, 0, 196631, 40, 0, 196632, 40, 0, 196633, 40, 0, 196634, 40, 0, 196635, 40, 0, 196636, 40, 0, 196637, 40, 0, 196638, 40, 0, 196639, 40, 0, 196640, 40, 0, 196641, 40, 0, 196642, 40, 0, 196647, 40, 0, 196648, 40, 0, 196649, 0, 0, 196650, 52, 0, 196651, 13, 0, 196652, 13, 0, 262144, 13, 0, 262145, 13, 0, 262146, 23, 0, 262147, 37, 0, 262148, 37, 0, 262149, 37, 0, 262150, 37, 0, 262151, 37, 0, 262152, 37, 0, 262153, 37, 0, 262154, 37, 0, 262155, 37, 0, 262156, 37, 0, 262157, 37, 0, 262158, 37, 0, 262159, 37, 0, 262160, 37, 0, 262161, 37, 0, 262162, 37, 0, 262163, 37, 0, 262164, 37, 0, 262165, 37, 0, 262166, 37, 0, 262167, 37, 0, 262168, 37, 0, 262169, 37, 0, 262170, 37, 0, 262171, 37, 0, 262172, 37, 0, 262173, 37, 0, 262174, 37, 0, 262175, 37, 0, 262176, 37, 0, 262177, 37, 0, 262178, 37, 0, 262183, 37, 0, 262184, 37, 0, 262185, 0, 0, 262186, 52, 0, 262187, 13, 0, 262188, 13, 0, 327680, 13, 0, 327681, 13, 0, 327682, 23, 0, 327683, 37, 0, 327684, 37, 0, 327685, 37, 0, 327686, 37, 0, 327687, 37, 0, 327688, 37, 0, 327689, 37, 0, 327690, 37, 0, 327691, 37, 0, 327692, 37, 0, 327693, 37, 0, 327694, 37, 0, 327695, 37, 0, 327696, 37, 0, 327697, 37, 0, 327698, 37, 0, 327699, 37, 0, 327700, 37, 0, 327701, 37, 0, 327702, 37, 0, 327703, 37, 0, 327704, 37, 0, 327705, 37, 0, 327706, 37, 0, 327707, 37, 0, 327708, 37, 0, 327709, 37, 0, 327710, 37, 0, 327711, 37, 0, 327712, 37, 0, 327713, 37, 0, 327714, 37, 0, 327719, 37, 0, 327720, 37, 0, 327721, 0, 0, 327722, 52, 0, 327723, 13, 0, 327724, 13, 0, 393216, 13, 0, 393217, 13, 0, 393218, 23, 0, 393219, 37, 0, 393220, 37, 0, 393221, 37, 0, 393222, 37, 0, 393223, 37, 0, 393224, 37, 0, 393225, 37, 0, 393226, 37, 0, 393227, 37, 0, 393228, 37, 0, 393229, 37, 0, 393230, 37, 0, 393231, 37, 0, 393232, 37, 0, 393233, 37, 0, 393234, 37, 0, 393235, 37, 0, 393236, 37, 0, 393237, 37, 0, 393238, 37, 0, 393239, 37, 0, 393240, 37, 0, 393241, 37, 0, 393242, 37, 0, 393243, 37, 0, 393244, 37, 0, 393245, 37, 0, 393246, 37, 0, 393247, 37, 0, 393248, 37, 0, 393249, 37, 0, 393250, 37, 0, 393255, 37, 0, 393256, 37, 0, 393257, 0, 0, 393258, 52, 0, 393259, 13, 0, 393260, 13, 0, 458752, 13, 0, 458753, 13, 0, 458754, 23, 0, 458755, 37, 0, 458756, 37, 0, 458757, 37, 0, 458758, 37, 0, 458759, 37, 0, 458760, 37, 0, 458761, 37, 0, 458762, 37, 0, 458763, 37, 0, 458764, 37, 0, 458765, 37, 0, 458766, 37, 0, 458767, 37, 0, 458768, 37, 0, 458769, 37, 0, 458770, 37, 0, 458771, 37, 0, 458772, 37, 0, 458773, 37, 0, 458774, 37, 0, 458775, 37, 0, 458776, 37, 0, 458777, 37, 0, 458778, 37, 0, 458779, 37, 0, 458780, 37, 0, 458781, 37, 0, 458782, 37, 0, 458783, 37, 0, 458784, 37, 0, 458785, 37, 0, 458786, 37, 0, 458791, 37, 0, 458792, 37, 0, 458793, 0, 0, 458794, 52, 0, 458795, 13, 0, 458796, 13, 0, 524288, 13, 0, 524289, 13, 0, 524290, 23, 0, 524329, 0, 0, 524330, 52, 0, 524331, 13, 0, 524332, 13, 0, 589824, 13, 0, 589825, 13, 0, 589826, 23, 0, 589865, 0, 0, 589866, 52, 0, 589867, 13, 0, 589868, 13, 0, 655360, 13, 0, 655361, 13, 0, 655362, 23, 0, 655401, 0, 0, 655402, 52, 0, 655403, 13, 0, 655404, 13, 0, 720896, 13, 0, 720897, 13, 0, 720898, 23, 0, 720937, 0, 0, 720938, 52, 0, 720939, 13, 0, 720940, 13, 0, 786432, 13, 0, 786433, 13, 0, 786434, 23, 0, 786473, 0, 0, 786474, 52, 0, 786475, 13, 0, 786476, 13, 0, 851968, 13, 0, 851969, 13, 0, 851970, 23, 0, 852009, 0, 0, 852010, 52, 0, 852011, 13, 0, 852012, 13, 0, 917504, 13, 0, 917505, 13, 0, 917506, 23, 0, 917545, 0, 0, 917546, 52, 0, 917547, 13, 0, 917548, 13, 0, 983040, 13, 0, 983041, 13, 0, 983042, 23, 0, 983081, 17, 0, 983082, 11, 0, 983083, 11, 0, 983084, 11, 0, 1048576, 13, 0, 1048577, 13, 0, 1048578, 23, 0, 1048617, 40, 0, 1048618, 40, 0, 1048619, 40, 0, 1048620, 40, 0, 1114112, 13, 0, 1114113, 13, 0, 1114114, 23, 0, 1114153, 37, 0, 1114154, 37, 0, 1114155, 37, 0, 1114156, 37, 0, 1179648, 13, 0, 1179649, 13, 0, 1179650, 23, 0, 1179689, 37, 0, 1179690, 37, 0, 1179691, 37, 0, 1179692, 37, 0, 1245184, 13, 0, 1245185, 13, 0, 1245186, 23, 0, 1245225, 37, 0, 1245226, 37, 0, 1245227, 37, 0, 1245228, 37, 0, 1310720, 13, 0, 1310721, 13, 0, 1310722, 23, 0, 1310761, 37, 0, 1310762, 37, 0, 1310763, 37, 0, 1310764, 37, 0, 1376256, 13, 0, 1376257, 13, 0, 1376258, 23, 0, 1441792, 13, 0, 1441793, 13, 0, 1441794, 23, 0, 1507328, 13, 0, 1507329, 13, 0, 1507330, 23, 0, 1572864, 13, 0, 1572865, 13, 0, 1572866, 4, 0, 1572867, 3, 0, 1572868, 3, 0, 1572869, 3, 0, 1572870, 3, 0, 1572871, 3, 0, 1572872, 3, 0, 1572873, 3, 0, 1572874, 3, 0, 1572875, 3, 0, 1572876, 3, 0, 1572877, 3, 0, 1572878, 3, 0, 1572879, 3, 0, 1572880, 3, 0, 1572881, 3, 0, 1572882, 3, 0, 1572883, 3, 0, 1572884, 3, 0, 1572885, 3, 0, 1572886, 3, 0, 1572887, 3, 0, 1572888, 3, 0, 1572889, 3, 0, 1572890, 3, 0, 1572891, 3, 0, 1572892, 3, 0, 1572893, 3, 0, 1572894, 3, 0, 1572895, 3, 0, 1572896, 3, 0, 1572897, 3, 0, 1572898, 3, 0, 1572899, 3, 0, 1572900, 3, 0, 1572901, 3, 0, 1572902, 3, 0, 1572903, 3, 0, 1572904, 3, 0, 1572905, 3, 0, 1572906, 3, 0, 1572907, 3, 0, 1572908, 3, 0, 1638400, 13, 0, 1638401, 13, 0, 1638402, 13, 0, 1638403, 13, 0, 1638404, 13, 0, 1638405, 13, 0, 1638406, 13, 0, 1638407, 13, 0, 1638408, 13, 0, 1638409, 13, 0, 1638410, 13, 0, 1638411, 13, 0, 1638412, 13, 0, 1638413, 13, 0, 1638414, 13, 0, 1638415, 13, 0, 1638416, 13, 0, 1638417, 13, 0, 1638418, 13, 0, 1638419, 13, 0, 1638420, 13, 0, 1638421, 13, 0, 1638422, 13, 0, 1638423, 13, 0, 1638424, 13, 0, 1638425, 13, 0, 1638426, 13, 0, 1638427, 13, 0, 1638428, 13, 0, 1638429, 13, 0, 1638430, 13, 0, 1638431, 13, 0, 1638432, 13, 0, 1638433, 13, 0, 1638434, 13, 0, 1638435, 13, 0, 1638436, 13, 0, 1638437, 13, 0, 1638438, 13, 0, 1638439, 13, 0, 1638440, 13, 0, 1638441, 13, 0, 1638442, 13, 0, 1638443, 13, 0, 1638444, 13, 0, 1703936, 13, 0, 1703937, 13, 0, 1703938, 13, 0, 1703939, 13, 0, 1703940, 13, 0, 1703941, 13, 0, 1703942, 13, 0, 1703943, 13, 0, 1703944, 13, 0, 1703945, 13, 0, 1703946, 13, 0, 1703947, 13, 0, 1703948, 13, 0, 1703949, 13, 0, 1703950, 13, 0, 1703951, 13, 0, 1703952, 13, 0, 1703953, 13, 0, 1703954, 13, 0, 1703955, 13, 0, 1703956, 13, 0, 1703957, 13, 0, 1703958, 13, 0, 1703959, 13, 0, 1703960, 13, 0, 1703961, 13, 0, 1703962, 13, 0, 1703963, 13, 0, 1703964, 13, 0, 1703965, 13, 0, 1703966, 13, 0, 1703967, 13, 0, 1703968, 13, 0, 1703969, 13, 0, 1703970, 13, 0, 1703971, 13, 0, 1703972, 13, 0, 1703973, 13, 0, 1703974, 13, 0, 1703975, 13, 0, 1703976, 13, 0, 1703977, 13, 0, 1703978, 13, 0, 1703979, 13, 0, 1703980, 13, 0 )
+_sections_unfolded = [ "Cell" ]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Key" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 70.8723, 154.666 )
+rotation = -0.365612
+scale = Vector2( 1.4375, 1.4375 )
+script = ExtResource( 4 )
+
+[node name="Wardrobe" parent="." index="3" instance=ExtResource( 5 )]
+
+editor/display_folded = true
+position = Vector2( 464, 114.653 )
+script = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Label" type="Label" parent="Wardrobe" index="2"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -384.0
+margin_top = 329.0
+margin_right = 10.0
+margin_bottom = 351.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 7 )
+text = "Oh, what is in here?"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="OpenWardrobe" parent="." index="4" instance=ExtResource( 8 )]
+
+visible = false
+position = Vector2( 464, 115 )
+
+[node name="Chair" parent="." index="5" instance=ExtResource( 9 )]
+
+position = Vector2( 114.516, 318.588 )
+rotation = 0.0249141
+scale = Vector2( 1.25475, 1.15211 )
+
+[node name="Bed" parent="." index="6" instance=ExtResource( 10 )]
+
+position = Vector2( 277.281, 157.16 )
+scale = Vector2( 1.8316, 2.07016 )
+
+[node name="WardrobeArea" type="Area2D" parent="." index="7"]
+
+editor/display_folded = true
+position = Vector2( 463, 71.5 )
+scale = Vector2( 1, 0.796875 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WardrobeArea" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="WardrobeLabel" type="Label" parent="WardrobeArea" index="1"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 270.115
+margin_top = 390.17
+margin_right = 450.115
+margin_bottom = 421.17
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "This is the wardrobe.
+Look what I found, a hairpin."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Desk" parent="." index="8" instance=ExtResource( 12 )]
+
+editor/display_folded = true
+position = Vector2( 140.026, 348.973 )
+scale = Vector2( 2.82032, 0.986663 )
+collision_layer = 8
+collision_mask = 3
+script = SubResource( 2 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="Label" type="Label" parent="Desk" index="2"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 14.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "There's nothing here..."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[connection signal="body_entered" from="WardrobeArea" to="WardrobeArea" method="_on_WardrobeArea_body_entered"]
+
+[connection signal="body_exited" from="WardrobeArea" to="WardrobeArea" method="_on_WardrobeArea_body_exited"]
+
+

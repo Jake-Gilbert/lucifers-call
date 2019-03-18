@@ -5,7 +5,7 @@
 extends Panel
 
 func _ready():
-	get_node("HBoxContainer/PauseBtn").connect("pressed", self, "_on_PauseBtn_pressed")
+	get_node("PauseBtn").connect("pressed", self, "_on_PauseBtn_pressed")
 	pass
 
 func _on_PauseBtn_pressed():
@@ -16,4 +16,6 @@ func _on_ExitBtn_pressed():
 
 func _on_ResumeBtn_pressed():
 	get_tree().paused = false
-	pass
+
+func _on_Inventory_Button_pressed():
+	get_tree().change_scene("res://inventoryUI/Scenes/Scene_PlayerInventory.tscn")

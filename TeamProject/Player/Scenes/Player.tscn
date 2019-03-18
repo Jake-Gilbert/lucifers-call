@@ -160,10 +160,11 @@ tracks/0/keys = {
 "values": [ 25, 26, 27, 28 ]
 }
 
-[node name="Player" type="KinematicBody2D" groups=[
+[node name="Player" type="KinematicBody2D" index="0" groups=[
 "persistent",
 ]]
 
+editor/display_folded = true
 position = Vector2( 357.722, 216.323 )
 input_pickable = false
 collision_layer = 1
@@ -171,9 +172,6 @@ collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
@@ -182,7 +180,7 @@ texture = ExtResource( 2 )
 vframes = 6
 hframes = 5
 frame = 9
-_sections_unfolded = [ "Animation", "Transform" ]
+_sections_unfolded = [ "Animation", "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
@@ -210,30 +208,20 @@ anims/walkup = SubResource( 9 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
-[node name="Camera2D" type="Camera2D" parent="." index="4"]
+[node name="shootTimer" type="Timer" parent="." index="4"]
 
-anchor_mode = 1
-rotating = false
-current = true
-zoom = Vector2( 1, 1 )
-limit_left = 0
-limit_top = -330
-limit_right = 730
-limit_bottom = 432
-limit_smoothed = false
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
-smoothing_enabled = true
-smoothing_speed = 5.0
-offset_v = 0.0
-offset_h = 0.0
-drag_margin_left = 0.08
-drag_margin_top = 0.16
-drag_margin_right = 0.08
-drag_margin_bottom = 0.16
-editor_draw_screen = true
-editor_draw_limits = true
-editor_draw_drag_margin = true
-_sections_unfolded = [ "Drag Margin", "Editor", "Limit" ]
+process_mode = 1
+wait_time = 0.5
+one_shot = true
+autostart = false
+
+[node name="invinciblityTimer" type="Timer" parent="." index="5"]
+
+process_mode = 1
+wait_time = 2.0
+one_shot = true
+autostart = false
+
+[connection signal="timeout" from="invinciblityTimer" to="." method="_on_invinciblityTimer_timeout"]
 
 

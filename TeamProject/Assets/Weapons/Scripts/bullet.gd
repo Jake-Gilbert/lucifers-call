@@ -6,22 +6,44 @@ extends Area2D
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
-const SPEED = 100
+const SPEED = 600
 var velocity = Vector2()
-var direction = 1
+var directionX = 1
+var directionY = 1
 
-func set_bullet_direction(dir):
-	direction = dir
-	if dir == -1:
+func _ready():
+	set_physics_process(true)
+
+func set_bullet_direction(dirX, dirY):
+	directionX = dirX
+	directionY = dirY
+	if dirX == -1 && dirY == 0:
 		$Sprite.flip_h = true
-	else:
+		$Sprite.rotation_degrees = 0
+	elif dirX == 1 && dirY == 0:
 		$Sprite.flip_h = false
+		$Sprite.rotation_degrees = 0
+	if dirY == 1 && dirX == 0:
+		$Sprite.rotation_degrees = 90
+	elif dirY == -1 && dirX == 0:
+		$Sprite.rotation_degrees = -90
+
 	
 func _physics_process(delta):
-	velocity.x = SPEED * delta * direction
+	var bodies = get_overlapping_areas()
+	for body in bodies:
+		if body.name == "enemy":
+			body.lose_health()
+			print ("hit")
+			queue_free()
+	velocity.x = SPEED * delta * directionX
+	velocity.y = SPEED * delta * directionY
 	translate(velocity)
 
 
 func _on_VisibilityNotifier2D_screen_exited():
-	queue_free()
-	pass # replace with function body
+	self.queue_free()
+	
+
+
+

@@ -181,8 +181,6 @@ polygon = PoolVector2Array( 396.709, 404.491, 396.709, 409.905, 538.304, 410.041
 
 [node name="VBlocks" type="Node" parent="." index="2"]
 
-editor/display_folded = true
-
 [node name="BlockMain" type="KinematicBody2D" parent="VBlocks" index="0"]
 
 editor/display_folded = true
@@ -321,8 +319,6 @@ scale = Vector2( 2.94004, 3.06664 )
 shape = SubResource( 4 )
 
 [node name="HBlocks" type="Node" parent="." index="3"]
-
-editor/display_folded = true
 
 [node name="Block1H" type="KinematicBody2D" parent="HBlocks" index="0"]
 

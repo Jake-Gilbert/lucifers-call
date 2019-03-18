@@ -16,8 +16,12 @@ config/icon="res://Assets/Images/Logo.jpg"
 
 [autoload]
 
+Global_DataParser="*res://inventoryUI/Scripts/Global_DataParser.gd"
+Global_ItemDatabase="*res://inventoryUI/Scripts/Global_ItemDatabase.gd"
+Global_Player="*res://inventoryUI/Scripts/Global_Player.gd"
 Save="*res://Save.gd"
-Player="*res://Sound/AudioStreamPlayer.tscn"
+AudioPlayer="*res://Sound/AudioStreamPlayer.tscn"
+Global_SceneSwitch="*res://Global_SceneSwitch.gd"
 
 [display]
 
@@ -34,3 +38,19 @@ ui_interact=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_nam
  ]
 ui_inventory=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":73,"unicode":0,"echo":false,"script":null)
  ]
+inventoryKey=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":73,"unicode":0,"echo":false,"script":null)
+ ]
+ui_reload=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":82,"unicode":0,"echo":false,"script":null)
+ ]
+leftMouse=[ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="wall"
+2d_physics/layer_3="ennemy"
+2d_physics/layer_4="interact"
+2d_physics/layer_5="bullet"
+2d_physics/layer_6="puzzlebit1"
+2d_physics/layer_7="puzzlebit2"

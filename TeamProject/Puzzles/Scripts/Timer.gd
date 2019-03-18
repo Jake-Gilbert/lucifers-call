@@ -2,7 +2,7 @@
 extends RichTextLabel
 
 var ms = 0
-var s = 30
+var s = 60
 
 func _ready():
 	set_physics_process(true)
