@@ -14,4 +14,4 @@ func _on_Exit_pressed():
 	get_tree().quit()
 
 func _on_Retry_pressed():
-	get_tree().change_scene("res://Puzzles/Scenes/Puzzle1.tscn")
+	get_tree().change_scene("res://Puzzles/Scenes/CatalystPuzzle.tscn")

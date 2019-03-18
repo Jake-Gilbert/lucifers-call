@@ -1,7 +1,6 @@
 extends StaticBody2D
 
 export (String, FILE, "*.tscn") var openPuzzle
-var scene = preload("res://Puzzles/Scenes/Puzzle.tscn")
 
 
 func _ready():

@@ -55,3 +55,4 @@ leftMouse=[ Object(InputEventMouseButton,"resource_local_to_scene":false,"resour
 2d_physics/layer_5="bullet"
 2d_physics/layer_6="puzzlebit1"
 2d_physics/layer_7="puzzlebit2"
+2d_physics/layer_8="puzzlebit3"

@@ -146,7 +146,6 @@ __meta__ = {
 
 position = Vector2( 2.49347, -1.21412 )
 scale = Vector2( 1.5, 1.5 )
-collision_layer = 128
 
 [node name="Path2" type="Path2D" parent="Paths" index="1"]
 
@@ -177,7 +176,6 @@ __meta__ = {
 
 rotation = 1.56465
 scale = Vector2( 1.5, 1.5 )
-collision_layer = 128
 
 [node name="Path3" type="Path2D" parent="Paths" index="2"]
 
@@ -207,7 +205,6 @@ __meta__ = {
 ] instance=ExtResource( 4 )]
 
 scale = Vector2( 1.5, 1.5 )
-collision_layer = 128
 
 [node name="Path4" type="Path2D" parent="Paths" index="3"]
 
@@ -238,8 +235,6 @@ __meta__ = {
 
 rotation = -1.64071
 scale = Vector2( 1.5, 1.5 )
-collision_layer = 128
-collision_mask = 128
 
 [node name="Path5" type="Path2D" parent="Paths" index="4"]
 
@@ -264,8 +259,6 @@ lookahead = 4.0
 
 position = Vector2( -2.03841, 6.48804 )
 scale = Vector2( 0.341619, 0.361401 )
-collision_layer = 128
-collision_mask = 128
 
 [node name="Hor" type="Area2D" parent="." index="4" groups=[
 "Switches",
