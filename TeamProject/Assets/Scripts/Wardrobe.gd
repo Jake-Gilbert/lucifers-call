@@ -1,4 +1,4 @@
-xtends StaticBody2D
+extends StaticBody2D
 
 func _ready():
 	pass

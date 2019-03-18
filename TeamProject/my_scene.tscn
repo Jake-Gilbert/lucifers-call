@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://UI/Scenes/UsableHUD.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Scenes/LevelOne/Rooms/L1R1.tscn" type="PackedScene" id=2]
@@ -23,6 +23,8 @@
 [ext_resource path="res://Fonts/titleFontW.tres" type="DynamicFont" id=21]
 [ext_resource path="res://PopupMenu.tscn" type="PackedScene" id=22]
 [ext_resource path="res://PopupMenu.gd" type="Script" id=23]
+[ext_resource path="res://Assets/Scenes/Door.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Levels/Scripts/Door.gd" type="Script" id=25]
 
 [sub_resource type="GDScript" id=1]
 
@@ -43,7 +45,7 @@ func _ready():
 custom_solver_bias = 0.0
 extents = Vector2( 11.5055, 16.4894 )
 
-[node name="L1Map" type="Node2D" index="6"]
+[node name="L1Map" type="Node2D" index="7"]
 
 script = SubResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -184,7 +186,7 @@ shape = SubResource( 2 )
 ] instance=ExtResource( 15 )]
 
 editor/display_folded = true
-position = Vector2( 806.439, 266.648 )
+position = Vector2( 200.856, 239.439 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 6
@@ -195,7 +197,6 @@ _sections_unfolded = [ "Collision", "Pause", "collision" ]
 [node name="Camera2D" type="Camera2D" parent="." index="10" instance=ExtResource( 17 )]
 
 editor/display_folded = true
-position = Vector2( 720, 0 )
 anchor_mode = 0
 rotating = false
 current = true
@@ -277,6 +278,36 @@ selection_enabled = false
 override_selected_font_color = false
 _sections_unfolded = [ "Pause", "custom_fonts" ]
 
+[node name="text" type="RichTextLabel" parent="Camera2D/NinePatchRect" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 14.0
+margin_top = 10.0
+margin_right = 706.0
+margin_bottom = 53.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/normal_font = ExtResource( 21 )
+bbcode_enabled = false
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 2
+text = ""
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "Pause", "custom_fonts" ]
+
 [node name="PopupMenu" type="PopupMenu" parent="Camera2D" index="2" instance=ExtResource( 22 )]
 
 visible = false
@@ -300,6 +331,21 @@ items = [  ]
 hide_on_state_item_selection = false
 script = ExtResource( 23 )
 _sections_unfolded = [ "Rect" ]
+
+[node name="Door" type="StaticBody2D" parent="." index="11" instance=ExtResource( 24 )]
+
+visible = false
+position = Vector2( 711, 360 )
+input_pickable = false
+collision_layer = 4
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 25 )
+_sections_unfolded = [ "Collision", "Transform" ]
+openPuzzle = "res://Puzzles/Scenes/PuzzleR1.tscn"
 
 [connection signal="body_entered" from="L1RoomA/RoomAreaA" to="L1RoomA" method="_on_RoomAreaA_body_entered"]
 

@@ -5,7 +5,6 @@ onready var itemList = get_node("Panel/ItemList")
 onready var itemMenu = get_node("Panel/WindowDialog_ItemMenu")
 onready var itemMenu_TextureFrame_Icon = get_node("Panel/WindowDialog_ItemMenu/ItemMenu_TextureFrame_Icon")
 onready var itemMenu_RichTextLabel_ItemInfo = get_node("Panel/WindowDialog_ItemMenu/ItemMenu_RichTextLabel_ItemInfo")
-onready var itemMenu_Button_DropItem = get_node("Panel/WindowDialog_ItemMenu/ItemMenu_Button_DropItem")
 
 var activeItemSlot = -1
 var dropItemSlot = -1
@@ -41,10 +40,10 @@ func _process(delta):
 #Simply moving the mouse causes the function to track the mouse positon
 func _input(event):
 	if (event is InputEventMouseButton):
-		if (event.is_action_pressed("mouse_leftbtn")):
+		if (event.is_action_pressed("leftMouse")):
 			mouseButtonReleased = false
 			initial_mousePos = get_viewport().get_mouse_position()
-		if (event.is_action_released("mouse_leftbtn")):
+		if (event.is_action_released("leftMouse")):
 			move_item()
 			end_drag_item()
 
@@ -167,4 +166,5 @@ func _on_ItemList_mouse_exited():
 
 
 func _on_Close_Button_pressed():
-	get_tree().change_scene("res://Levels/Scenes/LevelOneWithDoor.tscn")
+	get_node("Panel").hide()
+	Global_SceneSwitch.reload_last_saved()
