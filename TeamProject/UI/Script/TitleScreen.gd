@@ -40,5 +40,6 @@ func _on_Settings_pressed():
 	pass # replace with function body
 
 func _on_Load_pressed():
-	Save.load_game()
+	Global_SceneSwitch.reload_last_saved()
+#	Save.load_game()
 	#print("Red load button clicked")

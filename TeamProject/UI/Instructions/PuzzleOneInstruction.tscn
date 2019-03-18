@@ -8,7 +8,7 @@
 [ext_resource path="res://UI/Images/GreenBlock.png" type="Texture" id=6]
 [ext_resource path="res://UI/Images/KeyboardBtn.png" type="Texture" id=7]
 
-[node name="PuzzleOneInstruction" type="Node" index="0"]
+[node name="PuzzleOneInstruction" type="Node"]
 
 script = ExtResource( 1 )
 
