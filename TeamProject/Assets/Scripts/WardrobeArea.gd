@@ -4,7 +4,7 @@
 extends Area2D
 
 var inside = false
-
+#Displays text when the select key is pressed and the player is next to the object	
 func _process(delta):
 	if(inside && Input.is_action_pressed("ui_accept")):
 		$WardrobeLabel.visible = true

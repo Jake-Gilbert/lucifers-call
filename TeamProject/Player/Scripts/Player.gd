@@ -67,15 +67,17 @@ func movement_loop():
 	#Move and slide method moves the player along the vector
 	move_and_slide(motion, Vector2(0,0))
 
+#Function that opens inventory when a key is pressed
 func inventory():
 	if (Input.is_action_pressed("ui_inventory")):
 		Global_SceneSwitch.save_current_scene()
 		get_tree().change_scene("res://inventoryUI/Scenes/Scene_PlayerInventory.tscn")
-
+#Function that reloads gun when a key is pressed
 func reload():
 	if (Input.is_action_just_pressed("ui_reload")):
 		currentAmmo = ammoClip
-
+#Shoots a bullet from the gun if the key is pressed and there are bullets left.
+#Also the delay timer needs to be equal to 0
 func shoot():
 	var bulleta = bullet.instance()
 	if (Input.is_action_just_pressed("ui_shoot")):
@@ -99,7 +101,8 @@ func shoot():
 			get_node("shootTimer").start()
 		elif (currentAmmo > 0 && get_node("shootTimer").get_time_left() != 0):
 			pass
-
+#Function that decreases the players health by 1 and makes them invincbile temporarily
+#Also reverts the invicibility when the timer runs out
 func lose_health():
 	if (health != 0 && get_node("invinciblityTimer").get_time_left() == 0):
 		health = health -1
@@ -109,7 +112,7 @@ func lose_health():
 			get_tree().change_scene("res://UI/Scenes/GameOver.tscn")
 	elif (health != 0 && get_node("invinciblityTimer").get_time_left() != 0):
 		pass
-
+#Determines the sprite used for each direction depending on the Vector 2 coordinate
 func spritedir_loop():
 	match movedir:
 		Vector2(-1,0):
@@ -120,7 +123,7 @@ func spritedir_loop():
 			spritedir = "up"
 		Vector2(0,1):
 			spritedir = "down"
-
+#Allows switching of player animations to a different animation 
 func switch_animation(animation):
 	var newAnim = str(animation,spritedir)
 	if $animChar.current_animation != newAnim:

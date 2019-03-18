@@ -5,7 +5,7 @@ var diaShowing = false
 func _ready():
 	set_physics_process(true)
 	pass
-	
+#Displays text when the select key is pressed and the player is next to the object	
 func _physics_process(delta):
 	var bodies = get_overlapping_bodies()
 	for body in bodies:
