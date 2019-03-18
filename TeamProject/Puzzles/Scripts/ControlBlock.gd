@@ -10,6 +10,8 @@ func _ready():
 #Once the red puzzle block enters the goal then the puzzle is completed and hte scene is changed
 func _on_Goal_body_entered(body):
 	if body.name == "BlockMain":
-		get_tree().reload_current_scene()
+		Global_SceneSwitch.reload_last_saved()
+		#L1Map._deferred_goto_scene("res://Levels/Scenes/LevelOne/L1Map.tscn")
+		#L1Map.goto_scene("res://Levels/Scenes/LevelOne/L1Map.tscn")
 #		get_tree().change_scene("res://Levels/Scenes/LevelOne/L1Map.tscn")
 #		get_tree().change_scene("res://Levels/Scenes/LevelOne.tscn")
