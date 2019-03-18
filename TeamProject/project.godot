@@ -22,6 +22,7 @@ Global_Player="*res://inventoryUI/Scripts/Global_Player.gd"
 Save="*res://Save.gd"
 AudioPlayer="*res://Sound/AudioStreamPlayer.tscn"
 Global_SceneSwitch="*res://Global_SceneSwitch.gd"
+Block_Controller="*res://Puzzles/Scripts/BlockController.gd"
 
 [display]
 
