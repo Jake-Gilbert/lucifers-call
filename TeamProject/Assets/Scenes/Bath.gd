@@ -1,11 +1,13 @@
 extends Area2D
-
+#boolean that sets whether dialogue is visible
 var diaShowing = false
 
+#Make sures physics process is ready to run/.
 func _ready():
 	set_physics_process(true)
 	pass
-	
+
+#Displays dialogue when player approaches and presses space
 func _physics_process(delta):
 	var bodies = get_overlapping_bodies()
 	for body in bodies:

@@ -67,14 +67,17 @@ func movement_loop():
 	#Move and slide method moves the player along the vector
 	move_and_slide(motion, Vector2(0,0))
 
-func reload():
+#Function allows the player to reload once bullets run out
+func reload(): 
 	if (Input.is_action_just_pressed("ui_reload")):
 		currentAmmo = ammoClip
-
+		
+#Function allows the player to shoot, depending on how many bullets are left
 func shoot():
+	#Creates new bullet instance
 	var bulleta = bullet.instance()
 	if (Input.is_action_just_pressed("ui_shoot")):
-		
+		#Will shoot if the ammo is more than 0 and the delay time is equal to 0
 		if (currentAmmo > 0 && get_node("shootTimer").get_time_left() == 0):
 		#face down
 			if get_node("Sprite").frame < 9:
@@ -95,6 +98,8 @@ func shoot():
 		elif (currentAmmo > 0 && get_node("shootTimer").get_time_left() != 0):
 			pass
 
+#Allows player to take damage and lose health
+#Whenever player takes damage he becomes invincible temporarily 
 func lose_health():
 	if (health != 0 && get_node("invinciblityTimer").get_time_left() == 0):
 		health = health -1
@@ -105,6 +110,7 @@ func lose_health():
 	elif (health != 0 && get_node("invinciblityTimer").get_time_left() != 0):
 		pass
 
+#Function that sets 4 directions so that the player sprite can change where it's facing
 func spritedir_loop():
 	match movedir:
 		Vector2(-1,0):
@@ -116,11 +122,13 @@ func spritedir_loop():
 		Vector2(0,1):
 			spritedir = "down"
 
+#Function used to change player animation
 func switch_animation(animation):
 	var newAnim = str(animation,spritedir)
 	if $animChar.current_animation != newAnim:
 		$animChar.play(newAnim)
 
+#Function gets the current state of the player
 func get_state():
 	var save_dict = {
 		pos = {
@@ -134,6 +142,7 @@ func get_state():
 	}
 	return save_dict
 
+#Function that loads a specific player state
 func load_state(data):
 	for attribute in data:
 		if attribute == "pos":
@@ -141,6 +150,7 @@ func load_state(data):
 		else:
 			set(attribute, data[attribute])
 
+#Function that saves the player's current location in the game
 func _on_SaveBtn_pressed():
 	var save_game = File.new()
 	save_game.open("user://savegame.save", File.WRITE)
@@ -150,6 +160,7 @@ func _on_SaveBtn_pressed():
 		save_game.store_line(to_json(node_data))
 	save_game.close()
 
+#Function that should load the player to the position they saved at but isn't functional at the moment
 func _on_LoadBtn_pressed():
     var save_game = File.new()
     if not save_game.file_exists("user://save_game.save"):
@@ -178,6 +189,6 @@ func _on_LoadBtn_pressed():
 	
 
 
-
+#Reverts the player back to normal after the invincibility colour change wears off
 func _on_invinciblityTimer_timeout():
 	get_node("Sprite").set_modulate(default)

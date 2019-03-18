@@ -1,14 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://UI/Script/LoadInstructions.gd" type="Script" id=1]
 [ext_resource path="res://UI/Images/Project - Drawing 1.jpeg" type="Texture" id=2]
 [ext_resource path="res://Fonts/pixelFont.tres" type="DynamicFont" id=3]
 [ext_resource path="res://UI/Images/arrow-icon-1182.png" type="Texture" id=4]
-[ext_resource path="res://UI/Images/I-icon.png" type="Texture" id=5]
-[ext_resource path="res://UI/Images/r-icon.png" type="Texture" id=6]
-[ext_resource path="res://UI/Images/S-icon.png" type="Texture" id=7]
 
-[node name="Node" type="Node"]
+
+
+[node name="Node" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -18,9 +17,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = -19.0
+margin_top = -20.0
 margin_right = 720.0
-margin_bottom = 450.0
+margin_bottom = 449.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -57,7 +56,7 @@ flat = false
 align = 1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Arrows" type="Sprite" parent="." index="2"]
+[node name="Sprite" type="Sprite" parent="." index="2"]
 
 position = Vector2( 172.891, 106.824 )
 scale = Vector2( 0.551072, 0.509217 )
@@ -81,7 +80,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_constants/separation = 30
 alignment = 0
-_sections_unfolded = [ "Margin", "Rect", "custom_constants" ]
+_sections_unfolded = [ "Margin", "custom_constants" ]
 
 [node name="Label" type="Label" parent="VBoxContainer" index="0"]
 
@@ -105,9 +104,6 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Mouse", "custom_colors", "custom_fonts" ]
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Label2" type="Label" parent="VBoxContainer" index="1"]
 
@@ -134,123 +130,6 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_fonts" ]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Label3" type="Label" parent="VBoxContainer" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 146.0
-margin_right = 689.0
-margin_bottom = 166.0
-rect_pivot_offset = Vector2( 0, -105 )
-rect_clip_content = true
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Press the R key to reload"
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Material", "Rect", "Visibility", "custom_colors", "custom_constants", "custom_fonts" ]
-
-[node name="Label4" type="Label" parent="VBoxContainer" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 196.0
-margin_right = 689.0
-margin_bottom = 216.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "The gun only has 10 bullets at a time"
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_constants", "custom_fonts" ]
-
-[node name="Label5" type="Label" parent="VBoxContainer" index="4"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 246.0
-margin_right = 689.0
-margin_bottom = 266.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Press the I button to check inventory"
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts", "custom_styles" ]
-
-[node name="Label6" type="Label" parent="VBoxContainer" index="5"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 296.0
-margin_right = 689.0
-margin_bottom = 316.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Press the S key to shoot"
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
-
-[node name="I" type="Sprite" parent="." index="4"]
-
-position = Vector2( 249.072, 289.983 )
-scale = Vector2( 0.0411567, 0.0530515 )
-texture = ExtResource( 5 )
-
-[node name="R" type="Sprite" parent="." index="5"]
-
-position = Vector2( 328.895, 191.011 )
-scale = Vector2( 0.105548, 0.104103 )
-texture = ExtResource( 6 )
-
-[node name="S-icon" type="Sprite" parent="." index="6"]
-
-position = Vector2( 334.244, 336.876 )
-scale = Vector2( 0.0915426, 0.117886 )
-texture = ExtResource( 7 )
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 

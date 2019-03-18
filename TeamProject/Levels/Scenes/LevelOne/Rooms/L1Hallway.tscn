@@ -1,17 +1,23 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Images/Assets_room_floor_wood.png" type="Texture" id=1]
 [ext_resource path="res://Assets/WallTiles/TileSets/WallTileSetNewestEdition.tres" type="TileSet" id=2]
 [ext_resource path="res://Assets/Images/Door.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Scenes/Door.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Levels/Scenes/LevelComplete.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Levels/Scenes/LevelOne/LevelComplete.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Images/DoorBlock.png" type="Texture" id=5]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10.5, 12 )
 
-[node name="L1Hallway" type="Node2D"]
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 23.55, 10 )
+
+[node name="L1Hallway" type="Node2D" index="0"]
 
 [node name="L1Floor" type="TextureRect" parent="." index="0"]
 
@@ -58,26 +64,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="DoorL1B" type="Sprite" parent="." index="2"]
-
-position = Vector2( 1143.13, 42.6079 )
-scale = Vector2( 0.546076, 0.6 )
-texture = ExtResource( 3 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="DoorL1C" parent="." index="3" instance=ExtResource( 4 )]
-
-visible = true
-position = Vector2( 1031.95, 423.151 )
-rotation = 1.5708
-
-[node name="DoorL1D" parent="." index="4" instance=ExtResource( 4 )]
-
-visible = true
-position = Vector2( 1239.97, 422.672 )
-rotation = 1.5708
-
-[node name="DoorL1A" type="StaticBody2D" parent="." index="5"]
+[node name="DoorL1A" type="StaticBody2D" parent="." index="2"]
 
 editor/display_folded = true
 input_pickable = false
@@ -96,7 +83,7 @@ scale = Vector2( 0.538587, 0.6 )
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="PuzzleTwo" parent="DoorL1A/Sprite" index="0" instance=ExtResource( 5 )]
+[node name="PuzzleTwo" parent="DoorL1A/Sprite" index="0" instance=ExtResource( 4 )]
 
 position = Vector2( 120.949, 42.0905 )
 scale = Vector2( 2.13484, 0.947134 )
@@ -104,9 +91,154 @@ changeLevels = "res://Puzzles/Scenes/PuzzleTwo.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorL1A" index="1"]
 
-position = Vector2( 919.975, 23.1037 )
-scale = Vector2( 2.2241, 1.89705 )
+position = Vector2( 919.975, 21.2014 )
+scale = Vector2( 2.2241, 1.77023 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
+
+[node name="AreaA" type="Area2D" parent="DoorL1A" index="2"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorL1A/AreaA" index="0"]
+
+position = Vector2( 919.509, 36.4961 )
+scale = Vector2( 0.945978, 1 )
+shape = SubResource( 2 )
+
+[node name="DoorL1B" type="StaticBody2D" parent="." index="3"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="Door" type="Sprite" parent="DoorL1B" index="0"]
+
+position = Vector2( 1143.13, 42.6079 )
+scale = Vector2( 0.546076, 0.6 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorL1B" index="1"]
+
+position = Vector2( 1143.42, 21.582 )
+scale = Vector2( 2.2241, 1.77023 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="AreaB" type="Area2D" parent="DoorL1B" index="2"]
+
+editor/display_folded = true
+position = Vector2( 26, 0 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorL1B/AreaB" index="0"]
+
+position = Vector2( 1117.83, 38.7801 )
+scale = Vector2( 0.945978, 1 )
+shape = SubResource( 2 )
+
+[node name="DoorL1C" type="StaticBody2D" parent="." index="4"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="Door" type="Sprite" parent="DoorL1C" index="0"]
+
+position = Vector2( 1032.11, 422.986 )
+rotation = 1.5708
+scale = Vector2( 1, 0.75 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorL1C" index="1"]
+
+position = Vector2( 1032.24, 422.958 )
+scale = Vector2( 2.28467, 0.756447 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="AreaC" type="Area2D" parent="DoorL1C" index="2"]
+
+editor/display_folded = true
+position = Vector2( 26, 0 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorL1C/AreaC" index="0"]
+
+position = Vector2( 1006.05, 417.793 )
+scale = Vector2( 0.945978, 1 )
+shape = SubResource( 2 )
+
+[node name="DoorL1D" type="StaticBody2D" parent="." index="5"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="Door" type="Sprite" parent="DoorL1D" index="0"]
+
+position = Vector2( 1240.11, 422.991 )
+rotation = 1.5708
+scale = Vector2( 1, 0.75 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorL1D" index="1"]
+
+position = Vector2( 1239.94, 423.186 )
+scale = Vector2( 2.31325, 0.75583 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="AreaD" type="Area2D" parent="DoorL1D" index="2"]
+
+position = Vector2( 122.613, 379.316 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorL1D/AreaD" index="0"]
+
+position = Vector2( 1117.83, 38.7801 )
+scale = Vector2( 0.945978, 1 )
+shape = SubResource( 2 )
 
 
