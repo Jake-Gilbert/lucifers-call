@@ -60,7 +60,7 @@ extents = Vector2( 10, 10 )
 custom_solver_bias = 0.0
 extents = Vector2( 19.2, 42.6667 )
 
-[node name="PuzzleR1" type="Node2D" index="0"]
+[node name="PuzzleR1" type="Node2D"]
 
 [node name="Background" type="Node2D" parent="." index="0"]
 
@@ -351,6 +351,8 @@ shape = SubResource( 5 )
 
 [node name="VBlocks" type="Node2D" parent="." index="3"]
 
+editor/display_folded = true
+
 [node name="BlockMain" type="KinematicBody2D" parent="VBlocks" index="0"]
 
 modulate = Color( 0.988281, 0.0193024, 0.0193024, 1 )
@@ -418,7 +420,7 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="Sprite" type="Sprite" parent="VBlocks/Block1V" index="1"]
 
-position = Vector2( 3.30712, 5.23711e-08 )
+position = Vector2( 3.30712, 5.23711e-008 )
 rotation = -1.5708
 scale = Vector2( 3.45449, 7.11864 )
 texture = ExtResource( 7 )

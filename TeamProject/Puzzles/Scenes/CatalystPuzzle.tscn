@@ -1,12 +1,13 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Puzzles/Scripts/Puzzle1.gd" type="Script" id=1]
-[ext_resource path="res://Puzzles/Images/Untitled.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Puzzle Sprite/tileable_bricks_single.jpg" type="Texture" id=2]
 [ext_resource path="res://Assets/WallTiles/TileSets/WallTileSetNewestEdition.tres" type="TileSet" id=3]
 [ext_resource path="res://Puzzles/Scenes/Node.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Puzzles/Scripts/CollisionArea2D.gd" type="Script" id=5]
-[ext_resource path="res://icon.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Puzzle Sprite/Ghost puzzle piece (Left & Right).png" type="Texture" id=6]
 [ext_resource path="res://Puzzles/Scenes/Vert.gd" type="Script" id=7]
+[ext_resource path="res://Assets/Puzzle Sprite/Ghost puzzle piece (Up & down).png" type="Texture" id=8]
 
 [sub_resource type="NavigationPolygon" id=1]
 
@@ -42,12 +43,19 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 55.2001, 272.838, 0, 0, 0, 0, 53.0315, 419.216, 0, 0, 0, 0, 961.661, 417.048, 0, 0, 0, 0, 961.661, 542.825, 0, 0, 0, 0, 784.923, 547.162, 0, 0, 0, 0, 783.839, 275.007, 0, 0, 0, 0, 785.829, 163.383, 0, 0, 0, 0, 533.844, 153.95, 0, 0, 0, 0, 539.234, 51.539, 0, 0, 0, 0, 965.049, 50.1915, 0, 0, 0, 0, 959.659, 275.227, 0, 0, 0, 0, 58.1701, 275.227 )
 }
 
+[sub_resource type="Curve2D" id=7]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 190, 377, 0, 0, 0, 0, 191, 291, 0, 0, 0, 0, 32, 289, 0, 0, 0, 0, 37, 193, 0, 0, 0, 0, 192, 189, 0, 0, 0, 0, 545, 188, 0, 0, 0, 0, 542, 289, 0, 0, 0, 0, 674, 299, 0, 0, 0, 0, 675, 381, 0, 0, 0, 0, 190, 377 )
+}
+
 [sub_resource type="RectangleShape2D" id=6]
 
 custom_solver_bias = 0.0
 extents = Vector2( 45, 45 )
 
-[node name="Puzzle1" type="Navigation2D"]
+[node name="Puzzle1" type="Navigation2D" index="0"]
 
 scale = Vector2( 0.24, 0.24 )
 script = ExtResource( 1 )
@@ -59,9 +67,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 176.0
-margin_bottom = 80.0
-rect_scale = Vector2( 13, 13 )
+margin_right = 960.0
+margin_bottom = 960.0
+rect_scale = Vector2( 2.93, 1.75 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -110,6 +118,7 @@ _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 [node name="Path1" type="Path2D" parent="Paths" index="0"]
 
+editor/display_folded = true
 self_modulate = Color( 0.5, 0.6, 1, 0.7 )
 scale = Vector2( 0.7, 0.7 )
 curve = SubResource( 2 )
@@ -117,13 +126,13 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path1" index="0"]
 
-position = Vector2( 550.714, 51.9934 )
-rotation = 0.00527637
+position = Vector2( 852.976, 53.5884 )
+rotation = 0.00527807
 scale = Vector2( 0.3, 0.3 )
-offset = 500.0
+offset = 800.0
 h_offset = 0.0
 v_offset = 0.0
-rotate = true
+rotate = false
 cubic_interp = true
 loop = true
 lookahead = 4.0
@@ -137,12 +146,10 @@ __meta__ = {
 
 position = Vector2( 2.49347, -1.21412 )
 scale = Vector2( 1.5, 1.5 )
-collision_layer = 128
-collision_mask = 64
-_sections_unfolded = [ "Collision" ]
 
 [node name="Path2" type="Path2D" parent="Paths" index="1"]
 
+editor/display_folded = true
 self_modulate = Color( 0.5, 0.6, 1, 0.7 )
 scale = Vector2( 0.7, 0.7 )
 curve = SubResource( 3 )
@@ -155,7 +162,7 @@ scale = Vector2( 0.3, 0.3 )
 offset = 0.0
 h_offset = 0.0
 v_offset = 0.0
-rotate = true
+rotate = false
 cubic_interp = true
 loop = true
 lookahead = 4.0
@@ -167,13 +174,12 @@ __meta__ = {
 "Nodes",
 ] instance=ExtResource( 4 )]
 
+rotation = 1.56465
 scale = Vector2( 1.5, 1.5 )
-collision_layer = 128
-collision_mask = 64
-_sections_unfolded = [ "Collision" ]
 
 [node name="Path3" type="Path2D" parent="Paths" index="2"]
 
+editor/display_folded = true
 self_modulate = Color( 0.5, 0.6, 1, 0.7 )
 scale = Vector2( 0.7, 0.7 )
 curve = SubResource( 4 )
@@ -181,12 +187,12 @@ curve = SubResource( 4 )
 [node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path3" index="0"]
 
 position = Vector2( 273.277, 161.389 )
-rotation = 0.00470902
+rotation = 0.00470906
 scale = Vector2( 0.3, 0.3 )
 offset = 0.0
 h_offset = 0.0
 v_offset = 0.0
-rotate = true
+rotate = false
 cubic_interp = true
 loop = true
 lookahead = 4.0
@@ -199,12 +205,10 @@ __meta__ = {
 ] instance=ExtResource( 4 )]
 
 scale = Vector2( 1.5, 1.5 )
-collision_layer = 128
-collision_mask = 64
-_sections_unfolded = [ "Collision" ]
 
 [node name="Path4" type="Path2D" parent="Paths" index="3"]
 
+editor/display_folded = true
 self_modulate = Color( 0.5, 0.6, 1, 0.7 )
 scale = Vector2( 0.7, 0.7 )
 curve = SubResource( 5 )
@@ -217,7 +221,7 @@ scale = Vector2( 0.3, 0.3 )
 offset = 0.0
 h_offset = 0.0
 v_offset = 0.0
-rotate = true
+rotate = false
 cubic_interp = true
 loop = true
 lookahead = 4.0
@@ -229,10 +233,32 @@ __meta__ = {
 "Nodes",
 ] instance=ExtResource( 4 )]
 
+rotation = -1.64071
 scale = Vector2( 1.5, 1.5 )
-collision_layer = 128
-collision_mask = 128
-_sections_unfolded = [ "Collision" ]
+
+[node name="Path5" type="Path2D" parent="Paths" index="4"]
+
+self_modulate = Color( 0.5, 0.6, 1, 0.7 )
+curve = SubResource( 7 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path5" index="0"]
+
+position = Vector2( 190, 377 )
+rotation = -0.00591314
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = false
+cubic_interp = true
+loop = true
+lookahead = 4.0
+
+[node name="NodeFollow" parent="Paths/Path5/PathFollow2D" index="0" groups=[
+"Nodes",
+] instance=ExtResource( 4 )]
+
+position = Vector2( -2.03841, 6.48804 )
+scale = Vector2( 0.341619, 0.361401 )
 
 [node name="Hor" type="Area2D" parent="." index="4" groups=[
 "Switches",
@@ -258,9 +284,10 @@ __meta__ = {
 
 [node name="Switch" type="Sprite" parent="Hor" index="0"]
 
-modulate = Color( 1, 0, 0, 1 )
-rotation = 0.00173805
-scale = Vector2( 1.5, 1.5 )
+modulate = Color( 0.996094, 0.996094, 0.996094, 1 )
+position = Vector2( 13.9221, -1.94592 )
+rotation = 1.5708
+scale = Vector2( 0.502621, 0.522028 )
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
@@ -273,7 +300,8 @@ shape = SubResource( 6 )
 ]]
 
 editor/display_folded = true
-position = Vector2( 1511.66, 1602.26 )
+position = Vector2( 1522.08, 1593.93 )
+rotation = 1.5708
 scale = Vector2( 0.7, 0.7 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -292,9 +320,10 @@ __meta__ = {
 
 [node name="Switch" type="Sprite" parent="Hor2" index="0"]
 
-modulate = Color( 1, 0, 0, 1 )
+modulate = Color( 0.996094, 0.996094, 0.996094, 1 )
+position = Vector2( 13.9221, -1.94592 )
 rotation = 0.00173805
-scale = Vector2( 1.5, 1.5 )
+scale = Vector2( 0.502621, 0.522028 )
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
@@ -326,13 +355,47 @@ __meta__ = {
 
 [node name="Switch" type="Sprite" parent="Vert" index="0"]
 
-modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 0.186768, 7.86963 )
 rotation = 0.00173805
-scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 6 )
+scale = Vector2( 0.377777, 0.373777 )
+texture = ExtResource( 8 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vert" index="1"]
+
+shape = SubResource( 6 )
+
+[node name="Vert2" type="Area2D" parent="." index="7" groups=[
+"Switches",
+]]
+
+editor/display_folded = true
+position = Vector2( 1529.32, 1221.96 )
+scale = Vector2( 0.976564, 0.976561 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 64
+collision_mask = 128
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 7 )
+_sections_unfolded = [ "Collision", "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Switch" type="Sprite" parent="Vert2" index="0"]
+
+position = Vector2( 0.186768, 7.86963 )
+rotation = 1.5708
+scale = Vector2( 0.377777, 0.373777 )
+texture = ExtResource( 8 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Vert2" index="1"]
 
 shape = SubResource( 6 )
 
