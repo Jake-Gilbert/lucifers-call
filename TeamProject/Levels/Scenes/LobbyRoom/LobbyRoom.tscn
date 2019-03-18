@@ -22,6 +22,8 @@
 custom_solver_bias = 0.0
 extents = Vector2( 32.1082, 66.7379 )
 
+[node name="LobbyRoom" type="Node2D"]
+
 editor/display_folded = true
 __meta__ = {
 "_edit_group_": true,

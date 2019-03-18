@@ -8,7 +8,7 @@ extends Camera2D
 #	# Called when the node is added to the scene for the first time.
 #	# Initialization here
 #	pass
-
+#Function that sets up the camera with corect coordinates.
 func _process(delta):
 	var pos = get_node("../Player").global_position - Vector2(0,16)
 	var x = floor(pos.x / 720) * 720

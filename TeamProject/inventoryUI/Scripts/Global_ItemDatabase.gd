@@ -1,5 +1,3 @@
-#Loads the item into the inventory depending on the item ID
-#Created by Hannah
 extends Node
 
 var url_database_item = "res://Database//Database_Items.json"

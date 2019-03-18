@@ -1,9 +1,7 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Player/Scripts/Player_Inventory.gd" type="Script" id=1]
-[ext_resource path="res://inventoryUI/inventory background.png" type="Texture" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
-[ext_resource path="res://inventoryUI/inventory closeV2.png" type="Texture" id=4]
+[ext_resource path="res://icon.png" type="Texture" id=2]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -50,7 +48,7 @@ content_margin_right = -1.0
 content_margin_top = -1.0
 content_margin_bottom = -1.0
 
-[node name="Node" type="Node" index="0"]
+[node name="Node" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -69,21 +67,15 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-_sections_unfolded = [ "Material" ]
 
-[node name="Sprite" type="Sprite" parent="Panel" index="0"]
-
-position = Vector2( 357.24, 217.057 )
-texture = ExtResource( 2 )
-
-[node name="Sprite_DraggedItem" type="Sprite" parent="Panel" index="1"]
+[node name="Sprite_DraggedItem" type="Sprite" parent="Panel" index="0"]
 
 visible = false
 z_index = 1
 z_as_relative = false
 _sections_unfolded = [ "Z Index" ]
 
-[node name="ItemList" type="ItemList" parent="Panel" index="2"]
+[node name="ItemList" type="ItemList" parent="Panel" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -91,7 +83,6 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 26.0
 margin_top = 27.0
-margin_right = 627.0
 margin_bottom = 420.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
@@ -118,17 +109,18 @@ icon_mode = 0
 fixed_icon_size = Vector2( 48, 48 )
 _sections_unfolded = [ "Columns", "Icon", "Theme", "custom_colors", "custom_constants", "custom_styles" ]
 
-[node name="WindowDialog_ItemMenu" type="WindowDialog" parent="Panel" index="3"]
+[node name="WindowDialog_ItemMenu" type="WindowDialog" parent="Panel" index="2"]
 
+editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 315.0
-margin_top = 132.0
-margin_right = 575.0
-margin_bottom = 323.0
+margin_left = 300.0
+margin_top = 130.0
+margin_right = 590.0
+margin_bottom = 370.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -138,7 +130,6 @@ size_flags_vertical = 1
 popup_exclusive = false
 window_title = ""
 resizable = false
-_sections_unfolded = [ "Material" ]
 
 [node name="ItemMenu_TextureFrame_Icon" type="TextureRect" parent="Panel/WindowDialog_ItemMenu" index="1"]
 
@@ -146,9 +137,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 105.0
+margin_left = 120.0
 margin_top = 10.0
-margin_right = 153.0
+margin_right = 168.0
 margin_bottom = 58.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -156,7 +147,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 expand = true
 stretch_mode = 6
 
@@ -168,7 +159,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 10.0
 margin_top = 70.0
-margin_right = 250.0
+margin_right = 280.0
 margin_bottom = 170.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
@@ -188,16 +179,17 @@ scroll_following = false
 selection_enabled = false
 override_selected_font_color = false
 
-[node name="Close_Button" type="Button" parent="Panel" index="4"]
+[node name="ItemMenu_Button_DropItem" type="Button" parent="Panel/WindowDialog_ItemMenu" index="3"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 637.0
-margin_top = 9.0
-margin_right = 709.0
-margin_bottom = 75.0
+margin_left = 90.0
+margin_top = 190.0
+margin_right = 190.0
+margin_bottom = 220.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -209,16 +201,161 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-icon = ExtResource( 4 )
-flat = true
+text = "Drop"
+flat = false
 align = 1
-_sections_unfolded = [ "Rect" ]
+
+[node name="Close_Button" type="Button" parent="Panel" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 623.0
+margin_top = 9.0
+margin_right = 710.0
+margin_bottom = 45.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Close"
+flat = false
+align = 1
+
+[node name="Crafting_ItemList1" type="ItemList" parent="Panel" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 575.0
+margin_top = 73.0
+margin_right = 657.0
+margin_bottom = 151.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_colors/guide_color = Color( 0, 0, 0, 1 )
+items = [  ]
+select_mode = 0
+allow_reselect = false
+icon_mode = 1
+fixed_icon_size = Vector2( 0, 0 )
+_sections_unfolded = [ "custom_colors" ]
+
+[node name="Crafting_ItemList2" type="ItemList" parent="Panel" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 574.0
+margin_top = 176.0
+margin_right = 656.0
+margin_bottom = 254.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_colors/guide_color = Color( 0, 0, 0, 1 )
+items = [  ]
+select_mode = 0
+allow_reselect = false
+icon_mode = 1
+fixed_icon_size = Vector2( 0, 0 )
+_sections_unfolded = [ "custom_colors" ]
+
+[node name="Crafted_ItemList" type="ItemList" parent="Panel" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 575.0
+margin_top = 293.0
+margin_right = 657.0
+margin_bottom = 371.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_colors/guide_color = Color( 0, 0, 0, 1 )
+items = [  ]
+select_mode = 0
+allow_reselect = false
+icon_mode = 1
+fixed_icon_size = Vector2( 0, 0 )
+_sections_unfolded = [ "custom_colors" ]
+
+[node name="Label" type="Label" parent="Panel" index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 605.0
+margin_top = 158.0
+margin_right = 624.0
+margin_bottom = 172.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "+"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label2" type="Label" parent="Panel" index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 607.0
+margin_top = 270.0
+margin_right = 626.0
+margin_bottom = 284.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "="
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 [connection signal="item_rmb_selected" from="Panel/ItemList" to="." method="_on_ItemList_item_rmb_selected"]
 
 [connection signal="mouse_entered" from="Panel/ItemList" to="." method="_on_ItemList_mouse_entered"]
 
 [connection signal="mouse_exited" from="Panel/ItemList" to="." method="_on_ItemList_mouse_exited"]
+
+[connection signal="pressed" from="Panel/WindowDialog_ItemMenu/ItemMenu_Button_DropItem" to="." method="_on_ItemMenu_Button_DropItem_pressed"]
 
 [connection signal="pressed" from="Panel/Close_Button" to="." method="_on_Close_Button_pressed"]
 
