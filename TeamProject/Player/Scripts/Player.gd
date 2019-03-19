@@ -21,6 +21,7 @@ var shootTime
 var health = 5
 var red = Color(1, 0, 0, 1)
 var default = Color(1, 1, 1, 1)
+var puzzle1 = false
 
 #The functions are called in the beginning 
 func _physics_process(delta):
@@ -191,3 +192,17 @@ func _on_LoadBtn_pressed():
 
 func _on_invinciblityTimer_timeout():
 	get_node("Sprite").set_modulate(default)
+
+
+func _on_Door_body_entered(body):
+	if body.get_collision_mask_bit(1) && L1Map.puzzle1 == false:
+		L1Map.puzzle1 = true
+		print("fuck godot")
+		Global_SceneSwitch.save_current_scene()
+		#L1Map._deferred_goto_scene("res://Puzzles/Scenes/(USE THIS)Puzzle.tscn")
+		#L1Map.playerPosition = position
+		L1Map.goto_scene("res://Puzzles/Scenes/(USE THIS)Puzzle.tscn")
+	else:
+		pass
+		
+	

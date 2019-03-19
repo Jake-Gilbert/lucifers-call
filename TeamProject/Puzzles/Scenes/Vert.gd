@@ -11,10 +11,10 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("ui_select") && hor == true:
 		hor = false
-		rotate(3.14)
+		rotate(1.57)
 	elif event.is_action_pressed("ui_select") && hor == false:
 		hor = true
-		rotate(-3.14)
+		rotate(-1.57)
 func _physics_process(delta):
 	var bodies = get_overlapping_areas()
 	

@@ -31,8 +31,6 @@ func _ready():
 	
 	$DoorL1D/AreaD.connect("body_entered", self, "_on_AreaD_body_entered")
 	$DoorL1D/AreaD.connect("body_exited", self, "_on_AreaD_body_exited")
-#	$DoorL1D/AreaD.connect("body_entered", self, "_on_AreaD_body_entered")
-#	$DoorL1D/AreaD.connect("body_exited", self, "_on_AreaD_body_exited")
 
 func _popupAndStop():
 	menuPopup.show()
@@ -41,9 +39,6 @@ func _popupAndStop():
 
 func _on_AreaA_body_entered(body):
 	if body.name == "Player":
-#		menuPopup.show()
-#		player.set_physics_process(false)
-#		playerAnim.stop(true)
 		_popupAndStop()
 		roomA = true
 
@@ -53,9 +48,6 @@ func _on_AreaA_body_exited(body):
 
 func _on_AreaB_body_entered(body):
 	if body.name == "Player":
-#		menuPopup.show()
-#		player.set_physics_process(false)
-#		playerAnim.stop(true)
 		_popupAndStop()
 		roomB = true
 
@@ -65,9 +57,6 @@ func _on_AreaB_body_exited(body):
 
 func _on_AreaC_body_entered(body):
 	if body.name == "Player":
-#		menuPopup.show()
-#		$Player.set_physics_process(false)
-#		$Player/animChar.stop(true)
 		_popupAndStop()
 		roomC = true
 
@@ -77,9 +66,6 @@ func _on_AreaC_body_exited(body):
 
 func _on_AreaD_body_entered(body):
 	if body.name == "Player":
-#		menuPopup.show()
-#		$Player.set_physics_process(false)
-#		$Player/animChar.stop(true)
 		_popupAndStop()
 		roomD = true
 
