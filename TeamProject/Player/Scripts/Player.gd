@@ -195,7 +195,7 @@ func _on_invinciblityTimer_timeout():
 
 
 func _on_Door_body_entered(body):
-	if body.name == "Player" && L1Map.puzzle1 == false:
+	if body.get_collision_mask_bit(1) && L1Map.puzzle1 == false:
 		L1Map.puzzle1 = true
 		print("fuck godot")
 		Global_SceneSwitch.save_current_scene()

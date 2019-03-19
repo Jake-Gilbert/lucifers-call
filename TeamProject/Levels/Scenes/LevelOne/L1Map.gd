@@ -7,10 +7,14 @@ extends Node2D
 var current_scene = null
 var puzzle1 = false
 var playerPosition = Vector2(0,0)
+var initialise = false
 
 func _ready():
-    var root = get_tree().get_root()
-    current_scene = root.get_child(root.get_child_count() - 1)
+	set_process(true)
+
+func _process(delta):
+	var root = get_tree().get_root()
+	current_scene = root.get_child(root.get_child_count() - 1)
 
 func goto_scene(path):
     # This function will usually be called from a signal callback,
