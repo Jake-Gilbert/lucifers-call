@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/BossRoom/room floor carpet (Ripped).png" type="Texture" id=1]
 [ext_resource path="res://Assets/WallTiles/TileSets/GreenEdition.tres" type="TileSet" id=2]
@@ -19,6 +19,13 @@ _data = {
 bake_interval = 5.0
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 776.128, 433.317, 0, 0, 0, 0, 733.128, 396.317, 0, 0, 0, 0, 689.128, 361.317, 0, 0, 0, 0, 638.128, 339.317, 0, 0, 0, 0, 600.128, 326.317, 0, 0, 0, 0, 494.128, 393.317, 0, 0, 0, 0, 405.128, 432.317, 0, 0, 0, 0, 370.128, 494.317, 0, 0, 0, 0, 348.128, 528.317, 0, 0, 0, 0, 421.128, 650.395, 0, 0, 0, 0, 563.128, 737.395, 0, 0, 0, 0, 761.128, 745.395, 0, 0, 0, 0, 862.128, 746.395, 0, 0, 0, 0, 916.128, 629.395, 0, 0, 0, 0, 916.128, 540.395, 0, 0, 0, 0, 850.128, 500.123, 0, 0, 0, 0, 777.128, 433.123, 0, 0, 0, 0, 830.128, 445.123 )
+}
+
+[sub_resource type="Curve2D" id=3]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 1147, 537.087, 0, 0, 0, 0, 999, 573.087, 0, 0, 0, 0, 979, 665.087, 0, 0, 0, 0, 779, 673.087, 0, 0, 0, 0, 631, 681.087, 0, 0, 0, 0, 451, 597.087, 0, 0, 0, 0, 255, 593.087, 0, 0, 0, 0, 71, 561.087, 0, 0, 0, 0, 99, 389.087, 0, 0, 0, 0, 139, 261.087, 0, 0, 0, 0, 475, 261.087, 0, 0, 0, 0, 775, 245.087, 0, 0, 0, 0, 1259, 297.087, 0, 0, 0, 0, 1335, 493.087, 0, 0, 0, 0, 1351, 797.087, 0, 0, 0, 0, 1159, 765.087, 0, 0, 0, 0, 1139, 585.087, 0, 0, 0, 0, 1147, 557.087 )
 }
 
 [node name="FinalRoom" type="Node2D" index="0"]
@@ -134,6 +141,7 @@ __meta__ = {
 
 [node name="WhiteGhostPath" type="Path2D" parent="." index="5"]
 
+editor/display_folded = true
 self_modulate = Color( 0.5, 0.6, 1, 0.7 )
 curve = SubResource( 1 )
 
@@ -154,12 +162,13 @@ lookahead = 4.0
 position = Vector2( -103.952, 4.35233 )
 rotation = 3.07091
 
-[node name="Path2D" type="Path2D" parent="." index="6"]
+[node name="SecondWhiteGhost" type="Path2D" parent="." index="6"]
 
+editor/display_folded = true
 self_modulate = Color( 0.5, 0.6, 1, 0.7 )
 curve = SubResource( 2 )
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" index="0"]
+[node name="PathFollow2D" type="PathFollow2D" parent="SecondWhiteGhost" index="0"]
 
 position = Vector2( 776.128, 433.317 )
 rotation = -2.43105
@@ -171,19 +180,42 @@ cubic_interp = true
 loop = true
 lookahead = 4.0
 
-[node name="enemy" parent="Path2D/PathFollow2D" index="0" instance=ExtResource( 3 )]
+[node name="enemy" parent="SecondWhiteGhost/PathFollow2D" index="0" instance=ExtResource( 3 )]
 
-position = Vector2( 837.128, 452.317 )
+position = Vector2( -200.254, -11.2332 )
 
-[node name="Player" parent="." index="7" instance=ExtResource( 4 )]
+[node name="ThirdWhiteGhost" type="Path2D" parent="." index="7"]
+
+self_modulate = Color( 0.5, 0.6, 1, 0.7 )
+curve = SubResource( 3 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="ThirdWhiteGhost" index="0"]
+
+position = Vector2( 1147, 537.087 )
+rotation = 2.90298
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotate = true
+cubic_interp = true
+loop = true
+lookahead = 4.0
+
+[node name="enemy" parent="ThirdWhiteGhost/PathFollow2D" index="0" instance=ExtResource( 3 )]
+
+position = Vector2( -101.719, -242.599 )
+scale = Vector2( 1.04688, 1.25 )
+
+[node name="Player" parent="." index="8" instance=ExtResource( 4 )]
 
 position = Vector2( 63.643, 163.299 )
 
-[node name="Camera2D" parent="." index="8" instance=ExtResource( 5 )]
+[node name="Camera2D" parent="." index="9" instance=ExtResource( 5 )]
 
+position = Vector2( 0, -4 )
 current = true
 
-[node name="enemy" parent="." index="9" instance=ExtResource( 6 )]
+[node name="enemy" parent="." index="10" instance=ExtResource( 6 )]
 
 position = Vector2( 538, 87 )
 
