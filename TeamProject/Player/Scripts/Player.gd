@@ -204,5 +204,3 @@ func _on_Door_body_entered(body):
 		L1Map.goto_scene("res://Puzzles/Scenes/(USE THIS)Puzzle.tscn")
 	else:
 		pass
-		
-	

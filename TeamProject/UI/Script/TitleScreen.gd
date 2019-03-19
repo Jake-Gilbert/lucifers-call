@@ -25,4 +25,8 @@ func _on_Load_pressed():
 	Global_SceneSwitch.reload_last_saved()
 
 func _on_Help_pressed():
+	pass
+
+
+func _on_Settings_pressed():
 	get_tree().change_scene("res://UI/Instructions/HelpInstructions.tscn")
