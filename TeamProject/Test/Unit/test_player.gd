@@ -8,9 +8,23 @@ func _ready():
 	# Initialization here
 	pass
 
-
+#Testing firing
 func test_is_firing():
 	var player = Player.new()		
-	player.shoot()
-	print(player.currentAmmo)
-	assert_ne(10, player.currentAmmo)
+	player.shootHelp()
+	assert_eq(player.currentAmmo, 9, "Shooting gun once")
+#Testing reloading
+func test_is_reloading():
+	var player = Player.new()
+	for i in range (20):
+		player.shootHelp()	
+	player.reloadHelp()
+	assert_eq(player.currentAmmo, 10, "Reloading gun")
+#Testing moving
+func test_is_moving():
+	var player = Player.new()
+	player.moveHelper()
+	assert_ne(player.movedir.x, 0)	
+	assert_ne(player.movedir.y, 0)
+	
+	
