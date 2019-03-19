@@ -31,7 +31,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 11.5055, 16.4894 )
 
-[node name="@L1Map@4" type="Node2D" index="8"]
+[node name="@L1Map@4" type="Node2D" index="9"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -171,9 +171,7 @@ shape = SubResource( 1 )
 ] instance=ExtResource( 16 )]
 
 editor/display_folded = true
-
-position = Vector2( 684.664, 332.86 )
-
+position = Vector2( 306.911, 267.878 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 6
@@ -288,7 +286,6 @@ items = [  ]
 hide_on_state_item_selection = false
 script = ExtResource( 24 )
 _sections_unfolded = [ "Rect" ]
-
 
 [node name="Door" type="Area2D" parent="." index="11" instance=ExtResource( 25 )]
 

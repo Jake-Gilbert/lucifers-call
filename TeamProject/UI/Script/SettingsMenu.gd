@@ -16,38 +16,47 @@ func _on_Back_pressed():
 func _on_ChangeSong_pressed():
 	if (alton == false):
 		Audio.stop_playing()
+		Audioalt.play()
 		alton = true
 		on = false
 	elif (alton == false):
+		Audioalt.play()
+		Audio.stop_playing()
+		on = false
+		alton = true
+	else:
 		Audio._ready()
+		Audioalt.stop_playing()
 		on = true
 		alton = false
-	#self.add_child(player)
-	player.stream = load("res://Sound/Scary Horror Music  - Haunted.ogg")
-	Audioalt.play()
 
 #Once clicked will mute the music
 func _on_MuteCheck_pressed():
-	if (on == true):
-		Audio.stop_playing()
-		on = false
-	elif (on == false):
-		Audio._ready()
-		on = true
-	else:
-		Audio._ready()
-		on = true
+	Audio.stop_playing()
+	Audioalt.stop_playing()
+#	if (on == true):
+#		Audio.stop_playing()
+#		on = false
+#
+#	if (alton == true):
+#		Audioalt.stop_playing()
+#		on = false
 
-	if (alton == true):
-		Audioalt.stop_playing()
-		on = false
-	elif (alton == false):
-		Audioalt.start_playing()
-		alton = true
-	else:
-		Audioalt._start_playing()
-		alton = true
-	
+#	elif (on == false):
+#		Audio._ready()
+#		on = true
+#	else:
+#		Audio._ready()
+#		on = true
+
+#	elif (alton == false):
+#		Audioalt.start_playing()
+#		alton = true
+#		on = false
+#	else:
+#		Audioalt._start_playing()
+#		alton = true
+#		on = false
 
 
 #Changes volume of music

@@ -5,7 +5,7 @@
 [ext_resource path="res://Fonts/MainFont.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Sound/CheckButton.tscn" type="PackedScene" id=4]
 
-[node name="TitleScreen" type="Node"]
+[node name="TitleScreen" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
