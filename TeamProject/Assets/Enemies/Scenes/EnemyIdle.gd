@@ -46,8 +46,8 @@ func _physics_process(delta):
 #		spritedir = "Up"
 #	elif get_parent().get_offset() >= 780:
 #		location = 0
-	location += speed
-	get_parent().set_offset(location)
+#	location += speed
+#	get_parent().set_offset(location)
 	var bodies = get_overlapping_bodies()
 	for body in bodies:
 		if body.name == "Player":
