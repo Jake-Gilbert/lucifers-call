@@ -172,7 +172,7 @@ shape = SubResource( 1 )
 
 editor/display_folded = true
 
-position = Vector2( 684.709, 330.738 )
+position = Vector2( 684.664, 332.86 )
 
 input_pickable = false
 collision_layer = 1
