@@ -26,6 +26,7 @@ func _ready():
 func lose_health():
 	if (health != 0):
 		health = health -1
+		$Sprite.modulate.a = $Sprite.modulate.a * 0.8
 		if (health == 0):
 			queue_free()
 
