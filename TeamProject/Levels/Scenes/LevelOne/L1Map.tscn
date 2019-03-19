@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Levels/Scenes/LevelOne/L1Map.gd" type="Script" id=1]
 [ext_resource path="res://UI/Scenes/UsableHUD.tscn" type="PackedScene" id=2]
@@ -20,11 +20,17 @@
 [ext_resource path="res://UI/Scenes/DialogueBox.tscn" type="PackedScene" id=18]
 [ext_resource path="res://PopupMenu.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Assets/Scenes/Door.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Levels/Scripts/Cutscene.gd" type="Script" id=21]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 11.5055, 16.4894 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
 
 [node name="L1Map" type="Node2D" index="0"]
 
@@ -157,6 +163,7 @@ _sections_unfolded = [ "Collision", "Pause", "collision" ]
 
 [node name="Camera2D" parent="." index="10" instance=ExtResource( 17 )]
 
+editor/display_folded = true
 current = true
 
 [node name="NinePatchRect" parent="Camera2D" index="1" instance=ExtResource( 18 )]
@@ -172,6 +179,27 @@ visible = false
 [node name="Door" parent="." index="11" instance=ExtResource( 20 )]
 
 visible = true
+
+[node name="Cutscene" type="Area2D" parent="." index="12"]
+
+editor/display_folded = true
+position = Vector2( 1484.08, 311.527 )
+scale = Vector2( 1, 1.96415 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 21 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cutscene" index="0"]
+
+shape = SubResource( 2 )
 
 [connection signal="body_entered" from="L1RoomA/RoomAreaA" to="L1RoomA" method="_on_RoomAreaA_body_entered"]
 
@@ -190,6 +218,8 @@ visible = true
 [connection signal="body_exited" from="L1RoomD/RoomAreaD" to="L1RoomD" method="_on_RoomAreaD_body_exited"]
 
 [connection signal="body_entered" from="Door" to="Player" method="_on_Door_body_entered"]
+
+[connection signal="body_entered" from="Cutscene" to="Cutscene" method="_on_Cutscene_body_entered"]
 
 
 [editable path="Camera2D/NinePatchRect"]
