@@ -1,151 +1,35 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Assets/Enemies/Scenes/Enemy1.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Enemies/Ghost Revamped Easier ghost.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Enemies/Scenes/EnemyChar1.tscn" type="PackedScene" id=1]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="Curve2D" id=1]
 
-custom_solver_bias = 0.0
-extents = Vector2( 9.97103, 17.1937 )
-
-[sub_resource type="RectangleShape2D" id=2]
-
-custom_solver_bias = 0.0
-extents = Vector2( 28.515, 30.4701 )
-
-[sub_resource type="Animation" id=3]
-
-resource_name = "moveDown"
-length = 1.5
-loop = true
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2, 1.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 7, 8, 6, 7, 8, 6 ]
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -296.939, -5.64944, 0, 0, 0, 0, -296.147, 203.504, 0, 0, 0, 0, -4.59943, 198.751, 0, 0, 0, 0, -3.01495, -3.27271, 0, 0, 0, 0, -297.731, -8.0262 )
 }
 
-[sub_resource type="Animation" id=4]
+[node name="Path2D" type="Path2D"]
 
-resource_name = "moveLeft"
-length = 1.5
+self_modulate = Color( 0.5, 0.6, 1, 0.7 )
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="." index="0"]
+
+position = Vector2( -296.939, -5.64944 )
+rotation = 1.56701
+offset = 991.998
+h_offset = 0.0
+v_offset = 0.0
+rotate = false
+cubic_interp = true
 loop = true
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2, 1.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 4, 5, 3, 4, 5, 5 ]
-}
+lookahead = 4.0
 
-[sub_resource type="Animation" id=5]
+[node name="enemy" parent="PathFollow2D" index="0" instance=ExtResource( 1 )]
 
-resource_name = "moveRight"
-length = 1.5
-loop = true
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2, 1.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 1, 2, 0, 1, 2, 0 ]
-}
-
-[sub_resource type="Animation" id=6]
-
-resource_name = "moveUp"
-length = 1.5
-loop = true
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2, 1.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 10, 9, 10, 11, 9, 10 ]
-}
-
-[node name="KinematicBody2D" type="Area2D"]
-
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-collision_layer = 4
-collision_mask = 18
-audio_bus_override = false
-audio_bus_name = "Master"
-script = ExtResource( 1 )
-_sections_unfolded = [ "Collision" ]
-
-[node name="Sprite" type="Sprite" parent="." index="0"]
-
-position = Vector2( -8.7069, -1.55577 )
-scale = Vector2( 0.111373, 0.0784006 )
-texture = ExtResource( 2 )
-vframes = 4
-hframes = 3
-frame = 4
-_sections_unfolded = [ "Animation", "Region" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
-
-position = Vector2( 0.445521, -0.944925 )
-scale = Vector2( 2.83606, 1.76125 )
-shape = SubResource( 1 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." index="2"]
-
-position = Vector2( -0.697357, 0.34869 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
-
-shape = SubResource( 2 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
-
-root_node = NodePath("..")
-autoplay = ""
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
-anims/moveDown = SubResource( 3 )
-anims/moveLeft = SubResource( 4 )
-anims/moveRight = SubResource( 5 )
-anims/moveUp = SubResource( 6 )
-blend_times = [  ]
-_sections_unfolded = [ "Playback Options" ]
+position = Vector2( -1.15156, -6.1575 )
+rotation = -1.58477
+scale = Vector2( 1.60345, 1.62217 )
 
 
