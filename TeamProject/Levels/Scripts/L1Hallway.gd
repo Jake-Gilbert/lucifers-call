@@ -71,7 +71,8 @@ func _on_AreaC_body_exited(body):
 		roomC = false
 
 func _on_AreaD_body_entered(body):
-	if body.name == "Player":
+	if body.name == "Player" && L1Map.ghostCombat == false:
+		L1Map.ghostCombat = true
 		_popupAndStop()
 		roomD = true
 
