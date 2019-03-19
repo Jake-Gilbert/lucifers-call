@@ -160,11 +160,10 @@ tracks/0/keys = {
 "values": [ 25, 26, 27, 28 ]
 }
 
-[node name="Player" type="KinematicBody2D" index="0" groups=[
+[node name="Player" type="KinematicBody2D" groups=[
 "persistent",
 ]]
 
-editor/display_folded = true
 position = Vector2( 357.722, 216.323 )
 input_pickable = false
 collision_layer = 1
