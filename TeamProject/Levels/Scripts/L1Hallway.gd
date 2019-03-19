@@ -38,16 +38,20 @@ func _popupAndStop():
 	playerAnim.stop(true)
 
 func _on_AreaA_body_entered(body):
-	if body.name == "Player":
+	if body.name == "Player" && L1Map.mazePuzzle == false:
+		L1Map.mazePuzzle = true
+		roomA= true
 		_popupAndStop()
-		roomA = true
+	else:
+		pass
 
 func _on_AreaA_body_exited(body):
 	if body.name == "Player":
 		roomA = false
 
 func _on_AreaB_body_entered(body):
-	if body.name == "Player":
+	if body.name == "Player" && L1Map.potatoCombat == false:
+		L1Map.potatoCombat = true
 		_popupAndStop()
 		roomB = true
 
@@ -56,16 +60,20 @@ func _on_AreaB_body_exited(body):
 		roomB = false
 
 func _on_AreaC_body_entered(body):
-	if body.name == "Player":
+	if body.name == "Player" && L1Map.flipPuzzle == false:
+		L1Map.flipPuzzle = true
+		roomC= true
 		_popupAndStop()
-		roomC = true
+	else:
+		pass
 
 func _on_AreaC_body_exited(body):
 	if body.name == "Player":
 		roomC = false
 
 func _on_AreaD_body_entered(body):
-	if body.name == "Player":
+	if body.name == "Player" && L1Map.ghostCombat == false:
+		L1Map.ghostCombat = true
 		_popupAndStop()
 		roomD = true
 

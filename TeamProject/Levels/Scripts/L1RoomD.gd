@@ -21,7 +21,6 @@ func _on_RoomAreaD_body_entered(body):
 	if body.name == "Player":
 		self.show()
 		playerInside = true
-	pass # replace with function body
 
 
 func _on_RoomAreaD_body_exited(body):

@@ -43,19 +43,19 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 55.2001, 272.838, 0, 0, 0, 0, 53.0315, 419.216, 0, 0, 0, 0, 961.661, 417.048, 0, 0, 0, 0, 961.661, 542.825, 0, 0, 0, 0, 784.923, 547.162, 0, 0, 0, 0, 783.839, 275.007, 0, 0, 0, 0, 785.829, 163.383, 0, 0, 0, 0, 533.844, 153.95, 0, 0, 0, 0, 539.234, 51.539, 0, 0, 0, 0, 965.049, 50.1915, 0, 0, 0, 0, 959.659, 275.227, 0, 0, 0, 0, 58.1701, 275.227 )
 }
 
-[sub_resource type="Curve2D" id=7]
+[sub_resource type="Curve2D" id=6]
 
 bake_interval = 5.0
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 190, 377, 0, 0, 0, 0, 191, 291, 0, 0, 0, 0, 32, 289, 0, 0, 0, 0, 37, 193, 0, 0, 0, 0, 192, 189, 0, 0, 0, 0, 545, 188, 0, 0, 0, 0, 542, 289, 0, 0, 0, 0, 674, 299, 0, 0, 0, 0, 675, 381, 0, 0, 0, 0, 190, 377 )
 }
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=7]
 
 custom_solver_bias = 0.0
 extents = Vector2( 45, 45 )
 
-[node name="Puzzle1" type="Navigation2D" index="0"]
+[node name="Puzzle1" type="Navigation2D"]
 
 scale = Vector2( 0.24, 0.24 )
 script = ExtResource( 1 )
@@ -239,7 +239,7 @@ scale = Vector2( 1.5, 1.5 )
 [node name="Path5" type="Path2D" parent="Paths" index="4"]
 
 self_modulate = Color( 0.5, 0.6, 1, 0.7 )
-curve = SubResource( 7 )
+curve = SubResource( 6 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path5" index="0"]
 
@@ -293,7 +293,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hor" index="1"]
 
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="Hor2" type="Area2D" parent="." index="5" groups=[
 "Switches",
@@ -329,7 +329,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hor2" index="1"]
 
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="Vert" type="Area2D" parent="." index="6" groups=[
 "Switches",
@@ -363,7 +363,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vert" index="1"]
 
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="Vert2" type="Area2D" parent="." index="7" groups=[
 "Switches",
@@ -397,6 +397,6 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vert2" index="1"]
 
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 
