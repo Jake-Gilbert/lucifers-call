@@ -59,9 +59,12 @@ func _on_AreaB_body_exited(body):
 		roomB = false
 
 func _on_AreaC_body_entered(body):
-	if body.name == "Player":
+	if body.name == "Player" && L1Map.flipPuzzle == false:
+		L1Map.flipPuzzle = true
+		roomC= true
 		_popupAndStop()
-		roomC = true
+	else:
+		pass
 
 func _on_AreaC_body_exited(body):
 	if body.name == "Player":

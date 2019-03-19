@@ -31,9 +31,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 11.5055, 16.4894 )
 
-
-[node name="@@@@@@@L1Map@4@11@21@35@51@69@89" type="Node2D" index="8"]
-
+[node name="@@@L1Map@4@11@20" type="Node2D" index="9"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -63,6 +61,7 @@ script = ExtResource( 6 )
 [node name="L1RoomA" type="Node2D" parent="." index="4" instance=ExtResource( 7 )]
 
 editor/display_folded = true
+visible = false
 position = Vector2( 720, -432 )
 script = ExtResource( 8 )
 _sections_unfolded = [ "Transform" ]
@@ -174,10 +173,7 @@ _sections_unfolded = [ "Transform" ]
 "persistent",
 ] instance=ExtResource( 16 )]
 
-editor/display_folded = true
-
-position = Vector2( 840.227, -277.158 )
-
+position = Vector2( 923.074, 79.695 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 6
@@ -187,9 +183,7 @@ _sections_unfolded = [ "Collision", "Pause", "collision" ]
 
 [node name="Camera2D" type="Camera2D" parent="." index="10" instance=ExtResource( 18 )]
 
-
-position = Vector2( 720, -432 )
-
+position = Vector2( 720, 0 )
 anchor_mode = 0
 rotating = false
 current = true
@@ -331,129 +325,8 @@ selection_enabled = false
 override_selected_font_color = false
 _sections_unfolded = [ "Pause", "custom_fonts" ]
 
-[node name="text" type="RichTextLabel" parent="Camera2D/NinePatchRect" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 14.0
-margin_top = 10.0
-margin_right = 706.0
-margin_bottom = 53.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = true
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-custom_fonts/normal_font = ExtResource( 22 )
-bbcode_enabled = false
-bbcode_text = ""
-visible_characters = -1
-percent_visible = 1.0
-meta_underlined = true
-tab_size = 2
-text = ""
-scroll_active = true
-scroll_following = false
-selection_enabled = false
-override_selected_font_color = false
-_sections_unfolded = [ "Pause", "custom_fonts" ]
-
-[node name="text" type="RichTextLabel" parent="Camera2D/NinePatchRect" index="4"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 14.0
-margin_top = 10.0
-margin_right = 706.0
-margin_bottom = 53.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = true
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-custom_fonts/normal_font = ExtResource( 22 )
-bbcode_enabled = false
-bbcode_text = ""
-visible_characters = -1
-percent_visible = 1.0
-meta_underlined = true
-tab_size = 2
-text = ""
-scroll_active = true
-scroll_following = false
-selection_enabled = false
-override_selected_font_color = false
-_sections_unfolded = [ "Pause", "custom_fonts" ]
-
-[node name="text" type="RichTextLabel" parent="Camera2D/NinePatchRect" index="5"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 14.0
-margin_top = 10.0
-margin_right = 706.0
-margin_bottom = 53.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = true
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-custom_fonts/normal_font = ExtResource( 22 )
-bbcode_enabled = false
-bbcode_text = ""
-visible_characters = -1
-percent_visible = 1.0
-meta_underlined = true
-tab_size = 2
-text = ""
-scroll_active = true
-scroll_following = false
-selection_enabled = false
-override_selected_font_color = false
-_sections_unfolded = [ "Pause", "custom_fonts" ]
-
-[node name="text" type="RichTextLabel" parent="Camera2D/NinePatchRect" index="6"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 14.0
-margin_top = 10.0
-margin_right = 706.0
-margin_bottom = 53.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = true
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-custom_fonts/normal_font = ExtResource( 22 )
-bbcode_enabled = false
-bbcode_text = ""
-visible_characters = -1
-percent_visible = 1.0
-meta_underlined = true
-tab_size = 2
-text = ""
-scroll_active = true
-scroll_following = false
-selection_enabled = false
-override_selected_font_color = false
-_sections_unfolded = [ "Pause", "custom_fonts" ]
-
 [node name="PopupMenu" type="PopupMenu" parent="Camera2D" index="2" instance=ExtResource( 23 )]
 
-visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5

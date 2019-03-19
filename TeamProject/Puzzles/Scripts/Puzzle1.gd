@@ -29,4 +29,4 @@ func _process(delta):
 	pathFour.set_unit_offset(boploc)
 	pathFive.set_unit_offset(boploc)
 	if cleared == 5:
-		get_tree().change_scene("res://Levels/Scenes/LevelOne.tscn")
+		Global_SceneSwitch.reload_last_saved()
