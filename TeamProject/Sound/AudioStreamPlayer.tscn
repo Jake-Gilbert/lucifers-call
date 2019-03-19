@@ -3,7 +3,7 @@
 [ext_resource path="res://Sound/Sound_Title_Screen_MusicV2.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Sound/AudioStreamPlayer.gd" type="Script" id=2]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" index="0"]
 
 stream = ExtResource( 1 )
 volume_db = 0.0
