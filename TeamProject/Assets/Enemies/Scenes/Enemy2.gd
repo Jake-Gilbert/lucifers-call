@@ -36,16 +36,16 @@ func switch_animation(animation):
 		$AnimationPlayer.play(newAnim)
 #Real time function  determines the direction of the enemy 
 func _physics_process(delta):
-	if get_parent().get_offset() < 275:
-		spritedir = "Left"
-	elif get_parent().get_offset() < 400:
-		spritedir = "Down"
-	elif get_parent().get_offset() < 675:
-		spritedir = "Right"
-	elif get_parent().get_offset() < 780:
-		spritedir = "Up"
-	elif get_parent().get_offset() >= 780:
-		location = 0
+#	if get_parent().get_offset() < 275:
+#		spritedir = "Left"
+#	elif get_parent().get_offset() < 400:
+#		spritedir = "Down"
+#	elif get_parent().get_offset() < 675:
+#		spritedir = "Right"
+#	elif get_parent().get_offset() < 780:
+#		spritedir = "Up"
+#	elif get_parent().get_offset() >= 780:
+#		location = 0
 	location += speed
 	get_parent().set_offset(location)
 	var bodies = get_overlapping_bodies()

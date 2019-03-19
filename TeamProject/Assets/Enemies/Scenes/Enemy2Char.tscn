@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Assets/Enemies/Scenes/Enemy1.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Enemies/Ghost Revamped.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Enemies/Scenes/Enemy2.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Enemies/Enemies or Scene creatures/Evil Head/$Evil Head.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -110,8 +110,8 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-position = Vector2( -2.73629, -4.49339 )
-scale = Vector2( 0.107594, 0.0813149 )
+position = Vector2( 0.739113, -0.33058 )
+scale = Vector2( 1.35358, 1.56544 )
 texture = ExtResource( 2 )
 vframes = 4
 hframes = 3

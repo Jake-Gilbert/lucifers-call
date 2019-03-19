@@ -36,15 +36,15 @@ func switch_animation(animation):
 		$AnimationPlayer.play(newAnim)
 #Real time function  determines the direction of the enemy 
 func _physics_process(delta):
-	if get_parent().get_offset() < 275:
-		spritedir = "Left"
-	elif get_parent().get_offset() < 400:
+	if get_parent().get_offset() < 200:
 		spritedir = "Down"
-	elif get_parent().get_offset() < 675:
+	elif get_parent().get_offset() < 500:
 		spritedir = "Right"
-	elif get_parent().get_offset() < 780:
+	elif get_parent().get_offset() < 700:
 		spritedir = "Up"
-	elif get_parent().get_offset() >= 780:
+	elif get_parent().get_offset() < 992:
+		spritedir = "Left"
+	elif get_parent().get_offset() >= 992:
 		location = 0
 	location += speed
 	get_parent().set_offset(location)
