@@ -22,6 +22,7 @@ var health = 5
 var red = Color(1, 0, 0, 1)
 var default = Color(1, 1, 1, 1)
 var puzzle1 = false
+var inventoryshow = false
 
 #The functions are called in the beginning 
 func _physics_process(delta):
@@ -71,9 +72,14 @@ func movement_loop():
 
 #Function that opens inventory when a key is pressed
 func inventory():
-	if (Input.is_action_pressed("ui_inventory")):
-		Global_SceneSwitch.save_current_scene()
-		get_tree().change_scene("res://inventoryUI/Scenes/Scene_PlayerInventory.tscn")
+	if Input.is_action_pressed("ui_inventory"):
+		get_node("../Camera2D/Node").show()
+#	else:
+#		get_node("../Camera2D/Node").hide()
+#		Global_SceneSwitch.save_current_scene()
+#		get_tree().change_scene("res://inventoryUI/Scenes/Scene_PlayerInventory.tscn")
+
+
 
 #Function that reloads gun when a key is pressed
 func reload():

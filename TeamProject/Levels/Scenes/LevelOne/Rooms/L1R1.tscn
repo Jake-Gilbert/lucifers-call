@@ -95,6 +95,7 @@ position = Vector2( 70.8723, 154.666 )
 rotation = -0.365612
 scale = Vector2( 1.4375, 1.4375 )
 script = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Wardrobe" parent="." index="3" instance=ExtResource( 5 )]
 
@@ -145,8 +146,8 @@ scale = Vector2( 1.8316, 2.07016 )
 [node name="WardrobeArea" type="Area2D" parent="." index="7"]
 
 editor/display_folded = true
-position = Vector2( 463, 71.5 )
-scale = Vector2( 1, 0.796875 )
+position = Vector2( 462.035, 107.731 )
+scale = Vector2( 0.633235, 1.9291 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0

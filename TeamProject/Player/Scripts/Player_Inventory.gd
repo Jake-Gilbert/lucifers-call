@@ -159,7 +159,5 @@ func _on_ItemList_mouse_entered():
 func _on_ItemList_mouse_exited():
 	cursor_insideItemList = false;
 
-
-func _on_Close_Button_pressed():
-	get_node("Panel").hide()
-	Global_SceneSwitch.reload_last_saved()
+func _on_CloseButton_pressed():
+	self.hide()

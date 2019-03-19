@@ -74,7 +74,6 @@ __meta__ = {
 
 [node name="DoorL1A" type="StaticBody2D" parent="." index="2"]
 
-editor/display_folded = true
 input_pickable = false
 collision_layer = 1
 collision_mask = 1

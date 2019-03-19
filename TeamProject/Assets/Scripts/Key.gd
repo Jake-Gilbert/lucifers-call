@@ -4,7 +4,6 @@ var keypicked = false
 
 func _ready():
 	set_physics_process(true)
-	print ("There is a key on the floor!")
 
 func _physics_process(delta):
 	var bodiesCollision = get_overlapping_bodies()
@@ -13,8 +12,7 @@ func _physics_process(delta):
 		if body.name == "Player":
 			keypicked = true
 			print("key picked up")
-			print ("No key anymore")
 			queue_free()
+			Global_Player.inventory_addItem("1")
 
 	if keypicked == true:
-		Global_Player.inventory_addItem("1")

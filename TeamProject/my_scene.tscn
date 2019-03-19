@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Levels/Scenes/LevelOne/L1Map.gd" type="Script" id=1]
 [ext_resource path="res://UI/Scenes/UsableHUD.tscn" type="PackedScene" id=2]
@@ -24,14 +24,16 @@
 [ext_resource path="res://Fonts/titleFontW.tres" type="DynamicFont" id=22]
 [ext_resource path="res://PopupMenu.tscn" type="PackedScene" id=23]
 [ext_resource path="res://PopupMenu.gd" type="Script" id=24]
-[ext_resource path="res://Assets/Scenes/Door.tscn" type="PackedScene" id=25]
+[ext_resource path="res://inventoryUI/Scenes/Scene_PlayerInventory.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Player/Scripts/Player_Inventory.gd" type="Script" id=26]
+[ext_resource path="res://Assets/Scenes/Door.tscn" type="PackedScene" id=27]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 11.5055, 16.4894 )
 
-[node name="@L1Map@4" type="Node2D" index="9"]
+[node name="@L1Map@7" type="Node2D" index="10"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -50,7 +52,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="L1R1Bathroom" type="Node2D" parent="." index="2" instance=ExtResource( 4 )]
 
-position = Vector2( 0.663147, 0.396301 )
+position = Vector2( 1.77118, 0.396301 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="L1Hallway" type="Node2D" parent="." index="3" instance=ExtResource( 5 )]
@@ -171,7 +173,7 @@ shape = SubResource( 1 )
 ] instance=ExtResource( 16 )]
 
 editor/display_folded = true
-position = Vector2( 306.911, 267.878 )
+position = Vector2( 136.844, 201.782 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 6
@@ -181,7 +183,6 @@ _sections_unfolded = [ "Collision", "Pause", "collision" ]
 
 [node name="Camera2D" type="Camera2D" parent="." index="10" instance=ExtResource( 18 )]
 
-editor/display_folded = true
 anchor_mode = 0
 rotating = false
 current = true
@@ -287,7 +288,26 @@ hide_on_state_item_selection = false
 script = ExtResource( 24 )
 _sections_unfolded = [ "Rect" ]
 
-[node name="Door" type="Area2D" parent="." index="11" instance=ExtResource( 25 )]
+[node name="Node" type="PopupPanel" parent="Camera2D" index="3" instance=ExtResource( 25 )]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 25.0
+margin_top = 50.0
+margin_right = 695.0
+margin_bottom = 394.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+popup_exclusive = false
+script = ExtResource( 26 )
+
+[node name="Door" type="Area2D" parent="." index="11" instance=ExtResource( 27 )]
 
 position = Vector2( 711, 360 )
 input_pickable = true

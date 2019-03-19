@@ -5,7 +5,7 @@ extends Node
 
 var url_PlayerData = "user://PlayerData.bin"
 var inventory = {}
-var inventory_maxSlots = 18
+var inventory_maxSlots = 9
 onready var playerData = Global_DataParser.load_data(url_PlayerData)
 
 

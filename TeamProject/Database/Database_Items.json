@@ -3,10 +3,8 @@
 		"name": "",
 		"icon": "res://Database/Item_Icons/empty_slot.png",
 		"type": "misc",
-		"weight": 0.0,
 		"stackable": false,
-		"description": "",
-		"sell_price": 0
+		"description": ""
 	},
 	
 	"1": {
