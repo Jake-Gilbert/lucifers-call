@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Assets/Enemies/Ghost Revamped Easier ghost.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Enemies/Scenes/Enemy1.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Enemies/Ghost Revamped Easier ghost.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -99,13 +100,14 @@ collision_layer = 4
 collision_mask = 18
 audio_bus_override = false
 audio_bus_name = "Master"
+script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
 position = Vector2( -8.7069, -1.55577 )
 scale = Vector2( 0.111373, 0.0784006 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 vframes = 4
 hframes = 3
 frame = 4
