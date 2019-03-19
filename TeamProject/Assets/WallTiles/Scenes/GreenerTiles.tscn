@@ -32,7 +32,27 @@ extents = Vector2( 8, 8 )
 custom_solver_bias = 0.0
 extents = Vector2( 8, 8 )
 
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 8, 8 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 8, 8 )
+
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 8, 8 )
+
 [sub_resource type="RectangleShape2D" id=6]
+
+custom_solver_bias = 0.0
+extents = Vector2( 8, 8 )
+
+[sub_resource type="RectangleShape2D" id=7]
 
 custom_solver_bias = 0.0
 extents = Vector2( 8, 8 )
@@ -63,26 +83,6 @@ custom_solver_bias = 0.0
 extents = Vector2( 8, 8 )
 
 [sub_resource type="RectangleShape2D" id=13]
-
-custom_solver_bias = 0.0
-extents = Vector2( 8, 8 )
-
-[sub_resource type="RectangleShape2D" id=3]
-
-custom_solver_bias = 0.0
-extents = Vector2( 8, 8 )
-
-[sub_resource type="RectangleShape2D" id=4]
-
-custom_solver_bias = 0.0
-extents = Vector2( 8, 8 )
-
-[sub_resource type="RectangleShape2D" id=5]
-
-custom_solver_bias = 0.0
-extents = Vector2( 8, 8 )
-
-[sub_resource type="RectangleShape2D" id=7]
 
 custom_solver_bias = 0.0
 extents = Vector2( 8, 8 )
@@ -162,7 +162,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CornerW2/StaticBody2D" index="0"]
 
-shape = SubResource( 6 )
+shape = SubResource( 3 )
 
 [node name="TopW" type="Sprite" parent="." index="3"]
 
@@ -188,7 +188,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopW/StaticBody2D" index="0"]
 
-shape = SubResource( 8 )
+shape = SubResource( 4 )
 
 [node name="CornerW3" type="Sprite" parent="." index="4"]
 
@@ -213,7 +213,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CornerW3/StaticBody2D" index="0"]
 
-shape = SubResource( 9 )
+shape = SubResource( 5 )
 
 [node name="SideW2" type="Sprite" parent="." index="5"]
 
@@ -239,7 +239,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SideW2/StaticBody2D" index="0"]
 
-shape = SubResource( 10 )
+shape = SubResource( 6 )
 
 [node name="CornerW4" type="Sprite" parent="." index="6"]
 
@@ -263,7 +263,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CornerW4/StaticBody2D" index="0"]
 
-shape = SubResource( 11 )
+shape = SubResource( 7 )
 
 [node name="BottomW" type="Sprite" parent="." index="7"]
 
@@ -288,7 +288,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomW/StaticBody2D" index="0"]
 
-shape = SubResource( 12 )
+shape = SubResource( 8 )
 
 [node name="CornerW5" type="Sprite" parent="." index="8"]
 
@@ -313,7 +313,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CornerW5/StaticBody2D" index="0"]
 
-shape = SubResource( 13 )
+shape = SubResource( 9 )
 
 [node name="BlackW" type="Sprite" parent="." index="9"]
 
@@ -358,7 +358,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GreenTopW/StaticBody2D" index="0"]
 
-shape = SubResource( 3 )
+shape = SubResource( 10 )
 
 [node name="CurlyW" type="Sprite" parent="." index="12"]
 
@@ -380,7 +380,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CurlyW/StaticBody2D" index="0"]
 
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 
 [node name="GreenWCollision" type="Sprite" parent="." index="13"]
 
@@ -406,7 +406,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GreenWCollision/StaticBody2D" index="0"]
 
-shape = SubResource( 5 )
+shape = SubResource( 12 )
 
 [node name="CornerW6" type="Sprite" parent="." index="14"]
 
@@ -432,7 +432,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CornerW6/StaticBody2D" index="0"]
 
-shape = SubResource( 5 )
+shape = SubResource( 12 )
 
 [node name="PlainCornerW" type="Sprite" parent="." index="15"]
 
@@ -458,7 +458,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlainCornerW/StaticBody2D" index="0"]
 
-shape = SubResource( 5 )
+shape = SubResource( 12 )
 
 [node name="GreenCornerW" type="Sprite" parent="." index="16"]
 
@@ -484,7 +484,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GreenCornerW/StaticBody2D" index="0"]
 
-shape = SubResource( 5 )
+shape = SubResource( 12 )
 
 [node name="PlainW" type="Sprite" parent="." index="17"]
 
@@ -510,7 +510,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlainW/StaticBody2D" index="0"]
 
-shape = SubResource( 5 )
+shape = SubResource( 12 )
 
 [node name="CornerW7" type="Sprite" parent="." index="18"]
 
@@ -536,7 +536,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CornerW7/StaticBody2D" index="0"]
 
-shape = SubResource( 5 )
+shape = SubResource( 12 )
 
 [node name="PlainCornerW2" type="Sprite" parent="." index="19"]
 
@@ -562,7 +562,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlainCornerW2/StaticBody2D" index="0"]
 
-shape = SubResource( 5 )
+shape = SubResource( 12 )
 
 [node name="CornerW8" type="Sprite" parent="." index="20"]
 
@@ -588,7 +588,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CornerW8/StaticBody2D" index="0"]
 
-shape = SubResource( 5 )
+shape = SubResource( 12 )
 
 [node name="CornerW9" type="Sprite" parent="." index="21"]
 
@@ -614,7 +614,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CornerW9/StaticBody2D" index="0"]
 
-shape = SubResource( 5 )
+shape = SubResource( 12 )
 
 [node name="GreenCornerW2" type="Sprite" parent="." index="22"]
 
@@ -640,7 +640,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GreenCornerW2/StaticBody2D" index="0"]
 
-shape = SubResource( 5 )
+shape = SubResource( 12 )
 
 [node name="PlainBottomW" type="Sprite" parent="." index="23"]
 
@@ -666,7 +666,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlainBottomW/StaticBody2D" index="0"]
 
-shape = SubResource( 5 )
+shape = SubResource( 12 )
 
 [node name="BlackWCollision" type="Sprite" parent="." index="24"]
 
@@ -690,6 +690,6 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlackWCollision/StaticBody2D" index="0"]
 
-shape = SubResource( 7 )
+shape = SubResource( 13 )
 
 
