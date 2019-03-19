@@ -32,27 +32,7 @@ extents = Vector2( 8, 8 )
 custom_solver_bias = 0.0
 extents = Vector2( 8, 8 )
 
-[sub_resource type="RectangleShape2D" id=3]
-
-custom_solver_bias = 0.0
-extents = Vector2( 8, 8 )
-
-[sub_resource type="RectangleShape2D" id=4]
-
-custom_solver_bias = 0.0
-extents = Vector2( 8, 8 )
-
-[sub_resource type="RectangleShape2D" id=5]
-
-custom_solver_bias = 0.0
-extents = Vector2( 8, 8 )
-
 [sub_resource type="RectangleShape2D" id=6]
-
-custom_solver_bias = 0.0
-extents = Vector2( 8, 8 )
-
-[sub_resource type="RectangleShape2D" id=7]
 
 custom_solver_bias = 0.0
 extents = Vector2( 8, 8 )
@@ -87,12 +67,34 @@ extents = Vector2( 8, 8 )
 custom_solver_bias = 0.0
 extents = Vector2( 8, 8 )
 
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 8, 8 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 8, 8 )
+
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 8, 8 )
+
+[sub_resource type="RectangleShape2D" id=7]
+
+custom_solver_bias = 0.0
+extents = Vector2( 8, 8 )
+
 [node name="Node" type="Node" index="0"]
 
 [node name="SideW" type="Sprite" parent="." index="0"]
 
+modulate = Color( 0.807843, 1, 0.505882, 1 )
 position = Vector2( 25.1558, 20.8361 )
 texture = ExtResource( 1 )
+_sections_unfolded = [ "Visibility" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -114,8 +116,10 @@ shape = SubResource( 1 )
 [node name="CornerW" type="Sprite" parent="." index="1"]
 
 editor/display_folded = true
+modulate = Color( 0.807843, 1, 0.505882, 1 )
 position = Vector2( 25.1558, 3.8147e-06 )
 texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -137,9 +141,11 @@ shape = SubResource( 2 )
 [node name="CornerW2" type="Sprite" parent="." index="2"]
 
 editor/display_folded = true
+modulate = Color( 0.807843, 1, 0.505882, 1 )
 position = Vector2( 0.508194, 23.6312 )
 rotation = -0.00146039
 texture = ExtResource( 3 )
+_sections_unfolded = [ "Visibility" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -156,15 +162,16 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CornerW2/StaticBody2D" index="0"]
 
-shape = SubResource( 3 )
+shape = SubResource( 6 )
 
 [node name="TopW" type="Sprite" parent="." index="3"]
 
 editor/display_folded = true
+modulate = Color( 0.807843, 1, 0.505882, 1 )
 position = Vector2( 77.5002, 3.81149 )
 rotation = 3.14159
 texture = ExtResource( 4 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Visibility" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -181,14 +188,15 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopW/StaticBody2D" index="0"]
 
-shape = SubResource( 4 )
+shape = SubResource( 8 )
 
 [node name="CornerW3" type="Sprite" parent="." index="4"]
 
 editor/display_folded = true
+modulate = Color( 0.807843, 1, 0.505882, 1 )
 position = Vector2( 49.8034, 1.52459 )
 texture = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Visibility" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -205,15 +213,16 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CornerW3/StaticBody2D" index="0"]
 
-shape = SubResource( 5 )
+shape = SubResource( 9 )
 
 [node name="SideW2" type="Sprite" parent="." index="5"]
 
 editor/display_folded = true
+modulate = Color( 0.807843, 1, 0.505882, 1 )
 position = Vector2( 52.3444, 21.8525 )
 rotation = -3.14159
 texture = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Visibility" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -230,13 +239,14 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SideW2/StaticBody2D" index="0"]
 
-shape = SubResource( 6 )
+shape = SubResource( 10 )
 
 [node name="CornerW4" type="Sprite" parent="." index="6"]
 
-editor/display_folded = true
+modulate = Color( 0.807843, 1, 0.505882, 1 )
 position = Vector2( 79.7871, 25.1558 )
 texture = ExtResource( 6 )
+_sections_unfolded = [ "Visibility" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -253,13 +263,15 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CornerW4/StaticBody2D" index="0"]
 
-shape = SubResource( 7 )
+shape = SubResource( 11 )
 
 [node name="BottomW" type="Sprite" parent="." index="7"]
 
 editor/display_folded = true
+modulate = Color( 0.807843, 1, 0.505882, 1 )
 position = Vector2( 26.6605, 42.7488 )
 texture = ExtResource( 4 )
+_sections_unfolded = [ "Visibility" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -276,14 +288,15 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomW/StaticBody2D" index="0"]
 
-shape = SubResource( 8 )
+shape = SubResource( 12 )
 
 [node name="CornerW5" type="Sprite" parent="." index="8"]
 
 editor/display_folded = true
+modulate = Color( 0.807843, 1, 0.505882, 1 )
 position = Vector2( 52.8614, 43.4383 )
 texture = ExtResource( 7 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Visibility" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -300,20 +313,24 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CornerW5/StaticBody2D" index="0"]
 
-shape = SubResource( 9 )
+shape = SubResource( 13 )
 
 [node name="BlackW" type="Sprite" parent="." index="9"]
 
+modulate = Color( 0.807843, 1, 0.505882, 1 )
 position = Vector2( 0.229828, 64.5829 )
 texture = ExtResource( 8 )
+_sections_unfolded = [ "Visibility" ]
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="GreenW" type="Sprite" parent="." index="10"]
 
+modulate = Color( 0.811129, 1, 0.506623, 1 )
 position = Vector2( 27.5799, 64.5829 )
 texture = ExtResource( 9 )
+_sections_unfolded = [ "Visibility" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -321,8 +338,10 @@ __meta__ = {
 [node name="GreenTopW" type="Sprite" parent="." index="11"]
 
 editor/display_folded = true
+modulate = Color( 0.807843, 1, 0.505882, 1 )
 position = Vector2( 53.3211, 64.5829 )
 texture = ExtResource( 10 )
+_sections_unfolded = [ "Visibility" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -339,13 +358,15 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GreenTopW/StaticBody2D" index="0"]
 
-shape = SubResource( 10 )
+shape = SubResource( 3 )
 
 [node name="CurlyW" type="Sprite" parent="." index="12"]
 
 editor/display_folded = true
+modulate = Color( 0.807843, 1, 0.505882, 1 )
 position = Vector2( 0.174751, 42.6647 )
 texture = ExtResource( 11 )
+_sections_unfolded = [ "Visibility" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="CurlyW" index="0"]
 
@@ -359,13 +380,15 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CurlyW/StaticBody2D" index="0"]
 
-shape = SubResource( 11 )
+shape = SubResource( 4 )
 
 [node name="GreenWCollision" type="Sprite" parent="." index="13"]
 
 editor/display_folded = true
+modulate = Color( 0.807843, 1, 0.505882, 1 )
 position = Vector2( 0.919334, 84.8081 )
 texture = ExtResource( 9 )
+_sections_unfolded = [ "Visibility" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -383,13 +406,15 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GreenWCollision/StaticBody2D" index="0"]
 
-shape = SubResource( 12 )
+shape = SubResource( 5 )
 
 [node name="CornerW6" type="Sprite" parent="." index="14"]
 
 editor/display_folded = true
+modulate = Color( 0.807843, 1, 0.505882, 1 )
 position = Vector2( 79.6962, 43.7071 )
 texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -407,13 +432,15 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CornerW6/StaticBody2D" index="0"]
 
-shape = SubResource( 12 )
+shape = SubResource( 5 )
 
 [node name="PlainCornerW" type="Sprite" parent="." index="15"]
 
 editor/display_folded = true
+modulate = Color( 0.807843, 1, 0.505882, 1 )
 position = Vector2( 79.5473, 64.5555 )
 texture = ExtResource( 12 )
+_sections_unfolded = [ "Visibility" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -431,13 +458,15 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlainCornerW/StaticBody2D" index="0"]
 
-shape = SubResource( 12 )
+shape = SubResource( 5 )
 
 [node name="GreenCornerW" type="Sprite" parent="." index="16"]
 
 editor/display_folded = true
+modulate = Color( 0.807843, 1, 0.505882, 1 )
 position = Vector2( 27.5754, 84.957 )
 texture = ExtResource( 13 )
+_sections_unfolded = [ "Visibility" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -455,13 +484,15 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GreenCornerW/StaticBody2D" index="0"]
 
-shape = SubResource( 12 )
+shape = SubResource( 5 )
 
 [node name="PlainW" type="Sprite" parent="." index="17"]
 
 editor/display_folded = true
+modulate = Color( 0.807843, 1, 0.505882, 1 )
 position = Vector2( 53.338, 85.1059 )
 texture = ExtResource( 14 )
+_sections_unfolded = [ "Visibility" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -479,13 +510,15 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlainW/StaticBody2D" index="0"]
 
-shape = SubResource( 12 )
+shape = SubResource( 5 )
 
 [node name="CornerW7" type="Sprite" parent="." index="18"]
 
 editor/display_folded = true
+modulate = Color( 0.807843, 1, 0.505882, 1 )
 position = Vector2( 79.8451, 84.6592 )
 texture = ExtResource( 15 )
+_sections_unfolded = [ "Visibility" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -503,13 +536,15 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CornerW7/StaticBody2D" index="0"]
 
-shape = SubResource( 12 )
+shape = SubResource( 5 )
 
 [node name="PlainCornerW2" type="Sprite" parent="." index="19"]
 
 editor/display_folded = true
+modulate = Color( 0.807843, 1, 0.505882, 1 )
 position = Vector2( 0.621498, 104.316 )
 texture = ExtResource( 16 )
+_sections_unfolded = [ "Visibility" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -527,13 +562,15 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlainCornerW2/StaticBody2D" index="0"]
 
-shape = SubResource( 12 )
+shape = SubResource( 5 )
 
 [node name="CornerW8" type="Sprite" parent="." index="20"]
 
 editor/display_folded = true
+modulate = Color( 0.807843, 1, 0.505882, 1 )
 position = Vector2( 26.3841, 104.316 )
 texture = ExtResource( 17 )
+_sections_unfolded = [ "Visibility" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -551,13 +588,15 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CornerW8/StaticBody2D" index="0"]
 
-shape = SubResource( 12 )
+shape = SubResource( 5 )
 
 [node name="CornerW9" type="Sprite" parent="." index="21"]
 
 editor/display_folded = true
+modulate = Color( 0.807843, 1, 0.505882, 1 )
 position = Vector2( 26.59, 124.085 )
 texture = ExtResource( 18 )
+_sections_unfolded = [ "Visibility" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -575,13 +614,15 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CornerW9/StaticBody2D" index="0"]
 
-shape = SubResource( 12 )
+shape = SubResource( 5 )
 
 [node name="GreenCornerW2" type="Sprite" parent="." index="22"]
 
 editor/display_folded = true
+modulate = Color( 0.807843, 1, 0.505882, 1 )
 position = Vector2( 52.4445, 104.912 )
 texture = ExtResource( 19 )
+_sections_unfolded = [ "Visibility" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -599,13 +640,15 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GreenCornerW2/StaticBody2D" index="0"]
 
-shape = SubResource( 12 )
+shape = SubResource( 5 )
 
 [node name="PlainBottomW" type="Sprite" parent="." index="23"]
 
 editor/display_folded = true
+modulate = Color( 0.807843, 1, 0.505882, 1 )
 position = Vector2( 52.0326, 125.505 )
 texture = ExtResource( 20 )
+_sections_unfolded = [ "Visibility" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -623,12 +666,14 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlainBottomW/StaticBody2D" index="0"]
 
-shape = SubResource( 12 )
+shape = SubResource( 5 )
 
 [node name="BlackWCollision" type="Sprite" parent="." index="24"]
 
 editor/display_folded = true
+modulate = Color( 0.807843, 1, 0.505882, 1 )
 texture = ExtResource( 21 )
+_sections_unfolded = [ "Visibility" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -645,6 +690,6 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlackWCollision/StaticBody2D" index="0"]
 
-shape = SubResource( 13 )
+shape = SubResource( 7 )
 
 
