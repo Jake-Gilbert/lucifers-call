@@ -4,7 +4,7 @@
 [ext_resource path="res://Cutscenes/Images/Boss Room 1- cutscene 5.jpg" type="Texture" id=2]
 [ext_resource path="res://Fonts/font.tres" type="DynamicFont" id=3]
 
-[node name="Node" type="Node" index="0"]
+[node name="Node" type="Node"]
 
 script = ExtResource( 1 )
 nextScene = "res://Cutscenes/Scenes/BossSix.tscn"
@@ -54,5 +54,7 @@ text = "NEXT >>"
 flat = false
 align = 1
 _sections_unfolded = [ "custom_fonts" ]
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 
 

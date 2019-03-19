@@ -28,6 +28,7 @@ func lose_health():
 		health = health -1
 		if (health == 0):
 			queue_free()
+			get_tree().change_scene("res://Cutscenes/Scenes/BossDeathCutsceneOne.tscn")
 
 #Switches the animation of enemy to a different animation
 func switch_animation(animation):
