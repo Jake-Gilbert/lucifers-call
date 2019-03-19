@@ -1,11 +1,7 @@
 extends AudioStreamPlayer
 
-var on = true
-
-func _ready():
+func start_playing():
 	self.play()
-	on
 
 func stop_playing():
 	self.stop()
-	on = false

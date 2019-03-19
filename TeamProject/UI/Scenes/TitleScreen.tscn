@@ -5,7 +5,7 @@
 [ext_resource path="res://Fonts/MainFont.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Sound/CheckButton.tscn" type="PackedScene" id=4]
 
-[node name="TitleScreen" type="Node"]
+[node name="TitleScreen" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -34,7 +34,6 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." index="1"]
 
-editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -63,7 +62,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 180.0
+margin_right = 200.0
 margin_bottom = 36.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -91,7 +90,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 46.0
-margin_right = 180.0
+margin_right = 200.0
 margin_bottom = 82.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -112,14 +111,14 @@ flat = true
 align = 1
 _sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
 
-[node name="Help" type="Button" parent="VBoxContainer" index="2"]
+[node name="Settings" type="Button" parent="VBoxContainer" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 92.0
-margin_right = 180.0
+margin_right = 200.0
 margin_bottom = 128.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -135,7 +134,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Help"
+text = "Settings"
 flat = true
 align = 1
 _sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
@@ -147,7 +146,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 138.0
-margin_right = 180.0
+margin_right = 200.0
 margin_bottom = 174.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -179,7 +178,7 @@ margin_bottom = 37.0
 
 [connection signal="pressed" from="VBoxContainer/Load" to="." method="_on_Load_pressed"]
 
-[connection signal="pressed" from="VBoxContainer/Help" to="." method="_on_Help_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_Settings_pressed"]
 
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
 
