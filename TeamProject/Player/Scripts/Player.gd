@@ -22,7 +22,8 @@ var health = 5
 var red = Color(1, 0, 0, 1)
 var default = Color(1, 1, 1, 1)
 var puzzle1 = false
-
+var shooting = false
+var reloading = true
 #The functions are called in the beginning 
 func _physics_process(delta):
 	controls_loop()
@@ -68,6 +69,10 @@ func movement_loop():
 	var motion = movedir.normalized() * SPEED
 	#Move and slide method moves the player along the vector
 	move_and_slide(motion, Vector2(0,0))
+#Testing movement
+func moveHelper():
+ movedir.x = -int(26) + int(25)
+ movedir.y = -int(26) + int(25)
 
 #Function that opens inventory when a key is pressed
 func inventory():
@@ -79,10 +84,12 @@ func inventory():
 func reload():
 	if (Input.is_action_just_pressed("ui_reload")):
 		currentAmmo = ammoClip
+				
 #Shoots a bullet from the gun if the key is pressed and there are bullets left.
 #Also the delay timer needs to be equal to 0
 func shoot():
 	var bulleta = bullet.instance()
+	
 	if (Input.is_action_just_pressed("ui_shoot")):
 		
 		if (currentAmmo > 0 && get_node("shootTimer").get_time_left() == 0):
@@ -104,6 +111,21 @@ func shoot():
 			get_node("shootTimer").start()
 		elif (currentAmmo > 0 && get_node("shootTimer").get_time_left() != 0):
 			pass
+#Shooting for testing purposes
+func shootHelp():
+	if shooting == false:
+			currentAmmo -= 1
+			shooting = true
+	else:
+		shooting = false
+		
+#Reloading for testing purposes
+func reloadHelp():
+	if currentAmmo == 0 && reloading == true:
+		reloading = false
+		currentAmmo = 10
+	else:
+		reloading = true
 #Function that decreases the players health by 1 and makes them invincbile temporarily
 #Also reverts the invicibility when the timer runs out
 func lose_health():
