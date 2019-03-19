@@ -204,12 +204,13 @@ shape = SubResource( 3 )
 [node name="DoorL1D" type="StaticBody2D" parent="." index="5"]
 
 input_pickable = false
-collision_layer = 1
-collision_mask = 1
+collision_layer = 128
+collision_mask = 128
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+_sections_unfolded = [ "Collision" ]
 
 [node name="Door" type="Sprite" parent="DoorL1D" index="0"]
 

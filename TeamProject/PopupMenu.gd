@@ -44,5 +44,11 @@ func _on_YesBtn_pressed():
 		else: 
 			pass
 	if get_node("../../L1Hallway").roomD == true:
-		doorD.queue_free()
+		if L1Map.ghostCombat == true:
+			doorD.queue_free()
+			Global_SceneSwitch.save_current_scene()
+			doorD.get_node("CollisionShape2D").disabled = true
+		#L1Map._deferred_goto_scene("res://Puzzles/Scenes/(USE THIS)Puzzle.tscn")
+		#L1Map.playerPosition = position
+			L1Map.goto_scene("res://Cutscenes/Scenes/GhostCombatCutsceneOne.tscn")
 	self.hide()

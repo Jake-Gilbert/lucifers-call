@@ -59,4 +59,14 @@ __meta__ = {
 position = Vector2( 686.473, 168.815 )
 scale = Vector2( 0.831583, 0.802053 )
 
+[node name="Path2D3" parent="." index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 607.165, 231.009 )
+scale = Vector2( 0.252596, 0.267758 )
+
+[node name="Path2D2" parent="." index="4" instance=ExtResource( 3 )]
+
+position = Vector2( 645.666, 206.224 )
+scale = Vector2( 0.527052, 0.493 )
+
 

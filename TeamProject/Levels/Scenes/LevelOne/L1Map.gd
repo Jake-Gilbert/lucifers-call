@@ -10,6 +10,7 @@ var playerPosition = Vector2(0,0)
 var initialise = false
 var mazePuzzle = false
 var flipPuzzle = false
+var ghostCombat = false
 
 func _ready():
 	set_process(true)
