@@ -17,5 +17,5 @@ func _physics_process(delta):
 	for body in bodiesCollision:
 		if body.name == "Player":
 			#Global_SceneSwitch.save_current_scene()
-			get_tree().change_scene(changeLevels)
+			Global_SceneSwitch.reload_last_saved()
 			Global_Player.inventory_addItem("2")

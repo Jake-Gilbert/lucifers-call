@@ -157,7 +157,6 @@ _sections_unfolded = [ "Collision", "Pause", "collision" ]
 
 [node name="Camera2D" parent="." index="10" instance=ExtResource( 17 )]
 
-editor/display_folded = true
 current = true
 
 [node name="NinePatchRect" parent="Camera2D" index="1" instance=ExtResource( 18 )]

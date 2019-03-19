@@ -1,9 +1,16 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Images/Assets_room_floor_wood.png" type="Texture" id=1]
 [ext_resource path="res://Assets/WallTiles/TileSets/WallTileSetNewestEdition.tres" type="TileSet" id=2]
+[ext_resource path="res://Levels/Scenes/LevelOne/Rooms/Piece1.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Jigsaw puzzle pieces/Jigsaw piece1.png" type="Texture" id=4]
 
-[node name="L1RoomA" type="Node2D" index="0"]
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="L1RoomA" type="Node2D"]
 
 position = Vector2( 720, -432 )
 _sections_unfolded = [ "Transform" ]
@@ -51,5 +58,25 @@ __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
+
+[node name="Piece1" type="Area2D" parent="." index="2"]
+
+position = Vector2( 99.723, 157.341 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Piece1" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Piece1" index="1"]
+
+texture = ExtResource( 4 )
 
 
