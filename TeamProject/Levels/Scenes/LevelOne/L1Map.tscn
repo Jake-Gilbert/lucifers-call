@@ -80,7 +80,6 @@ script = ExtResource( 10 )
 
 [node name="RoomAreaB" type="Area2D" parent="L1RoomB" index="1"]
 
-editor/display_folded = true
 position = Vector2( 297.32, 0 )
 scale = Vector2( 1.0725, 1 )
 input_pickable = true
@@ -94,8 +93,9 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="L1RoomB/RoomAreaB" index="0"]
 
-position = Vector2( 225.014, 249.799 )
-scale = Vector2( 12.7446, 11.2174 )
+position = Vector2( 214.038, 249.799 )
+scale = Vector2( 13.5013, 11.2174 )
+
 shape = SubResource( 1 )
 
 [node name="L1RoomC" parent="." index="6" instance=ExtResource( 11 )]

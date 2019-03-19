@@ -95,7 +95,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="RoomAreaB" type="Area2D" parent="L1RoomB" index="1"]
 
-editor/display_folded = true
 position = Vector2( 297.32, 0 )
 scale = Vector2( 1.0725, 1 )
 input_pickable = true
@@ -109,8 +108,8 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="L1RoomB/RoomAreaB" index="0"]
 
-position = Vector2( 225.014, 249.799 )
-scale = Vector2( 12.7446, 11.2174 )
+position = Vector2( 214.038, 249.799 )
+scale = Vector2( 13.5013, 11.2174 )
 shape = SubResource( 1 )
 
 [node name="L1RoomC" type="Node2D" parent="." index="6" instance=ExtResource( 11 )]
@@ -172,7 +171,9 @@ shape = SubResource( 1 )
 ] instance=ExtResource( 16 )]
 
 editor/display_folded = true
+
 position = Vector2( 684.664, 332.86 )
+
 input_pickable = false
 collision_layer = 1
 collision_mask = 6
@@ -287,6 +288,7 @@ items = [  ]
 hide_on_state_item_selection = false
 script = ExtResource( 24 )
 _sections_unfolded = [ "Rect" ]
+
 
 [node name="Door" type="Area2D" parent="." index="11" instance=ExtResource( 25 )]
 
