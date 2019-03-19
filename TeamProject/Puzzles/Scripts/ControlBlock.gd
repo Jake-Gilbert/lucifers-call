@@ -5,7 +5,7 @@
 extends "BlockTemplateV.gd"
 
 func _ready():
-	id = "BHC"
+	id = "CB"
 	set_physics_process(true)
 #Once the red puzzle block enters the goal then the puzzle is completed and hte scene is changed
 func _on_Goal_body_entered(body):

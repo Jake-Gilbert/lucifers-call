@@ -58,7 +58,6 @@ __meta__ = {
 
 [node name="Player" parent="." index="1" instance=ExtResource( 3 )]
 
-editor/display_folded = false
 position = Vector2( 18.5369, 78.633 )
 scale = Vector2( 0.487257, 0.399621 )
 
