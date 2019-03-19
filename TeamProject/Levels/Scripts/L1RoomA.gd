@@ -11,7 +11,7 @@ func _ready():
 func _on_RoomAreaA_body_entered(body):
 	if body.name == "Player":
 		self.show()
-		get_tree().change_scene("res://Cutscenes/Scenes/MazeCutsceneOne.tscn")
+		#get_tree().change_scene("res://Cutscenes/Scenes/MazeCutsceneOne.tscn")
 		playerInside = true
 
 
