@@ -81,5 +81,6 @@ lookahead = 4.0
 [node name="enemy" parent="Path2D/PathFollow2D" index="0" instance=ExtResource( 3 )]
 
 rotation = 3.08289
+gravity = 98.001
 
 

@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/Images/Assets_room_floor_wood_small (6).png" type="Texture" id=1]
 [ext_resource path="res://Assets/WallTiles/TileSets/BlueEdition.tres" type="TileSet" id=2]
+[ext_resource path="res://Assets/Enemies/Scenes/patrollingEnemy.tscn" type="PackedScene" id=3]
 
 [node name="L2Three" type="Node2D"]
 
-editor/display_folded = true
 position = Vector2( 1440, 0 )
 _sections_unfolded = [ "Transform" ]
 
@@ -53,5 +53,24 @@ __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
 }
+
+[node name="Path2D" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( -284.378, 404.945 )
+scale = Vector2( 1.51368, -0.623823 )
+
+[node name="Path2D3" parent="." index="3" instance=ExtResource( 3 )]
+
+position = Vector2( -169.132, 47.5 )
+
+[node name="Path2D2" parent="." index="4" instance=ExtResource( 3 )]
+
+position = Vector2( 190.265, 385.525 )
+scale = Vector2( 1.34157, -0.738224 )
+
+[node name="Path2D4" parent="." index="5" instance=ExtResource( 3 )]
+
+position = Vector2( 147.873, 36.7592 )
+scale = Vector2( 1.49584, 0.466689 )
 
 
