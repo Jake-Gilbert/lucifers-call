@@ -148,7 +148,6 @@ shape = SubResource( 1 )
 [node name="L1BossRoom" parent="." index="8" instance=ExtResource( 15 )]
 
 position = Vector2( -0.096436, 0.005 )
-_sections_unfolded = [ "Transform" ]
 
 [node name="Player" parent="." index="9" instance=ExtResource( 16 )]
 
@@ -172,6 +171,8 @@ margin_top = 349.0
 visible = false
 
 [node name="Door" parent="." index="11" instance=ExtResource( 20 )]
+
+visible = true
 
 [connection signal="body_entered" from="L1RoomA/RoomAreaA" to="L1RoomA" method="_on_RoomAreaA_body_entered"]
 

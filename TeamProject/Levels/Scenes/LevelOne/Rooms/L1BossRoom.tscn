@@ -18,9 +18,9 @@
 custom_solver_bias = 0.0
 extents = Vector2( 13.6016, 10 )
 
-
 [node name="L1BossRoom" type="Node2D" index="0"]
 
+_sections_unfolded = [ "Transform" ]
 
 [node name="Floor" type="TextureRect" parent="." index="0"]
 
@@ -153,7 +153,6 @@ __meta__ = {
 
 [node name="CoffeeTable" parent="." index="7" instance=ExtResource( 8 )]
 
-
 editor/display_folded = true
 position = Vector2( 1648.47, 275.848 )
 
@@ -176,7 +175,6 @@ text = "Looks appetising..."
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-
 
 [node name="CouchLHS" parent="." index="8" instance=ExtResource( 9 )]
 
