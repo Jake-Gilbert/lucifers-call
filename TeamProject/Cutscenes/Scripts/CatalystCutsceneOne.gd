@@ -14,4 +14,5 @@ func _on_NextBtn_pressed():
 
 #Changes scene to the puzzle so skips the rest of the cutscenes
 func _on_SkipBtn_pressed():
+	get_tree().change_scene("res://Puzzles/Scenes/CatalystPuzzle.tscn")
 	pass # replace with function body

@@ -8,7 +8,7 @@
 [ext_resource path="res://UI/Images/SwitchPic.png" type="Texture" id=6]
 [ext_resource path="res://UI/Images/SwitchPic2.png" type="Texture" id=7]
 
-[node name="PuzzleThreeInstructions" type="Node" index="0"]
+[node name="PuzzleThreeInstructions" type="Node"]
 
 script = ExtResource( 1 )
 

@@ -8,6 +8,8 @@ var current_scene = null
 var puzzle1 = false
 var playerPosition = Vector2(0,0)
 var initialise = false
+var mazePuzzle = false
+var flipPuzzle = false
 
 func _ready():
 	set_process(true)
@@ -41,5 +43,6 @@ func _deferred_goto_scene(path):
 	get_tree().get_root().add_child(current_scene)
 	# Optionally, to make it compatible with the SceneTree.change_scene() API.
 	get_tree().set_current_scene(current_scene)
+
 
 

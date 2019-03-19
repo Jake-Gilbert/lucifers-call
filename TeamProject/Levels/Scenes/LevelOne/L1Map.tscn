@@ -39,7 +39,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="L1R1Bathroom" parent="." index="2" instance=ExtResource( 4 )]
 
-position = Vector2( 0.0150146, 0.00170302 )
+position = Vector2( 17.015, -4.99829 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="L1Hallway" parent="." index="3" instance=ExtResource( 5 )]
