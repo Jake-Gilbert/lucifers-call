@@ -23,7 +23,6 @@ func _on_YesBtn_pressed():
 	if get_node("../../L1Hallway").roomA == true:
 		if L1Map.mazePuzzle == true:
 			#L1Map.puzzle1 = true
-			print("fuck godot")
 			doorA.get_node("CollisionShape2D").disabled = true
 			Global_SceneSwitch.save_current_scene()
 		#L1Map._deferred_goto_scene("res://Puzzles/Scenes/(USE THIS)Puzzle.tscn")
@@ -35,7 +34,15 @@ func _on_YesBtn_pressed():
 	if get_node("../../L1Hallway").roomB == true:
 		doorB.queue_free()
 	if get_node("../../L1Hallway").roomC == true:
-		doorC.queue_free()
+		if L1Map.flipPuzzle == true:
+			#L1Map.puzzle1 = true
+			doorC.get_node("CollisionShape2D").disabled = true
+			Global_SceneSwitch.save_current_scene()
+		#L1Map._deferred_goto_scene("res://Puzzles/Scenes/(USE THIS)Puzzle.tscn")
+		#L1Map.playerPosition = position
+			L1Map.goto_scene("res://Cutscenes/Scenes/CatalystCutsceneOne.tscn")
+		else: 
+			pass
 	if get_node("../../L1Hallway").roomD == true:
 		doorD.queue_free()
 	self.hide()
