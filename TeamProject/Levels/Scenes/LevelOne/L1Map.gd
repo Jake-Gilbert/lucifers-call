@@ -11,6 +11,7 @@ var initialise = false
 var mazePuzzle = false
 var flipPuzzle = false
 var ghostCombat = false
+var potatoCombat = false
 
 func _ready():
 	set_process(true)
