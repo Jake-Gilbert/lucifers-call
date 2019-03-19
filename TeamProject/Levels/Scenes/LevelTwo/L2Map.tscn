@@ -7,7 +7,7 @@
 [ext_resource path="res://Player/Scenes/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://UI/Scenes/Camera2D.tscn" type="PackedScene" id=6]
 
-[node name="L2Map" type="Node2D" index="0"]
+[node name="L2Map" type="Node2D"]
 
 [node name="L2One" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -68,6 +68,7 @@ __meta__ = {
 
 [node name="L2Four" type="Node2D" parent="." index="3"]
 
+editor/display_folded = true
 position = Vector2( 2160, 0 )
 _sections_unfolded = [ "Transform" ]
 

@@ -1,19 +1,14 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://UI/Script/SettingsMenu.gd" type="Script" id=1]
 [ext_resource path="res://UI/Images/blackscrn.jpg" type="Texture" id=2]
 [ext_resource path="res://UI/Images/Back Normal.png" type="Texture" id=3]
 [ext_resource path="res://UI/Images/Back Hover.png" type="Texture" id=4]
-[ext_resource path="res://UI/Images/Altenative.png" type="Texture" id=5]
-[ext_resource path="res://UI/Images/Settings page text.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Fonts/pixelFont.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Assets/Fonts/bigFont.tres" type="DynamicFont" id=6]
 [ext_resource path="res://UI/Images/Line.png" type="Texture" id=7]
-[ext_resource path="res://UI/Images/Mute.png" type="Texture" id=8]
-[ext_resource path="res://UI/Images/Low.png" type="Texture" id=9]
-[ext_resource path="res://UI/Images/High.png" type="Texture" id=10]
-[ext_resource path="res://UI/Images/Display.png" type="Texture" id=11]
-[ext_resource path="res://UI/Images/Fullscreen.png" type="Texture" id=12]
 
-[node name="Panel" type="Panel"]
+[node name="Panel" type="Panel" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -26,12 +21,30 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 1 )
+_sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
-[node name="Background" type="Sprite" parent="." index="0"]
+[node name="Bg" type="TextureRect" parent="." index="0"]
 
-position = Vector2( 360.965, 215.365 )
-scale = Vector2( 1.50734, 1.1975 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 720.0
+margin_bottom = 432.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
 texture = ExtResource( 2 )
+expand = true
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
 
 [node name="Back" type="TextureButton" parent="." index="1"]
 
@@ -39,10 +52,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 607.0
+margin_left = 619.0
 margin_top = 10.0
-margin_right = 697.0
-margin_bottom = 61.0
+margin_right = 709.0
+margin_bottom = 60.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -65,10 +78,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 231.0
-margin_top = 25.0
-margin_right = 525.0
-margin_bottom = 93.0
+margin_left = 121.0
+margin_top = 84.0
+margin_right = 415.0
+margin_bottom = 152.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -76,41 +89,105 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
 toggle_mode = true
 enabled_focus_mode = 2
 shortcut = null
 group = null
-icon = ExtResource( 5 )
+text = " Alternative Music"
 flat = false
 align = 0
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
-[node name="Music" type="Sprite" parent="." index="3"]
+[node name="MusicLbl" type="Label" parent="." index="3"]
 
-position = Vector2( 93.3831, 68.0526 )
-texture = ExtResource( 6 )
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -328.0
+margin_top = -406.0
+margin_right = -198.0
+margin_bottom = -366.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Music"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Hint", "Rect", "custom_colors", "custom_fonts" ]
 
 [node name="Underline" type="Sprite" parent="." index="4"]
 
-position = Vector2( 94.2933, 84.3663 )
+position = Vector2( 95.2933, 68.3663 )
 scale = Vector2( 0.319903, 1 )
 texture = ExtResource( 7 )
 
-[node name="Mute" type="Sprite" parent="." index="5"]
+[node name="MuteLbl" type="Label" parent="." index="5"]
 
-position = Vector2( 136.585, 124.551 )
-texture = ExtResource( 8 )
-_sections_unfolded = [ "Transform" ]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -250.0
+margin_top = -255.0
+margin_right = -198.0
+margin_bottom = -235.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Mute"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Hint", "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="MuteCheck" type="CheckBox" parent="." index="6"]
+[node name="HighLbl" type="Label" parent="." index="6"]
+
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 245.0
+margin_top = -255.0
+margin_right = 297.0
+margin_bottom = -235.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "High"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Hint", "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="MuteCheck" type="CheckBox" parent="." index="7"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 123.0
-margin_top = 145.0
+margin_top = 210.0
 margin_right = 147.0
-margin_bottom = 169.0
+margin_bottom = 234.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -126,17 +203,29 @@ flat = false
 align = 0
 _sections_unfolded = [ "Rect" ]
 
-[node name="Low" type="Sprite" parent="." index="7"]
+[node name="LowLbl" type="Label" parent="." index="8"]
 
-position = Vector2( 288.055, 124.551 )
-texture = ExtResource( 9 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="High" type="Sprite" parent="." index="8"]
-
-position = Vector2( 630.437, 124.551 )
-texture = ExtResource( 10 )
-_sections_unfolded = [ "Transform" ]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -91.0
+margin_top = -254.0
+margin_right = -39.0
+margin_bottom = -234.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Low"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Hint", "Rect", "custom_colors", "custom_fonts" ]
 
 [node name="Volume" type="HSlider" parent="." index="9"]
 
@@ -145,9 +234,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -78.0
-margin_top = -67.0
+margin_top = -2.0
 margin_right = 281.0
-margin_bottom = -51.0
+margin_bottom = 14.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -169,35 +258,74 @@ focus_mode = 2
 
 [node name="Line" type="Sprite" parent="." index="10"]
 
-position = Vector2( 366.79, 227.548 )
+position = Vector2( 366.79, 245.548 )
 texture = ExtResource( 7 )
 
-[node name="Display" type="Sprite" parent="." index="11"]
+[node name="DisplayLbl" type="Label" parent="." index="11"]
 
-position = Vector2( 111.432, 290.552 )
-texture = ExtResource( 11 )
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -319.0
+margin_top = -166.0
+margin_right = -59.0
+margin_bottom = -126.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Display"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 [node name="Underline2" type="Sprite" parent="." index="12"]
 
-position = Vector2( 111.857, 305.919 )
-scale = Vector2( 0.36095, 1 )
+position = Vector2( 132.336, 307.919 )
+scale = Vector2( 0.463344, 1 )
 texture = ExtResource( 7 )
+_sections_unfolded = [ "Visibility" ]
 
-[node name="Fullscreen" type="Sprite" parent="." index="13"]
+[node name="FullscreenLbl" type="Label" parent="." index="13"]
 
-position = Vector2( 378.338, 357.967 )
-texture = ExtResource( 12 )
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -130.0
+margin_top = -98.0
+margin_right = 130.0
+margin_bottom = -58.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Fullscreen"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 [node name="FullscreenCheck" type="CheckBox" parent="." index="14"]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 360.0
-margin_top = 396.0
-margin_right = 384.0
-margin_bottom = 420.0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -12.0
+margin_top = -43.0
+margin_right = 12.0
+margin_bottom = -19.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2

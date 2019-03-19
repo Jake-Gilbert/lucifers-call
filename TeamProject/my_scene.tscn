@@ -31,7 +31,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 11.5055, 16.4894 )
 
-[node name="@L1Map@4" type="Node2D" index="8"]
+[node name="@L1Map@4" type="Node2D" index="9"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -50,12 +50,12 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="L1R1Bathroom" type="Node2D" parent="." index="2" instance=ExtResource( 4 )]
 
-position = Vector2( 0.663147, 0.396301 )
+position = Vector2( 0.0150146, 0.00170302 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="L1Hallway" type="Node2D" parent="." index="3" instance=ExtResource( 5 )]
 
-position = Vector2( 0, 1.07718 )
+position = Vector2( 0, 0.00576353 )
 script = ExtResource( 6 )
 
 [node name="L1RoomA" type="Node2D" parent="." index="4" instance=ExtResource( 7 )]
@@ -166,14 +166,15 @@ shape = SubResource( 1 )
 
 [node name="L1BossRoom" type="Node2D" parent="." index="8" instance=ExtResource( 15 )]
 
+position = Vector2( -0.096436, 0.005 )
+_sections_unfolded = [ "Transform" ]
+
 [node name="Player" type="KinematicBody2D" parent="." index="9" groups=[
 "persistent",
 ] instance=ExtResource( 16 )]
 
 editor/display_folded = true
-
-position = Vector2( 684.664, 332.86 )
-
+position = Vector2( 587.951, -65.7509 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 6
@@ -184,6 +185,7 @@ _sections_unfolded = [ "Collision", "Pause", "collision" ]
 [node name="Camera2D" type="Camera2D" parent="." index="10" instance=ExtResource( 18 )]
 
 editor/display_folded = true
+position = Vector2( 0, -432 )
 anchor_mode = 0
 rotating = false
 current = true
@@ -288,7 +290,6 @@ items = [  ]
 hide_on_state_item_selection = false
 script = ExtResource( 24 )
 _sections_unfolded = [ "Rect" ]
-
 
 [node name="Door" type="Area2D" parent="." index="11" instance=ExtResource( 25 )]
 

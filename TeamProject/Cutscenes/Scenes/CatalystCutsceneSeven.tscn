@@ -7,7 +7,7 @@
 [node name="CatalystCutsceneSeven" type="Node" index="0"]
 
 script = ExtResource( 1 )
-nextScene = null
+nextScene = "res://UI/Instructions/PuzzleThreeInstruction.tscn"
 
 [node name="Bg" type="TextureRect" parent="." index="0"]
 
