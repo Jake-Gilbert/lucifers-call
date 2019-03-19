@@ -50,7 +50,8 @@ func _on_AreaA_body_exited(body):
 		roomA = false
 
 func _on_AreaB_body_entered(body):
-	if body.name == "Player":
+	if body.name == "Player" && L1Map.potatoCombat == false:
+		L1Map.potatoCombat = true
 		_popupAndStop()
 		roomB = true
 

@@ -32,7 +32,16 @@ func _on_YesBtn_pressed():
 			pass
 
 	if get_node("../../L1Hallway").roomB == true:
-		doorB.queue_free()
+		if L1Map.potatoCombat == true:
+			doorB.queue_free()
+			Global_SceneSwitch.save_current_scene()
+			doorB.get_node("CollisionShape2D").disabled = true
+		#L1Map._deferred_goto_scene("res://Puzzles/Scenes/(USE THIS)Puzzle.tscn")
+		#L1Map.playerPosition = position
+			L1Map.goto_scene("res://Cutscenes/Scenes/PotatoCombatCutsceneOne.tscn")
+		else:
+			pass
+
 	if get_node("../../L1Hallway").roomC == true:
 		if L1Map.flipPuzzle == true:
 			#L1Map.puzzle1 = true
@@ -43,6 +52,7 @@ func _on_YesBtn_pressed():
 			L1Map.goto_scene("res://Cutscenes/Scenes/CatalystCutsceneOne.tscn")
 		else: 
 			pass
+
 	if get_node("../../L1Hallway").roomD == true:
 		if L1Map.ghostCombat == true:
 			doorD.queue_free()
@@ -51,4 +61,6 @@ func _on_YesBtn_pressed():
 		#L1Map._deferred_goto_scene("res://Puzzles/Scenes/(USE THIS)Puzzle.tscn")
 		#L1Map.playerPosition = position
 			L1Map.goto_scene("res://Cutscenes/Scenes/GhostCombatCutsceneOne.tscn")
+		else:
+			pass
 	self.hide()

@@ -14,4 +14,5 @@ func _on_NextBtn_pressed():
 
 #Changes scene to the puzzle so skips the rest of the cutscenes
 func _on_SkipBtn_pressed():
+	Global_SceneSwitch.reload_last_saved()
 	pass # replace with function body
