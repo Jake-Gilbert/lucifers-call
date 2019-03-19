@@ -1,17 +1,16 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/Images/Assets_room_floor_wood.png" type="Texture" id=1]
 [ext_resource path="res://Assets/WallTiles/TileSets/WallTileSetNewestEdition.tres" type="TileSet" id=2]
 [ext_resource path="res://Assets/Scenes/Key.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Scripts/Key.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Scenes/Wardrobe.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Assets/Scripts/Wardrobe.gd" type="Script" id=6]
-[ext_resource path="res://Fonts/pixelFont.tres" type="DynamicFont" id=7]
-[ext_resource path="res://Assets/Scenes/OpenWardrobe.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Assets/Scenes/Chair.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Assets/Scenes/Bed.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Assets/Scripts/WardrobeArea.gd" type="Script" id=11]
-[ext_resource path="res://Assets/Scenes/Desk.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Fonts/pixelFont.tres" type="DynamicFont" id=6]
+[ext_resource path="res://Assets/Scenes/OpenWardrobe.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Scenes/Chair.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Scenes/Bed.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/Scripts/WardrobeArea.gd" type="Script" id=10]
+[ext_resource path="res://Assets/Scenes/Desk.tscn" type="PackedScene" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -45,8 +44,6 @@ func _physics_process(delta):
 "
 
 [node name="L1R1" type="Node2D"]
-
-editor/display_folded = true
 
 [node name="L1Floor" type="TextureRect" parent="." index="0"]
 
@@ -103,7 +100,6 @@ script = ExtResource( 4 )
 
 editor/display_folded = true
 position = Vector2( 464, 114.653 )
-script = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Label" type="Label" parent="Wardrobe" index="2"]
@@ -123,25 +119,25 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 6 )
 text = "Oh, what is in here?"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="OpenWardrobe" parent="." index="4" instance=ExtResource( 8 )]
+[node name="OpenWardrobe" parent="." index="4" instance=ExtResource( 7 )]
 
 visible = false
 position = Vector2( 464, 115 )
 
-[node name="Chair" parent="." index="5" instance=ExtResource( 9 )]
+[node name="Chair" parent="." index="5" instance=ExtResource( 8 )]
 
 position = Vector2( 114.516, 318.588 )
 rotation = 0.0249141
 scale = Vector2( 1.25475, 1.15211 )
 
-[node name="Bed" parent="." index="6" instance=ExtResource( 10 )]
+[node name="Bed" parent="." index="6" instance=ExtResource( 9 )]
 
 position = Vector2( 277.281, 157.16 )
 scale = Vector2( 1.8316, 2.07016 )
@@ -158,7 +154,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -190,7 +186,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Desk" parent="." index="8" instance=ExtResource( 12 )]
+[node name="Desk" parent="." index="8" instance=ExtResource( 11 )]
 
 editor/display_folded = true
 position = Vector2( 140.026, 348.973 )

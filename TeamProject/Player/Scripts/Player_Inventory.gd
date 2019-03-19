@@ -1,3 +1,5 @@
+#Sets the inventory's GUI and controls its functions
+#Created by Hannah
 extends Node
 
 onready var itemList = get_node("Panel/ItemList")
@@ -5,7 +7,6 @@ onready var itemList = get_node("Panel/ItemList")
 onready var itemMenu = get_node("Panel/WindowDialog_ItemMenu")
 onready var itemMenu_TextureFrame_Icon = get_node("Panel/WindowDialog_ItemMenu/ItemMenu_TextureFrame_Icon")
 onready var itemMenu_RichTextLabel_ItemInfo = get_node("Panel/WindowDialog_ItemMenu/ItemMenu_RichTextLabel_ItemInfo")
-onready var itemMenu_Button_DropItem = get_node("Panel/WindowDialog_ItemMenu/ItemMenu_Button_DropItem")
 
 var activeItemSlot = -1
 var dropItemSlot = -1
@@ -17,7 +18,7 @@ onready var mouseButtonReleased = true
 var draggedItemSlot = -1
 onready var initial_mousePos = Vector2()
 onready var cursor_insideItemList = false
-
+#Initialises variables and functions
 func _ready():
 	# Initialize Item List
 	itemList.set_max_columns(9)
@@ -31,18 +32,20 @@ func _ready():
 
 	set_process(false)
 	set_process_input(true)
-
+#Function that runs in real time that tracks mouse position
 func _process(delta):
 	if (isDraggingItem):
 		draggedItem.global_position = get_viewport().get_mouse_position()
 
-
+#Function that reacts to different inputs
+#If the left click is used then items can be dragged about.
+#Simply moving the mouse causes the function to track the mouse positon
 func _input(event):
 	if (event is InputEventMouseButton):
-		if (event.is_action_pressed("mouse_leftbtn")):
+		if (event.is_action_pressed("leftMouse")):
 			mouseButtonReleased = false
 			initial_mousePos = get_viewport().get_mouse_position()
-		if (event.is_action_released("mouse_leftbtn")):
+		if (event.is_action_released("leftMouse")):
 			move_item()
 			end_drag_item()
 
@@ -60,14 +63,14 @@ func _input(event):
 		else:
 			activeItemSlot = -1
 
-
+#Loads all items into the inventory so that they are not deleted when the player enters item screen
 func load_items():
 	itemList.clear()
 	for slot in range(0, Global_Player.inventory_maxSlots):
 		itemList.add_item("", null, false)
 		update_slot(slot)
 
-
+#Function to update an individual item slot, it can chang the amount of an item
 func update_slot(slot):
 	var inventoryItem = Global_Player.inventory[String(slot)]
 	var itemMetaData = Global_ItemDatabase.get_item(inventoryItem["id"])
@@ -84,7 +87,7 @@ func update_slot(slot):
 	itemList.set_item_tooltip(slot, itemMetaData["name"])
 	itemList.set_item_tooltip_enabled(slot, int(inventoryItem["id"]) > 0)
 
-
+#On right click gives options to interact with individual items
 func _on_ItemList_item_rmb_selected(index, atpos):
 	if (isDraggingItem):
 		return
@@ -107,14 +110,8 @@ func _on_ItemList_item_rmb_selected(index, atpos):
 	activeItemSlot = index
 	itemMenu.popup()
 	
-#func _on_ItemMenu_Button_DropItem_pressed():
-#	var newAmount = Global_Player.inventory_removeItem(dropItemSlot)
-#	if (newAmount < 1):
-#		itemMenu.hide()
-#	else:
-#		itemMenu_Button_DropItem.set_text("(" + String(newAmount) + ") Drop")
-#	update_slot(dropItemSlot)
 
+#Function to start dragging an item.
 func begin_drag_item(index):
 	if (isDraggingItem):
 		return
@@ -133,7 +130,7 @@ func begin_drag_item(index):
 	mouseButtonReleased = false
 	draggedItem.global_translate(get_viewport().get_mouse_position())
 
-
+#Function that ends the dragging of an item
 func end_drag_item():
 	set_process(false)
 	draggedItemSlot = -1
@@ -154,14 +151,15 @@ func move_item():
 	update_slot(draggedItemSlot)
 	update_slot(activeItemSlot)
 
-
+#Triggered when mouse enters the item list
 func _on_ItemList_mouse_entered():
 	cursor_insideItemList = true;
 
-
+#Triggered when mouse exits the item list
 func _on_ItemList_mouse_exited():
 	cursor_insideItemList = false;
 
 
 func _on_Close_Button_pressed():
-	get_tree().change_scene("res://Levels/Scenes/LevelOneWithDoor.tscn")
+	get_node("Panel").hide()
+	Global_SceneSwitch.reload_last_saved()

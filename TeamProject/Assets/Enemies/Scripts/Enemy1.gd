@@ -17,21 +17,24 @@ var velocity = Vector2()
 var direction = 1
 	# Called when the node is added to thse scene for the first time.
 	# Initialization here
+
+#Function to prepare the methods to be run
 func _ready():
 	set_physics_process(true)
-
+#Function to decrease health from the enemy
+#If health = 0 then delete the enemy
 func lose_health():
 	if (health != 0):
 		health = health -1
 		if (health == 0):
 			queue_free()
 
-
+#Switches the animation of enemy to a different animation
 func switch_animation(animation):
 	var newAnim = str(animation,spritedir)
 	if $AnimationPlayer.current_animation != newAnim:
 		$AnimationPlayer.play(newAnim)
-
+#Real time function  determines the direction of the enemy 
 func _physics_process(delta):
 	if get_parent().get_offset() < 125:
 		spritedir = "Up"

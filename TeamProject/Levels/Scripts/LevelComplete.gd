@@ -16,4 +16,6 @@ func _physics_process(delta):
 	#If one called player then the scene will change to designated chosen scene
 	for body in bodiesCollision:
 		if body.name == "Player":
+			#Global_SceneSwitch.save_current_scene()
 			get_tree().change_scene(changeLevels)
+			Global_Player.inventory_addItem("2")

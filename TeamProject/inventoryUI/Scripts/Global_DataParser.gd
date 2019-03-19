@@ -1,3 +1,5 @@
+#loads the current inventory into a file path specified and writes a data file if non exists
+#Created by Hannah
 extends Node
 
 onready var file = File.new()

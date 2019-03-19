@@ -23,6 +23,7 @@ Save="*res://Save.gd"
 AudioPlayer="*res://Sound/AudioStreamPlayer.tscn"
 Global_SceneSwitch="*res://Global_SceneSwitch.gd"
 Block_Controller="*res://Puzzles/Scripts/BlockController.gd"
+L1Map="*res://Levels/Scenes/LevelOne/L1Map.gd"
 
 [display]
 
@@ -55,3 +56,4 @@ leftMouse=[ Object(InputEventMouseButton,"resource_local_to_scene":false,"resour
 2d_physics/layer_5="bullet"
 2d_physics/layer_6="puzzlebit1"
 2d_physics/layer_7="puzzlebit2"
+2d_physics/layer_8="puzzlebit3"

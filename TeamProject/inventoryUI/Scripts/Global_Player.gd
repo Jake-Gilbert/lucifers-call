@@ -1,3 +1,6 @@
+#Loads the empty item slots initially, saves the inventory data, 
+#has the move item function allows the inventory to add and remove items
+#Created by Hannah
 extends Node
 
 var url_PlayerData = "user://PlayerData.bin"
