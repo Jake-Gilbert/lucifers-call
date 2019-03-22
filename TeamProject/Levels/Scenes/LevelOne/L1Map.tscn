@@ -180,7 +180,12 @@ visible = false
 
 visible = true
 
-[node name="Cutscene" type="Area2D" parent="." index="12"]
+[node name="Door2" parent="." index="12" instance=ExtResource( 20 )]
+
+visible = true
+position = Vector2( 1421.25, 309.03 )
+
+[node name="Cutscene" type="Area2D" parent="." index="13"]
 
 editor/display_folded = true
 position = Vector2( 1484.08, 311.527 )
@@ -218,6 +223,8 @@ shape = SubResource( 2 )
 [connection signal="body_exited" from="L1RoomD/RoomAreaD" to="L1RoomD" method="_on_RoomAreaD_body_exited"]
 
 [connection signal="body_entered" from="Door" to="Player" method="_on_Door_body_entered"]
+
+[connection signal="body_entered" from="Door2" to="Player" method="_on_Door2_body_entered"]
 
 [connection signal="body_entered" from="Cutscene" to="Cutscene" method="_on_Cutscene_body_entered"]
 

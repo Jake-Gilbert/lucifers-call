@@ -219,11 +219,22 @@ func _on_invinciblityTimer_timeout():
 func _on_Door_body_entered(body):
 	if body.get_collision_mask_bit(1) && L1Map.puzzle1 == false:
 		L1Map.puzzle1 = true
-		print("fuck godot")
 		Global_SceneSwitch.save_current_scene()
 		#L1Map._deferred_goto_scene("res://Puzzles/Scenes/(USE THIS)Puzzle.tscn")
 		#L1Map.playerPosition = position
 		L1Map.goto_scene("res://UI/Instructions/PuzzleOneInstruction.tscn")
+	else:
+		pass
+
+
+
+func _on_Door2_body_entered(body):
+	if body.get_collision_mask_bit(1) && L1Map.L1boss == false:
+		L1Map.L1boss = true
+		Global_SceneSwitch.save_current_scene()
+		#L1Map._deferred_goto_scene("res://Puzzles/Scenes/(USE THIS)Puzzle.tscn")
+		#L1Map.playerPosition = position
+		L1Map.goto_scene("res://Cutscenes/Scenes/BossOne.tscn")
 	else:
 		pass
 
